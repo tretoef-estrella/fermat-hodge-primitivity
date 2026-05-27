@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: >-
+  The Hodge–Fermat Campaign: verifying the Integral Hodge
+  Conjecture for high-dimensional Fermat varieties, and the
+  prime-power reduction frontier
+message: >-
+  If you use these engines, results, or writing, please cite
+  them using the metadata below.
+type: software
+authors:
+  - family-names: Amichis Luengo
+    given-names: Rafael
+    city: Madrid
+    country: ES
+    email: tretoef@gmail.com
+repository-code: 'https://github.com/tretoef-estrella/prime-power-frontier'
+abstract: >-
+  A computational campaign verifying the Integral Hodge
+  Conjecture for high-dimensional Fermat varieties on a single
+  8 GB laptop, via the Degtyarev–Shimada combinatorial
+  primitivity criterion. Eight cells were given complete
+  PRIMITIVE verdicts, including (6,6) — the first
+  composite-degree cell verified — and the work identified the
+  prime-power reduction frontier, the exact boundary at which
+  the Jordan-mould reduction silently fails.
+keywords:
+  - Hodge conjecture
+  - Fermat varieties
+  - algebraic geometry
+  - computational mathematics
+  - exact linear algebra
+  - finite fields
+license: MIT
+date-released: '2026-05-27'
