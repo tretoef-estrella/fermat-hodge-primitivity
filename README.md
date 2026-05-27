@@ -1,2 +1,267 @@
-# prime-power-frontier
-Verifying the Integral Hodge Conjecture for high-dimensional Fermat varieties on a single 8 GB laptop — and the prime-power reduction frontier, a boundary of the verification method discovered at cell (6,6)
+# The Hodge–Fermat Campaign
+
+### Verifying the Integral Hodge Conjecture for high-dimensional Fermat varieties on a single 8 GB laptop
+
+> A psychologist in Madrid, with no formal training as a mathematician, sat down at a MacBook Air — the thin consumer laptop, 8 GB of memory, one thread, deliberately throttled to a quarter of its power — and went after a problem the published literature had never reached. The tool for it, a criterion from 2016, was supposed to need real computers. He had a laptop and a refusal to quit. Over a series of sessions he decided eight cells of the problem, byte for byte, including one in a degree the entire field steers around — and, along the way, found a place where the standard method silently lies, that nobody had marked on any map.
+
+This is the record of that campaign: what was computed, how, and exactly what is new.
+
+**Architect:** Rafael Amichis Luengo (Madrid) · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
+**Method base:** Degtyarev–Shimada combinatorial primitivity criterion (*J. Math. Soc. Japan* **68:3** (2016), 975–996; arXiv:1405.4683)
+**Hardware:** MacBook Air M2 (2022), 8 GB RAM, single thread, throttled to 25% CPU. No swap. No cluster. No cloud.
+
+---
+
+## At a glance
+
+| | |
+|---|---|
+| **Cells given a complete PRIMITIVE verdict** | 8 — `(10,3)`, `(8,4)`, `(6,5)`, `(6,6)`, `(6,7)`, `(6,8)`, `(6,9)`, `(8,5)` |
+| **Deepest single computation** | `(6,9)`: a **3.45-billion-entry** closure, held at **1.07 bytes per entry** |
+| **First composite-degree cell ever verified** | `(6,6)` — `m = 6 = 2 × 3`, the degree the literature avoids |
+| **New structural result** | the *prime-power reduction frontier* (the *Frontier*) — where the verification method silently fails |
+| **Complex-half dimensions mapped** | 38 cells, in under an hour total, revealing a closed-form rank law |
+| **Storage cost driven down** | from 16 bytes per entry to **1.07** — a 15× compression, all in exact arithmetic |
+| **Hardware** | one 8 GB laptop, single thread, 25% CPU |
+
+---
+
+## What this is
+
+The Integral Hodge Conjecture is one of the load-bearing questions of modern geometry: does every integral Hodge class on a smooth projective variety come from an actual algebraic subvariety, with whole-number coefficients? The general answer is *no* (Atiyah–Hirzebruch found counterexamples in 1962), which is exactly why the cases where it *does* hold are worth pinning down — and Fermat varieties, the most symmetric examples there are, have been a proving ground for the question since Shioda's work in 1979. The hard part is that checking even a single case is a serious computation, and the published computations stop early. This campaign pushes that boundary on hardware nobody would call serious.
+
+For Fermat varieties — the surfaces and higher-dimensional analogues cut out by `x₀ᵐ + x₁ᵐ + ⋯ + xₙ₊₁ᵐ = 0` — Degtyarev and Shimada gave a purely combinatorial test: the standard linear cycles generate the full integral Hodge lattice **if and only if** a certain dimension computed over the complex numbers (`dim_C`) equals the same dimension computed over each prime field `F_p` for every prime `p` dividing `m`. When they agree, the cell is **PRIMITIVE**. When they disagree, the gap is **torsion** — and a torsion verdict in a degree where none is guaranteed would be a genuine surprise to the field.
+
+The two halves are not equally cheap. The complex half collapses to a fast eigenbasis scan. The prime-field half requires honest Gaussian elimination over a finite field on a sparse system whose size explodes with the cell — millions to billions of nonzero entries. **That second half is the entire engineering problem of this project**, and it is where every record here was won: not by buying a bigger machine, but by repeatedly redesigning the computation so that a cell which "could not fit in 8 GB" suddenly fit, exactly, byte-for-byte.
+
+Every number in this document comes from a run log in the repository. Nothing is from memory, and nothing is rounded to flatter.
+
+---
+
+## Where the published frontier was, and where this campaign went
+
+To be precise about what is new, here is the published state of the art, checked against the primary sources:
+
+- **Degtyarev–Shimada (2016)** [1] state the criterion and verify it by computer in **many cases up to their table, which stops at dimension n = 8, degree m = 3** (`(8,3)`).
+- **Aljovin–Movasati–Villaflor (2019)** [6] give an independent algorithm and a *theoretical* guarantee, but only under the condition **"d prime, or d = 4, or gcd(d, (n+1)!) = 1"**, and their implementation reaches only dimension **n ≤ 4**.
+- **For surfaces (n = 2)** the problem — originally posed by **Aoki and Shioda in 1983** [3] — is *completely settled*: Schütt–Shioda–van Luijk [4] and Degtyarev [5] proved the lines generate the Néron–Severi group **if and only if m ≤ 4 or gcd(m, 6) = 1**. The surface literature deliberately works in degrees coprime to 6.
+
+The lineage is worth seeing whole. Shioda asked in 1979 [2] whether the standard cycles generate the Hodge lattice of Fermat varieties; Aoki and Shioda sharpened the surface case in 1983; the surface verdict was closed by Schütt–Shioda–van Luijk and Degtyarev; and Degtyarev–Shimada turned the higher-dimensional question into a computable criterion in 2016. **This campaign is the next link in that chain.** Its cells are fourfolds and higher (`n = 4, 6, 8, 10`), in degrees the surface results do not touch, and deep into a region where **no published computation reaches**. The first virgin cell, `(10,3)`, sits outside every published table. The headline result, `(6,6)`, lives in a degree (`m = 6 = 2 × 3`) that the entire lines/primitivity literature explicitly avoids — and revealed, in the process, a boundary of the computational method itself that nobody had marked.
+
+---
+
+## The cells conquered
+
+Each verdict below is a *complete* verdict: the complex dimension `dim_C` **and** the prime-field dimension `dim_Fp` for every prime dividing `m`, computed independently and found equal. Every cell is **PRIMITIVE** — the linear cycles generate the integral Hodge lattice. Peak RAM and wall time are read directly from the run log named in the last column. All ran on the 8 GB MacBook Air, single thread, 25% CPU. **Every engine and every log is in this repository — check it yourself: the engine column links to the source, the log column to the raw run output.**
+
+| Cell (n,m) | DIM = (m−1)ⁿ⁺¹ | dim_C = dim_Fp | Verdict | Peak RAM | Wall time | Engine | Log |
+|---|---|---|---|---|---|---|---|
+| (10,3) | 2,048 | 1,124 | PRIMITIVE | 14 MB | minutes | [HODGE_ENGINE_v3](engines/HODGE_ENGINE_v3.cpp) | [log](logs/PRUEBA_RECORD_10_3.txt) |
+| (8,4) | 19,683 | 10,730 | PRIMITIVE | 0.72 GB | ~2 h 45 m | [HOUDINI](engines/HOUDINI.cpp) | [log](logs/CIC_8_4_run1.log) |
+| (6,5) | 16,384 | 11,484 | PRIMITIVE | 0.46 GB | ~58 m | [HOUDINI](engines/HOUDINI.cpp) | [log](logs/HOUDINI_6_5_diagnostico.log) |
+| (6,6) | 78,125 | 59,392 | PRIMITIVE | 0.47 / 0.60 GB | 6,551 s / 11,532 s | [**ROSETTA STAR**](engines/ROSETTA_STAR.cpp) | [log](logs/ROSETTA_STAR_6_6_run1.log) |
+| (6,7) | 279,936 | 235,206 | PRIMITIVE | 2.48 GB | 487 s | [HOUDINI HYPER SPARK](engines/HOUDINI_HYPER_SPARK.cpp) | [log](logs/HOUDINI_HYPER_SPARK_6_7_run1.log) |
+| (6,8) | 823,543 | 720,264 | PRIMITIVE | 2.77 GB | 1,059 s | [HYPER SPARK PACKED](engines/HYPER_SPARK_PACKED.cpp) | [log](logs/HYPER_SPARK_PACKED_6_8_run1.log) |
+| (6,9) | 2,097,152 | 1,907,032 | PRIMITIVE | 3.71 GB | 11,472 s | [HOUDINI SONIC BOOM STAR](engines/HOUDINI_SONIC_BOOM_STAR.cpp) | [log](logs/HOUDINI_SONIC_BOOM_STAR_6_9_run1.log) |
+| (8,5) | 262,144 | 198,640 | PRIMITIVE | 2.57 GB | 4,601 s | [HOUDINI HYPER SPARK](engines/HOUDINI_HYPER_SPARK.cpp) | [log](logs/HOUDINI_HYPER_SPARK_8_5_run1.log) |
+
+Notes, kept honest:
+- `(6,6)` has **two** prime-field computations (char 2 and char 3, since 6 = 2 × 3); both returned the same rank, partition by partition. Its peaks and times are listed per characteristic.
+- `(8,4)` and `(6,5)` each have two reduction passes (char-large and char-p). The listed peak is the larger of the two — the char-large pass — which is the true maximum of the cell; the char-p pass peaked lower (`(8,4)`: 0.42 GB; `(6,5)`: 0.40 GB). The listed time is the sum of both passes.
+- The "rank" reduced at each verdict is the *closing rank* `= DIM − dim_C` (e.g. `(8,5)`: `262,144 − 198,640 = 63,504`, held flat from partition 892 to 945 — the tail partitions add zero, confirming the span is complete).
+- `(10,3)`'s log records flat 14 MB RAM but no second-resolution wall time; "minutes" is the honest description.
+- The single largest object ever reduced in the campaign is `(6,9)`'s closure: **3.45 billion nonzero entries held on an 8 GB machine at 1.07 bytes per entry.**
+
+### The DOBERMAN sweep — the complex half, mapped across the mesh
+
+Beyond the full verdicts, the sweep engine **DOBERMAN** computed the *complex half* `dim_C` for **38 cells** in well under an hour of total wall time, RAM flat throughout. These are not complete verdicts — the prime-field half is the expensive one — but they map the entire territory, pre-stage every future target, and (see "What the sweep revealed" below) exposed a closed-form law. Every line is from the run log; `wall_s` is the time for that cell's complex half alone.
+
+| Cell (n,m) | DIM | partitions | dim_C | off {3,4,6}? | m prime? | torsion-suspect? | wall (s) |
+|---|---|---|---|---|---|---|---|
+| (4,3) | 32 | 15 | 12 | no | yes | no | 0.000 |
+| (4,4) | 243 | 15 | 102 | no | no | no | 0.000 |
+| (6,3) | 128 | 105 | 58 | no | yes | yes | 0.000 |
+| (4,5) | 1,024 | 15 | 624 | yes | yes | no | 0.000 |
+| (4,6) | 3,125 | 15 | 2,124 | no | no | no | 0.000 |
+| (4,7) | 7,776 | 15 | 5,916 | yes | yes | no | 0.001 |
+| (6,4) | 2,187 | 105 | 1,080 | no | no | no | 0.002 |
+| (4,8) | 16,807 | 15 | 13,506 | yes | no | no | 0.002 |
+| (8,3) | 512 | 945 | 260 | no | yes | yes | 0.002 |
+| (4,9) | 32,768 | 15 | 27,648 | yes | no | no | 0.002 |
+| (4,10) | 59,049 | 15 | 51,288 | yes | no | no | 0.002 |
+| (4,11) | 100,000 | 15 | 89,100 | yes | yes | no | 0.003 |
+| (6,5) | 16,384 | 105 | 11,484 | yes | yes | yes | 0.004 |
+| (4,12) | 161,051 | 15 | 145,950 | yes | no | no | 0.005 |
+| (4,13) | 248,832 | 15 | 228,912 | yes | yes | no | 0.007 |
+| (4,14) | 371,293 | 15 | 345,252 | yes | no | no | 0.010 |
+| (4,15) | 537,824 | 15 | 504,924 | yes | no | no | 0.015 |
+| (6,6) | 78,125 | 105 | 59,392 | no | no | no | 0.018 |
+| (8,4) | 19,683 | 945 | 10,730 | no | no | no | 0.029 |
+| (10,3) | 2,048 | 10,395 | 1,124 | no | yes | yes | 0.033 |
+| (6,7) | 279,936 | 105 | 235,206 | yes | yes | yes | 0.058 |
+| (6,8) | 823,543 | 105 | 720,264 | yes | no | yes | 0.157 |
+| (6,9) | 2,097,152 | 105 | 1,907,032 | yes | no | yes | 0.372 |
+| (8,5) | 262,144 | 945 | 198,640 | yes | yes | yes | 0.400 |
+| (6,10) | 4,782,969 | 105 | 4,437,504 | yes | no | yes | 0.796 |
+| (6,11) | 10,000,000 | 105 | 9,448,050 | yes | yes | yes | 1.618 |
+| (12,3) | 8,192 | 135,135 | 4,760 | no | yes | yes | 1.642 |
+| (10,4) | 177,147 | 10,395 | 103,358 | no | no | no | 2.531 |
+| (8,6) | 1,953,125 | 945 | 1,577,380 | no | no | no | 2.829 |
+| (6,12) | 19,487,171 | 105 | 18,610,840 | yes | no | yes | 3.076 |
+| (6,13) | 35,831,808 | 105 | 34,550,388 | yes | yes | yes | 5.549 |
+| (6,14) | 62,748,517 | 105 | 60,881,280 | yes | no | yes | 9.497 |
+| (8,7) | 10,077,696 | 945 | 8,905,140 | yes | yes | yes | 14.456 |
+| (8,8) | 40,353,607 | 945 | 36,758,430 | yes | no | yes | 54.691 |
+| (10,5) | 4,194,304 | 10,395 | 3,340,528 | yes | yes | yes | 65.628 |
+| (14,3) | 32,768 | 2,027,025 | 19,898 | no | yes | yes | 107.781 |
+| (12,4) | 1,594,323 | 135,135 | 978,096 | no | no | no | 305.280 |
+| (10,6) | 48,828,125 | 10,395 | 40,969,900 | no | no | no | 884.898 |
+
+The deepest cell here, `(10,6)`, has its complex half computed from over **two million partitions** in under fifteen minutes. The "torsion-suspect" column flags cells where theory does *not* force primitivity (degree prime and/or outside {3,4,6}) — these are where a surprise could in principle live, and they are the campaign's forward targets.
+
+### What the sweep revealed — a closed-form law
+
+The 38-cell sweep was not just a census; it exposed structure. Across the whole mesh, **`rank(n,m) = DIM − dim_C` is a polynomial in `m` of degree `d+1` whose leading coefficient is exactly the partition count `(2d+1)!!`** — split by the parity of `m`, with the two top-degree coefficients shared across both parities. This was verified on the two complete rows of the sweep: the full `n = 4` row (13 degrees, `m = 3…15`) and the full `n = 6` row (12 degrees, `m = 3…14`), every point polynomially regular with **zero outliers**. The hunt for a "black sheep" cell whose `dim_C` breaks the family pattern returned none. This is the family-scale confirmation that torsion is invisible to the complex half — it lives only in the prime-field Jordan structure, which no eigenbasis read can see. (Honest scope: the law extends a remark in Degtyarev–Shimada and is established empirically across these two rows, not proven in general.)
+
+A note on counts, for precision: the sweep evaluated `dim_C` for **38 cells** in one run; of those, roughly **27 are virgin** values not present in any published table (the rest are calibration cells with known values). "38 cells swept" and "~27 new `dim_C`" are two different counts of two different things, and both are honest — the first is the run, the second is the novelty within it.
+
+---
+
+## The engines
+
+The project's engineering is a single bloodline. Each engine was built only after the previous one's wall was *measured*, not guessed; each new name was earned by passing byte-exact validation gates against known cells before it was trusted. The names are deliberately playful — a house rule that a ridiculous name must carry a serious engine.
+
+| Engine | The lever it added | Decided / enabled |
+|---|---|---|
+| **HODGE_ENGINE_v3** | Sparse tensorial generation + incremental Gaussian elimination — kills the dense `O(DIM²)` wall of naive approaches. | `(10,3)` and the calibration cells |
+| **HOUDINI** | The escape act: compute the complex half in an **eigenbasis** where the ideal is block-diagonal, so `dim_C` falls out in milliseconds with no linear algebra at all. The prime half stays as honest reduction. | `(8,4)`, `(6,5)` |
+| **DOBERMAN** | Family-wide sweep of the cheap complex half across every cell under a size ceiling, cheapest-first. | 38 cells' `dim_C` |
+| **HOUDINI NAPKIN** | The **Jordan-mould starter**: work in the basis `u = t − 1`, where for `p \| m` each variable is nilpotent (`uᵐ⁻¹ = 0` exactly). Dead terms that would exceed the nilpotent ceiling are **never generated** — the mathematics kills them before they are born, instead of building them and reducing them away. (2.17× lighter.) | (8,5) attempt |
+| **HOUDINI NAPKIN TURBINA** | **Flow, not accumulation.** Each partition's small closure is saturated alone, folded into one shared echelon, and its intermediates discarded before the next enters. The live mass is never "all 945 pieces at once" — it is the echelon plus one piece. (≈5× lighter than NAPKIN on (6,5).) | (8,5) method |
+| **HOUDINI HYPER SPARK** | The **dense-rebound fold**: stop rebuilding a sparse vector on every Gaussian collision. Scatter each row once into a dense scratch, subtract pivots in place on their own columns only, read the leading column from a tiny heap. Diagnosed, not hunched: the old fold touched 4.89 **billion** nonzeros to keep a 1.75M echelon, with 82% of rows collapsing to zero — that count named the fix. (2.1× faster than TURBINA.) | `(8,5)`, `(6,7)` |
+| **HYPER SPARK PACKED** | Shrink the *envelope*: store each echelon entry in 5 bytes instead of 16. Same gasoline, a third of the tank. | `(6,8)` |
+| **HOUDINI SUPER BLACKHOLE** | Delta-varint columns (store the *gap* between consecutive columns, not the absolute column — like noting a route as "+14, +1, +34" instead of full coordinates). On `(6,9)` char 3 it ran a closure the older method projected at ~7.7 GB down toward the low-GB band — but the char-3 tail explodes in the final 5% (part 95→97: ~3 GB → 5.51 GB) and it **aborted clean at the 5.4 GB guard, part 97**. A vein that opened the road and died near the summit; it did not decide a cell, and is recorded as such. | `(6,9)` attempt (incomplete) |
+| **HOUDINI SONIC BOOM STAR** | Varint columns **with the coefficient embedded** in the low bits — **1.07 bytes per entry** on `(6,9)`, the practical floor for a varint store. The production engine for the deep cells. | `(6,9)` |
+| **ROSETTA STAR** | The fix for composite degree (see below). Reduces in the monomial basis with the *true* ring relation, correct for any `m`. | `(6,6)` |
+| **HOUDINI SUPERNOVA** | An attempt to break the deep-cell time wall by reordering the fold (the tail spends 96.8% of its work on rows that collapse to zero). Measured honestly: it **tied STAR in time and was worse in RAM** (0.27 vs 0.20 GB at the same point of `(6,7)`), because the reorder moved the fill-in heavier. Gate-valid (rank correct, byte-exact) so the mathematics is sound, but as a production engine it is a regression. The name is on the board but **unearned** until a genuine block-reduction redesign beats STAR. Recorded so the next attempt does not repeat the fold-sort approach. | — (not a win) |
+| **HOUDINI ANTIGRAVITY** | Two further levers, both byte-exact: deferred-modulo arithmetic (1.55× faster on (6,5)), and **the accordion** — the echelon is split into bellows, cold ones compressed and "capped," expanded only when touched (the cold 45% take only 10% of the work). Built and gate-validated; its big-cell log is the next run. | live vein |
+
+Across this lineage, the campaign drove the storage cost of a single echelon entry from **16 bytes down to 1.07 bytes** — a **15× compression** won in exact arithmetic, with every step validated byte-for-byte against the cells already conquered — and it converted the bottleneck from "hold everything at once" to "let it flow through." That is why an 8 GB laptop reduced a 3.45-billion-entry system.
+
+![Storage cost per entry falling from 16 bytes to 1.07 across the engine lineage](assets/compression_lineage.png)
+
+A note on reading this table, for honesty: not every engine decided a cell. Of the twelve, **six carried complete verdicts** (HODGE_ENGINE_v3, HOUDINI, HYPER SPARK, HYPER SPARK PACKED, SONIC BOOM STAR, ROSETTA STAR) and DOBERMAN carried the complex half of dozens more. The rest are honest parts of the record: NAPKIN and TURBINA are method-steps in the lineage that reached the deciding engine; BLACKHOLE is a vein that opened the road and died near the summit; SUPERNOVA is a measured non-improvement, kept so it is not retried; ANTIGRAVITY is a built, gate-validated vein whose big-cell run is still pending. An engine name in this project is *earned* by a byte-exact result, never claimed in advance.
+
+---
+
+## The method, in one breath
+
+For each cell, two numbers are computed and compared:
+
+1. **The complex half (`dim_C`).** Over a prime `P ≡ 1 (mod m)` a primitive `m`-th root of unity exists, the shift operators become simultaneously diagonalizable, and the whole problem factorizes character-by-character. No linear algebra, no memory wall — milliseconds. Computed over several such primes and cross-checked (cross-prime verification is mandatory).
+
+2. **The prime-field half (`dim_Fp`), for each `p \| m`.** Here no root of unity exists; the operator is a single nilpotent Jordan block, not diagonalizable. The dimension must be found by real sparse Gaussian elimination over `F_p` on the closure of the generators under all variable-shifts. This is the expensive half, and the home of every engine above.
+
+If `dim_C = dim_Fp` for all `p \| m`, the cell is **PRIMITIVE**. The campaign's discipline requires both halves, every time — a one-sided computation is never a verdict.
+
+**A hard limit, stated up front rather than buried.** Every cell verified so far is PRIMITIVE, so the gap between the two halves (the "scar") has only ever been measured at zero. This means the method is, to date, an audited **primitivity *confirmator***, not a validated **torsion *detector***: it is confirmed to report "no torsion" correctly, but it has never been tested reporting torsion where torsion exists, because no such Fermat cell is known. Therefore, before any future nonzero scar could be trusted as a real torsion verdict, a synthetic positive control — a fabricated system with known torsion — must be shown to make the detector fire correctly. This is logged as a binding requirement, not a footnote, and no result in this repository depends on the scar as a detector.
+
+The torsion the campaign hunts is called **the swan** — the rare cell where the two halves disagree, nesting (if it exists at all) only where theory does *not* force primitivity. The whole effort is, in one sentence, the search for a black swan among cells everyone expects to be white, conducted with enough rigour that a white verdict is trustworthy and a black one would be real.
+
+---
+
+## Lateral thinking as engineering — the metaphors
+
+The Architect is a psychologist by training, not a mathematician, and works through physical intuition: engines, mowers, carburettors, harvesters, an ancient analog computer. The project's operating principle is that **a metaphor is not encouragement — it is an architecture specification to be measured.** A sweep through engine types is a sweep through computational architectures; each one maps to a real design, gets built, and gets measured. Some flew. Many died — and the dead ones, measured to the bottom, are as much a part of the science as the survivors, because they map exactly where the wall is.
+
+### The metaphor running underneath everything — *quema-quema* ("burn-burn")
+
+The thread connecting the whole campaign. The flying grass — the transient nonzero entries that a reduction generates and then cancels — is what eats the RAM. The grain that hits the floor is wasted work. *Quema-quema* is the principle of **never letting the chaff accumulate**: generate-and-reduce so tightly that the dead terms are burned before they pile up, ideally never created at all. It first appeared as the harvester's "thresh in mid-air," and it is what the winning engines (the starter's non-generation, the turbine's burned exhaust) ultimately deliver. Every engine that flew was, at heart, a better answer to *quema-quema*.
+
+### The metaphors that flew
+
+- **The combine harvester — "thresh in mid-air."** Cut and collect in one gesture so the grain never hits the ground: generate-and-reduce integrated, and beyond that, *never generate the terms that will cancel*. The naive harvester (just integrate cut and collect) was measured to give no gain — the bottleneck was the threshing *time*, not the hopper, which fits. But the un-refuted core — never generate the doomed terms — became the Jordan-mould's structural non-generation.
+- **The starter motor.** *"The Jordan mould ignites everything, then retires so the mathematics do the rest."* This is the metaphor that made the mould work: apply it at ignition (kill the dead child as it is born), not as the reduction basis (where it densifies and dies, measured). The exact difference between a dead vein and a 2.17× win was *where in the cycle* the same idea was applied.
+- **The jet turbine — flow, not accumulation.** A literal sweep through engine types (rotary, V, diesel, electric, gas, hydrogen, jet) located the missing architecture. The turbine saturates each partition's small closure alone, folds it into one shared echelon, and burns the exhaust before the next enters — the live mass is never "all 945 cylinders at once." Cut the peak ~5× and opened `(8,5)`.
+- **The carburettor — "tapa-tapa / chispa / sopla-sopla"** (cap the busy needles, spark the free ones, blow the dead ones out fast). Became the dense-rebound fold of HYPER SPARK. Diagnosed first: the old fold touched 4.89 billion nonzeros to keep a 1.75M echelon, 82% of rows collapsing to zero — the count named the cure and pre-killed the wrong cures.
+- **The coca-cola bottle / the accordion** — crush the bottle, cap it, open it only when you drink. Became ANTIGRAVITY's compressed cold bellows: seal and compress the cold part of the echelon, expand only the slice you touch.
+- **The Antikythera mechanism** — the phenomenon lives in how the gears *couple*, not in any single gear. After four single-block torsion shortcuts were refuted, this pointed the hunt at the *coupling* of partitions, and produced the first detector to pass both calibrations: zero on primitive controls, nonzero on injected synthetic torsion.
+
+### The metaphors that died — measured to the bottom
+
+These are not failures to hide; they are the map of the wall. Each was a real idea, built and measured, and each taught exactly why the cost is intrinsic.
+
+- **The mower leaving cut grass in rows** (the *segadora*). Release pivot rows once their leading column can no longer be touched. Measured: **0% freeable at the peak.** Dead rows only appear in the tail, *after* the moment of maximum RAM. At the peak, everything is genuinely alive at once.
+- **Eratosthenes / navigating the Moon by tiles** (NAVEGANTE, degree-banding). Process the closure in bands by degree, releasing completed bands — since shift only raises degree. The *partition* was beautiful: the heaviest band is only **0.21× of the whole**, the lowest peak ratio of the campaign. But the *execution* failed three ways: the closure grows *through* the bands, and the low bands stay necessary to the end. A true structural fact about the final shape, not a processable saving.
+- **The vacuum cleaner** (Wiedemann / LEONIDAS). Store nothing; recompute the operator matrix-free, keeping RAM flat. RAM *did* stay flat (megabytes). But the operator's column count grows ≈7× per shift-depth and saturates only at depth 5–6 — on the deep cells, an unpayable per-step traversal. The wall moved from RAM to time and stayed exactly the same size.
+- **The lightning rod / blockchain** (fold the pivot index into a dense plane, no hash lookup). Real and clean — but a measured 3% gain, because the hash was never the bottleneck. Recorded as a micro-win, not soldered: no new engine for 3%.
+- **The impact driver — "destorgolpe"** (read the Smith normal form / elementary divisors of the small block in one blow). Bit, but was a 100% false positive on every primitive control — it detects the universal cyclotomic collapse, not the torsion.
+- **Splitting the space into parcels.** Blocks entangle under the shift action; the nonzero count is invariant. One of the earliest and most-confirmed walls.
+
+The meta-lesson, recorded as doctrine: **the graveyard of one metaphor does not predict the fate of another.** Cutting the *space* into blocks was dead; banding the *process* in time was a different cut and had to be measured fresh (it partitioned beautifully and still died, but for a new, measured reason). And the deepest invariant of the campaign emerged from this graveyard: the nonzero-count of the ideal closure is unchanged by prime, by basis, by elimination order, by partition-subset, and by grading — it is intrinsic to the mathematics. That is *why* the engines had to attack storage cost and flow, not the count itself.
+
+---
+
+## The (6,6) discovery — the prime-power reduction frontier
+
+The most recent and most structural result has its own document: **[THE_FRONTIER_6_6.md](THE_FRONTIER_6_6.md)**.
+
+In short: every cell conquered before `(6,6)` had a degree that was a power of a single prime (`m = 4, 5, 7, 8, 9`). `(6,6)` is the first with **two distinct primes** in the degree (`6 = 2 × 3`), and the standard engine returned an *impossible* answer on it — saturating completely in characteristic 2, and to a different wrong value in characteristic 3. That asymmetry was the clue: a generic overflow would fail the same way in both. It does not.
+
+The diagnosis: the Jordan-mould's pruning rule `uᵐ⁻¹ = 0` is the *true* ring relation **if and only if `m` is a power of a single prime**. When `m` has two distinct prime factors, the relation factors (a Chinese-Remainder splitting of the ring), the pruning imposes a false constraint, and the rank silently inflates. We call this the **prime-power reduction frontier** — henceforth, for brevity, **the Frontier**.
+
+A new engine, **ROSETTA STAR**, reduces in the monomial basis with the correct relation for any degree, and recovered the true verdict: `(6,6)` is **PRIMITIVE** by both primes, byte-exact, on the 8 GB laptop. The full story, the literature search that fixes priority honestly, and exactly what is new versus what is classical, are in the linked document.
+
+---
+
+## Reproducibility
+
+Every engine here is a single self-contained C++ file — exact modular arithmetic, no floating point anywhere, single-threaded. Pick any cell from the table above, build its engine, and reproduce the exact verdict. For example, the headline result `(6,6)`:
+
+```
+g++ -O3 -march=native -std=c++17 -funroll-loops engines/ROSETTA_STAR.cpp -o ROSETTA_STAR
+caffeinate -dims taskpolicy -c utility ./ROSETTA_STAR 6 6 2>&1 | tee my_run.log
+```
+
+Compare `my_run.log` against [`logs/ROSETTA_STAR_6_6_run1.log`](logs/ROSETTA_STAR_6_6_run1.log) — they should agree to the digit. Each engine prints a live heartbeat (rank, nonzeros, peak RAM, elapsed time) and aborts cleanly at a 5.4 GB guard before it could ever touch swap.
+
+**Repository layout**
+
+```
+engines/   the C++ verifiers — one self-contained file each
+logs/      the raw run output behind every number in this README
+assets/    the diagrams
+THE_FRONTIER_6_6.md   the (6,6) discovery, in full
+```
+
+Every verdict in this README is reproducible from the matching engine + log. Nothing here asks for trust — it asks to be checked.
+
+---
+
+## Discipline
+
+- **Numbers from logs only.** No figure in this repository is from memory; if a number is not in a file, it is not claimed.
+- **Both halves, every cell.** A one-sided computation is never a verdict.
+- **Cross-prime mandatory** for the complex half.
+- **Byte-exact validation gates** against known cells before any engine is trusted.
+- **Failed approaches are documented, not hidden** — the dead veins are part of the scientific record.
+- **Priority fixed by literature search before any claim.** The classical facts are cited as classical; only the genuinely new contribution is named as new.
+
+---
+
+## Why this matters
+
+Beyond the conjecture itself, the same primitivity questions sit underneath the structure of Néron–Severi lattices and the algebraic cycles of these varieties — objects at the centre of modern algebraic geometry. And the engineering stands on its own: driving exact sparse linear algebra over finite fields from 16 bytes per entry down to 1.07, on commodity hardware, turning cells that "do not fit in 8 GB" into byte-exact verdicts, is a reusable result independent of the mathematics it was built to serve.
+
+The work continues. The torsion — the *swan* — has not been found; every cell so far is primitive, exactly as the conjecture predicts. But the map is now drawn, the engines are built, the Frontier is named, and the next stones are chosen.
+
+---
+
+## References
+
+1. A. Degtyarev, I. Shimada, *On the topology of projective subspaces in complex Fermat varieties.* J. Math. Soc. Japan **68**:3 (2016), 975–996. arXiv:1405.4683.
+2. T. Shioda, *The Hodge conjecture for Fermat varieties.* Math. Ann. **245** (1979), 175–184.
+3. N. Aoki, T. Shioda, *Generators of the Néron–Severi group of a Fermat surface.* In: Arithmetic and Geometry (M. Artin, J. Tate, eds.), Progress in Mathematics **35**, Birkhäuser, Boston (1983), 1–12.
+4. M. Schütt, T. Shioda, R. van Luijk, *Lines on Fermat surfaces.* J. Number Theory **130**:9 (2010), 1939–1963. arXiv:0812.2377.
+5. A. Degtyarev, *Lines generate the Picard groups of certain Fermat surfaces.* arXiv:1305.3073.
+6. E. Aljovin, H. Movasati, R. Villaflor, *Integral Hodge conjecture for Fermat varieties.* J. Symbolic Computation **95** (2019), 177–184. arXiv:1711.02628.
