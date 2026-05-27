@@ -6,7 +6,7 @@
 
 This is the record of that campaign: what was computed, how, and exactly what is new.
 
-**Architect:** Rafael Amichis Luengo (Madrid) · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
+**Architect:** Rafael Amichis Luengo (Madrid) · [tretoef@gmail.com](mailto:tretoef@gmail.com) · [Repository](https://github.com/tretoef-estrella/prime-power-frontier)
 **Method base:** Degtyarev–Shimada combinatorial primitivity criterion (*J. Math. Soc. Japan* **68:3** (2016), 975–996; arXiv:1405.4683)
 **Hardware:** MacBook Air M2 (2022), 8 GB RAM, single thread, throttled to 25% CPU. No swap. No cluster. No cloud.
 
