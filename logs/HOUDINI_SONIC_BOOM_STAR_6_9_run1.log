@@ -1,0 +1,111 @@
+================ HOUDINI SONIC BOOM STAR  n=6 m=9  DIM=2097152  partitions=105 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 §5).
+char-p: Jordan-mould starter + TURBINE flow + SONICSTAR-FOLD dense-rebound fold.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000081 -> dim_C = 1907032
+   P=1000099 -> dim_C = 1907032
+   P=1000117 -> dim_C = 1907032
+   P=1000171 -> dim_C = 1907032
+   P=1000333 -> dim_C = 1907032
+   cross-prime: CONSISTENT   dim_C = 1907032   [Method A time 1.89 s over 5 primes]
+
+[METHOD B] dim_Fp via TURBINE + SONICSTAR-FOLD (primes dividing m: 3)
+
+  char 3 : turbine flow + sonicstar-fold
+  [SONICSTAR start] streaming 105 partitions, char 3
+  [SONICSTAR flow] part=1/105 rank=7680 echelon_nz=10932416 peak_bytes=134480094(~0.13GB) t=5s
+  [SONICSTAR flow] part=3/105 rank=14336 echelon_nz=23205248 peak_bytes=134512862(~0.13GB) t=11s
+  [SONICSTAR flow] part=5/105 rank=20160 echelon_nz=36212728 peak_bytes=134578398(~0.13GB) t=17s
+  [SONICSTAR flow] part=7/105 rank=25984 echelon_nz=49596632 peak_bytes=134578398(~0.13GB) t=24s
+  [SONICSTAR flow] part=9/105 rank=30976 echelon_nz=64224008 peak_bytes=201693263(~0.20GB) t=31s
+  [SONICSTAR flow] part=11/105 rank=35200 echelon_nz=83946696 peak_bytes=201824335(~0.20GB) t=40s
+  [SONICSTAR flow] part=13/105 rank=39424 echelon_nz=107422048 peak_bytes=201824335(~0.20GB) t=49s
+  [SONICSTAR flow] part=14/105 rank=40960 echelon_nz=117170016 peak_bytes=268942652(~0.27GB) t=55s
+  [SONICSTAR flow] part=16/105 rank=47680 echelon_nz=126735880 peak_bytes=268942652(~0.27GB) t=61s
+  [SONICSTAR flow] part=18/105 rank=53504 echelon_nz=137474608 peak_bytes=268942652(~0.27GB) t=67s
+  [SONICSTAR flow] part=20/105 rank=58600 echelon_nz=148856153 peak_bytes=268942652(~0.27GB) t=74s
+  [SONICSTAR flow] part=22/105 rank=63696 echelon_nz=160567069 peak_bytes=268942652(~0.27GB) t=81s
+  [SONICSTAR flow] part=23/105 rank=65712 echelon_nz=167096494 peak_bytes=336329902(~0.34GB) t=87s
+  [SONICSTAR flow] part=25/105 rank=70080 echelon_nz=180929460 peak_bytes=336329902(~0.34GB) t=96s
+  [SONICSTAR flow] part=26/105 rank=71760 echelon_nz=190623375 peak_bytes=336329902(~0.34GB) t=104s
+  [SONICSTAR flow] part=28/105 rank=75456 echelon_nz=211164308 peak_bytes=336329902(~0.34GB) t=115s
+  [SONICSTAR flow] part=29/105 rank=76800 echelon_nz=219693780 peak_bytes=403445850(~0.40GB) t=124s
+  [SONICSTAR flow] part=31/105 rank=82560 echelon_nz=242630113 peak_bytes=403445850(~0.40GB) t=130s
+  [SONICSTAR flow] part=33/105 rank=87616 echelon_nz=261717129 peak_bytes=403445850(~0.40GB) t=137s
+  [SONICSTAR flow] part=34/105 rank=90024 echelon_nz=266936269 peak_bytes=403445850(~0.40GB) t=143s
+  [SONICSTAR flow] part=35/105 rank=92088 echelon_nz=273830861 peak_bytes=403445850(~0.40GB) t=151s
+  [SONICSTAR flow] part=37/105 rank=96512 echelon_nz=285459061 peak_bytes=470594728(~0.47GB) t=167s
+  [SONICSTAR flow] part=38/105 rank=98288 echelon_nz=293370761 peak_bytes=470594728(~0.47GB) t=182s
+  [SONICSTAR flow] part=39/105 rank=100304 echelon_nz=298744643 peak_bytes=470594728(~0.47GB) t=189s
+  [SONICSTAR flow] part=40/105 rank=102032 echelon_nz=305227589 peak_bytes=470594728(~0.47GB) t=205s
+  [SONICSTAR flow] part=41/105 rank=103520 echelon_nz=315808527 peak_bytes=470594728(~0.47GB) t=226s
+  [SONICSTAR flow] part=42/105 rank=105248 echelon_nz=323266893 peak_bytes=470594728(~0.47GB) t=236s
+  [SONICSTAR flow] part=43/105 rank=106688 echelon_nz=333415041 peak_bytes=470594728(~0.47GB) t=255s
+  [SONICSTAR flow] part=44/105 rank=107840 echelon_nz=340726017 peak_bytes=537736214(~0.54GB) t=279s
+  [SONICSTAR flow] part=46/105 rank=112880 echelon_nz=366835385 peak_bytes=537736214(~0.54GB) t=288s
+  [SONICSTAR flow] part=47/105 rank=114896 echelon_nz=384288025 peak_bytes=537736214(~0.54GB) t=295s
+  [SONICSTAR flow] part=48/105 rank=117200 echelon_nz=400182673 peak_bytes=537736214(~0.54GB) t=301s
+  [SONICSTAR flow] part=49/105 rank=119216 echelon_nz=418013217 peak_bytes=604991135(~0.60GB) t=312s
+  [SONICSTAR flow] part=50/105 rank=120944 echelon_nz=441941512 peak_bytes=604991135(~0.60GB) t=327s
+  [SONICSTAR flow] part=51/105 rank=122864 echelon_nz=456689168 peak_bytes=604991135(~0.60GB) t=334s
+  [SONICSTAR flow] part=52/105 rank=124744 echelon_nz=467198465 peak_bytes=672247610(~0.67GB) t=374s
+  [SONICSTAR flow] part=53/105 rank=126280 echelon_nz=476441223 peak_bytes=672247610(~0.67GB) t=426s
+  [SONICSTAR flow] part=54/105 rank=127960 echelon_nz=492404103 peak_bytes=672247610(~0.67GB) t=442s
+  [SONICSTAR flow] part=55/105 rank=129496 echelon_nz=503160664 peak_bytes=672247610(~0.67GB) t=497s
+  [SONICSTAR flow] part=56/105 rank=130744 echelon_nz=513250805 peak_bytes=672247610(~0.67GB) t=575s
+  [SONICSTAR flow] part=57/105 rank=132184 echelon_nz=534886591 peak_bytes=739897169(~0.74GB) t=596s
+  [SONICSTAR flow] part=58/105 rank=133432 echelon_nz=547417193 peak_bytes=739897169(~0.74GB) t=669s
+  [SONICSTAR flow] part=59/105 rank=134392 echelon_nz=553509673 peak_bytes=739897169(~0.74GB) t=762s
+  [SONICSTAR flow] part=61/105 rank=138760 echelon_nz=595612394 peak_bytes=807015678(~0.81GB) t=782s
+  [SONICSTAR flow] part=62/105 rank=140488 echelon_nz=617095634 peak_bytes=807015678(~0.81GB) t=805s
+  [SONICSTAR flow] part=63/105 rank=142408 echelon_nz=653789082 peak_bytes=807015678(~0.81GB) t=813s
+  [SONICSTAR flow] part=64/105 rank=144184 echelon_nz=681329186 peak_bytes=874213425(~0.87GB) t=863s
+  [SONICSTAR flow] part=65/105 rank=145672 echelon_nz=722586758 peak_bytes=874213425(~0.87GB) t=935s
+  [SONICSTAR flow] part=66/105 rank=147208 echelon_nz=758511262 peak_bytes=941342097(~0.94GB) t=947s
+  [SONICSTAR flow] part=67/105 rank=148744 echelon_nz=802312004 peak_bytes=1008560768(~1.01GB) t=1051s
+  [SONICSTAR flow] part=68/105 rank=149992 echelon_nz=842449492 peak_bytes=1008560768(~1.01GB) t=1204s
+  [SONICSTAR flow] part=69/105 rank=151480 echelon_nz=869178464 peak_bytes=1076059028(~1.08GB) t=1280s
+  [SONICSTAR flow] part=70/105 rank=152728 echelon_nz=907141152 peak_bytes=1076059028(~1.08GB) t=1426s
+  [SONICSTAR flow] part=71/105 rank=153736 echelon_nz=943374766 peak_bytes=1144654431(~1.14GB) t=1646s
+  [SONICSTAR flow] part=72/105 rank=154984 echelon_nz=977864326 peak_bytes=1144654431(~1.14GB) t=1745s
+  [SONICSTAR flow] part=73/105 rank=155992 echelon_nz=1014671933 peak_bytes=1211892425(~1.21GB) t=1941s
+  [SONICSTAR flow] part=74/105 rank=156760 echelon_nz=1030667158 peak_bytes=1211892425(~1.21GB) t=2200s
+  [SONICSTAR flow] part=75/105 rank=158776 echelon_nz=1058696439 peak_bytes=1279038708(~1.28GB) t=2211s
+  [SONICSTAR flow] part=76/105 rank=160504 echelon_nz=1097769641 peak_bytes=1279038708(~1.28GB) t=2239s
+  [SONICSTAR flow] part=77/105 rank=161944 echelon_nz=1139843175 peak_bytes=1346152741(~1.35GB) t=2290s
+  [SONICSTAR flow] part=78/105 rank=163624 echelon_nz=1184704864 peak_bytes=1413356897(~1.41GB) t=2315s
+  [SONICSTAR flow] part=79/105 rank=165064 echelon_nz=1256600962 peak_bytes=1480515608(~1.48GB) t=2413s
+  [SONICSTAR flow] part=80/105 rank=166312 echelon_nz=1334032130 peak_bytes=1548654182(~1.55GB) t=2569s
+  [SONICSTAR flow] part=81/105 rank=167656 echelon_nz=1375798957 peak_bytes=1548654182(~1.55GB) t=2603s
+  [SONICSTAR flow] part=82/105 rank=168904 echelon_nz=1469584099 peak_bytes=1683531515(~1.68GB) t=2852s
+  [SONICSTAR flow] part=83/105 rank=169912 echelon_nz=1546271355 peak_bytes=1751029991(~1.75GB) t=3183s
+  [SONICSTAR flow] part=84/105 rank=171064 echelon_nz=1613983751 peak_bytes=1818982805(~1.82GB) t=3322s
+  [SONICSTAR flow] part=85/105 rank=172024 echelon_nz=1697316002 peak_bytes=1886862722(~1.89GB) t=3638s
+  [SONICSTAR flow] part=86/105 rank=172792 echelon_nz=1777880923 peak_bytes=1954518931(~1.95GB) t=4120s
+  [SONICSTAR flow] part=87/105 rank=173848 echelon_nz=1850308433 peak_bytes=2089163669(~2.09GB) t=4329s
+  [SONICSTAR flow] part=88/105 rank=174664 echelon_nz=1934099034 peak_bytes=2156292008(~2.16GB) t=4752s
+  [SONICSTAR flow] part=89/105 rank=175240 echelon_nz=1986437324 peak_bytes=2223487085(~2.22GB) t=5344s
+  [SONICSTAR flow] part=90/105 rank=176968 echelon_nz=2031851669 peak_bytes=2223487085(~2.22GB) t=5359s
+  [SONICSTAR flow] part=91/105 rank=178408 echelon_nz=2108601479 peak_bytes=2357980608(~2.36GB) t=5407s
+  [SONICSTAR flow] part=92/105 rank=179560 echelon_nz=2179901756 peak_bytes=2425373796(~2.43GB) t=5479s
+  [SONICSTAR flow] part=93/105 rank=181000 echelon_nz=2248723017 peak_bytes=2492590036(~2.49GB) t=5518s
+  [SONICSTAR flow] part=94/105 rank=182200 echelon_nz=2367656653 peak_bytes=2560415949(~2.56GB) t=5682s
+  [SONICSTAR flow] part=95/105 rank=183160 echelon_nz=2491167863 peak_bytes=2694955656(~2.69GB) t=5937s
+  [SONICSTAR flow] part=96/105 rank=184312 echelon_nz=2556391694 peak_bytes=2762186375(~2.76GB) t=5991s
+  [SONICSTAR flow] part=97/105 rank=185320 echelon_nz=2707105230 peak_bytes=2965041742(~2.97GB) t=6498s
+  [SONICSTAR flow] part=98/105 rank=186088 echelon_nz=2818204866 peak_bytes=3032316907(~3.03GB) t=7123s
+  [SONICSTAR flow] part=99/105 rank=187048 echelon_nz=2928660899 peak_bytes=3167490947(~3.17GB) t=7372s
+  [SONICSTAR flow] part=100/105 rank=187816 echelon_nz=3056507397 peak_bytes=3302309352(~3.30GB) t=8036s
+  [SONICSTAR flow] part=101/105 rank=188392 echelon_nz=3162541048 peak_bytes=3369486382(~3.37GB) t=9017s
+  [SONICSTAR flow] part=102/105 rank=189160 echelon_nz=3266348413 peak_bytes=3504081696(~3.50GB) t=9438s
+  [SONICSTAR flow] part=103/105 rank=189736 echelon_nz=3381003524 peak_bytes=3638571704(~3.64GB) t=10313s
+  [SONICSTAR flow] part=104/105 rank=190120 echelon_nz=3452219370 peak_bytes=3706367678(~3.71GB) t=11472s
+  [SONICSTAR done] rank=190120 echelon_nz=3452219370 peak_bytes=3706367678(~3.71GB) t=11472s
+  char 3 COMPLETE: rank_p=190120 dim_F3=1907032  TURBINE LIVE PEAK bytes=3706367678 (~3.71 GB)
+
+================ VERDICT ================
+dim_C  = 1907032   (Method A eigenbasis, cross-prime)
+dim_F3 = 1907032
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

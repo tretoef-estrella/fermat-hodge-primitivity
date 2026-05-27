@@ -1,0 +1,367 @@
+================ CICATRIZ n=8 m=4 DIM=19683 parts=945 ================
+prime dividing m: 2
+
+[PASS 1] char large P (rank_Q per round):
+  [Q round 0 seed] rank=815 nz=1420678(~0.02GB) t=1s
+  [Q ..alive] round=1 rank=3458 (17.57%) nz=13448859(~0.16GB) t=30s
+  [Q ..alive] round=1 rank=3990 (20.27%) nz=16674739(~0.20GB) t=60s
+  [Q ..alive] round=1 rank=4344 (22.07%) nz=18974061(~0.23GB) t=90s
+  [Q ..alive] round=1 rank=4564 (23.19%) nz=20217244(~0.24GB) t=120s
+  [Q round 1 done] rank=4807 (24.42%) nz=21548429(~0.26GB) t=144s
+  [Q ..alive] round=2 rank=4903 (24.91%) nz=22627359(~0.27GB) t=150s
+  [Q ..alive] round=2 rank=5090 (25.86%) nz=24674371(~0.30GB) t=180s
+  [Q ..alive] round=2 rank=5234 (26.59%) nz=26314646(~0.32GB) t=210s
+  [Q ..alive] round=2 rank=5355 (27.21%) nz=27574961(~0.33GB) t=240s
+  [Q ..alive] round=2 rank=5412 (27.50%) nz=28116811(~0.34GB) t=270s
+  [Q ..alive] round=2 rank=5497 (27.93%) nz=28835245(~0.35GB) t=300s
+  [Q ..alive] round=2 rank=5530 (28.10%) nz=29152880(~0.35GB) t=330s
+  [Q ..alive] round=2 rank=5584 (28.37%) nz=29586868(~0.36GB) t=360s
+  [Q ..alive] round=2 rank=5612 (28.51%) nz=29826819(~0.36GB) t=390s
+  [Q ..alive] round=2 rank=5659 (28.75%) nz=30234039(~0.36GB) t=420s
+  [Q ..alive] round=2 rank=5704 (28.98%) nz=30613804(~0.37GB) t=450s
+  [Q ..alive] round=2 rank=5836 (29.65%) nz=32091593(~0.39GB) t=481s
+  [Q ..alive] round=2 rank=5937 (30.16%) nz=33297783(~0.40GB) t=511s
+  [Q ..alive] round=2 rank=6034 (30.66%) nz=34410617(~0.41GB) t=541s
+  [Q ..alive] round=2 rank=6098 (30.98%) nz=34842056(~0.42GB) t=571s
+  [Q ..alive] round=2 rank=6122 (31.10%) nz=34940707(~0.42GB) t=601s
+  [Q ..alive] round=2 rank=6179 (31.39%) nz=35503490(~0.43GB) t=631s
+  [Q ..alive] round=2 rank=6214 (31.57%) nz=35800075(~0.43GB) t=661s
+  [Q ..alive] round=2 rank=6232 (31.66%) nz=35855162(~0.43GB) t=691s
+  [Q ..alive] round=2 rank=6262 (31.81%) nz=36081074(~0.43GB) t=721s
+  [Q ..alive] round=2 rank=6283 (31.92%) nz=36245148(~0.43GB) t=751s
+  [Q ..alive] round=2 rank=6297 (31.99%) nz=36324103(~0.44GB) t=781s
+  [Q ..alive] round=2 rank=6322 (32.12%) nz=36561780(~0.44GB) t=811s
+  [Q ..alive] round=2 rank=6330 (32.16%) nz=36619296(~0.44GB) t=841s
+  [Q ..alive] round=2 rank=6343 (32.23%) nz=36739337(~0.44GB) t=871s
+  [Q ..alive] round=2 rank=6348 (32.25%) nz=36792352(~0.44GB) t=901s
+  [Q ..alive] round=2 rank=6361 (32.32%) nz=36937729(~0.44GB) t=931s
+  [Q ..alive] round=2 rank=6414 (32.59%) nz=37537174(~0.45GB) t=961s
+  [Q ..alive] round=2 rank=6477 (32.91%) nz=38177481(~0.46GB) t=991s
+  [Q ..alive] round=2 rank=6510 (33.07%) nz=38513760(~0.46GB) t=1021s
+  [Q ..alive] round=2 rank=6541 (33.23%) nz=38850078(~0.47GB) t=1051s
+  [Q ..alive] round=2 rank=6598 (33.52%) nz=39608579(~0.48GB) t=1082s
+  [Q ..alive] round=2 rank=6631 (33.69%) nz=39879885(~0.48GB) t=1112s
+  [Q ..alive] round=2 rank=6660 (33.84%) nz=40123565(~0.48GB) t=1142s
+  [Q ..alive] round=2 rank=6675 (33.91%) nz=40248767(~0.48GB) t=1172s
+  [Q ..alive] round=2 rank=6697 (34.02%) nz=40443200(~0.49GB) t=1202s
+  [Q ..alive] round=2 rank=6722 (34.15%) nz=40635617(~0.49GB) t=1232s
+  [Q ..alive] round=2 rank=6737 (34.23%) nz=40713606(~0.49GB) t=1262s
+  [Q ..alive] round=2 rank=6749 (34.29%) nz=40801635(~0.49GB) t=1292s
+  [Q ..alive] round=2 rank=6766 (34.37%) nz=40936290(~0.49GB) t=1322s
+  [Q ..alive] round=2 rank=6772 (34.41%) nz=40971239(~0.49GB) t=1352s
+  [Q ..alive] round=2 rank=6783 (34.46%) nz=41050112(~0.49GB) t=1383s
+  [Q ..alive] round=2 rank=6788 (34.49%) nz=41087986(~0.49GB) t=1413s
+  [Q ..alive] round=2 rank=6809 (34.59%) nz=41268675(~0.50GB) t=1443s
+  [Q ..alive] round=2 rank=6858 (34.84%) nz=41867969(~0.50GB) t=1473s
+  [Q ..alive] round=2 rank=6893 (35.02%) nz=42153084(~0.51GB) t=1503s
+  [Q ..alive] round=2 rank=6919 (35.15%) nz=42388174(~0.51GB) t=1533s
+  [Q ..alive] round=2 rank=6942 (35.27%) nz=42582265(~0.51GB) t=1563s
+  [Q ..alive] round=2 rank=6973 (35.43%) nz=42898614(~0.51GB) t=1593s
+  [Q ..alive] round=2 rank=6988 (35.50%) nz=43011338(~0.52GB) t=1623s
+  [Q ..alive] round=2 rank=7009 (35.61%) nz=43253345(~0.52GB) t=1653s
+  [Q ..alive] round=2 rank=7030 (35.72%) nz=43488534(~0.52GB) t=1683s
+  [Q ..alive] round=2 rank=7050 (35.82%) nz=43623852(~0.52GB) t=1713s
+  [Q ..alive] round=2 rank=7058 (35.86%) nz=43670790(~0.52GB) t=1744s
+  [Q ..alive] round=2 rank=7067 (35.90%) nz=43738098(~0.52GB) t=1774s
+  [Q ..alive] round=2 rank=7079 (35.97%) nz=43812731(~0.53GB) t=1804s
+  [Q ..alive] round=2 rank=7084 (35.99%) nz=43850469(~0.53GB) t=1834s
+  [Q ..alive] round=2 rank=7096 (36.05%) nz=43960647(~0.53GB) t=1864s
+  [Q ..alive] round=2 rank=7140 (36.27%) nz=44417111(~0.53GB) t=1894s
+  [Q ..alive] round=2 rank=7179 (36.47%) nz=44821612(~0.54GB) t=1924s
+  [Q ..alive] round=2 rank=7203 (36.60%) nz=45022935(~0.54GB) t=1954s
+  [Q ..alive] round=2 rank=7225 (36.71%) nz=45238110(~0.54GB) t=1984s
+  [Q ..alive] round=2 rank=7240 (36.78%) nz=45366852(~0.54GB) t=2014s
+  [Q ..alive] round=2 rank=7255 (36.86%) nz=45475275(~0.55GB) t=2044s
+  [Q ..alive] round=2 rank=7267 (36.92%) nz=45592458(~0.55GB) t=2074s
+  [Q ..alive] round=2 rank=7282 (37.00%) nz=45723820(~0.55GB) t=2104s
+  [Q ..alive] round=2 rank=7291 (37.04%) nz=45790870(~0.55GB) t=2134s
+  [Q ..alive] round=2 rank=7293 (37.05%) nz=45811750(~0.55GB) t=2164s
+  [Q ..alive] round=2 rank=7327 (37.23%) nz=46157489(~0.55GB) t=2195s
+  [Q ..alive] round=2 rank=7361 (37.40%) nz=46490868(~0.56GB) t=2225s
+  [Q ..alive] round=2 rank=7385 (37.52%) nz=46749603(~0.56GB) t=2255s
+  [Q ..alive] round=2 rank=7407 (37.63%) nz=46966192(~0.56GB) t=2285s
+  [Q ..alive] round=2 rank=7423 (37.71%) nz=47097015(~0.57GB) t=2315s
+  [Q ..alive] round=2 rank=7430 (37.75%) nz=47145800(~0.57GB) t=2345s
+  [Q ..alive] round=2 rank=7444 (37.82%) nz=47280719(~0.57GB) t=2375s
+  [Q ..alive] round=2 rank=7451 (37.86%) nz=47352620(~0.57GB) t=2405s
+  [Q ..alive] round=2 rank=7486 (38.03%) nz=47730714(~0.57GB) t=2435s
+  [Q ..alive] round=2 rank=7510 (38.15%) nz=47998671(~0.58GB) t=2465s
+  [Q ..alive] round=2 rank=7535 (38.28%) nz=48267814(~0.58GB) t=2495s
+  [Q ..alive] round=2 rank=7551 (38.36%) nz=48404426(~0.58GB) t=2525s
+  [Q ..alive] round=2 rank=7562 (38.42%) nz=48498837(~0.58GB) t=2555s
+  [Q ..alive] round=2 rank=7570 (38.46%) nz=48572306(~0.58GB) t=2585s
+  [Q ..alive] round=2 rank=7593 (38.58%) nz=48805752(~0.59GB) t=2615s
+  [Q ..alive] round=2 rank=7623 (38.73%) nz=49147346(~0.59GB) t=2645s
+  [Q ..alive] round=2 rank=7652 (38.88%) nz=49477950(~0.59GB) t=2675s
+  [Q ..alive] round=2 rank=7668 (38.96%) nz=49652780(~0.60GB) t=2705s
+  [Q ..alive] round=2 rank=7674 (38.99%) nz=49715873(~0.60GB) t=2735s
+  [Q ..alive] round=2 rank=7716 (39.20%) nz=50129473(~0.60GB) t=2765s
+  [Q ..alive] round=2 rank=7754 (39.39%) nz=50478679(~0.61GB) t=2795s
+  [Q ..alive] round=2 rank=7773 (39.49%) nz=50637676(~0.61GB) t=2825s
+  [Q round 2 done] rank=7779 (39.52%) nz=50683187(~0.61GB) t=2844s
+  [Q ..alive] round=3 rank=7803 (39.64%) nz=50978970(~0.61GB) t=2856s
+  [Q ..alive] round=3 rank=7836 (39.81%) nz=51388944(~0.62GB) t=2886s
+  [Q ..alive] round=3 rank=7860 (39.93%) nz=51671390(~0.62GB) t=2916s
+  [Q ..alive] round=3 rank=7888 (40.08%) nz=52015499(~0.62GB) t=2946s
+  [Q ..alive] round=3 rank=7909 (40.18%) nz=52238906(~0.63GB) t=2976s
+  [Q ..alive] round=3 rank=7923 (40.25%) nz=52386571(~0.63GB) t=3006s
+  [Q ..alive] round=3 rank=7954 (40.41%) nz=52718275(~0.63GB) t=3036s
+  [Q ..alive] round=3 rank=7960 (40.44%) nz=52770996(~0.63GB) t=3066s
+  [Q ..alive] round=3 rank=7977 (40.53%) nz=52905850(~0.63GB) t=3096s
+  [Q ..alive] round=3 rank=7991 (40.60%) nz=53050006(~0.64GB) t=3127s
+  [Q ..alive] round=3 rank=8018 (40.74%) nz=53351462(~0.64GB) t=3157s
+  [Q ..alive] round=3 rank=8042 (40.86%) nz=53612777(~0.64GB) t=3187s
+  [Q ..alive] round=3 rank=8058 (40.94%) nz=53765171(~0.65GB) t=3217s
+  [Q ..alive] round=3 rank=8075 (41.03%) nz=53935027(~0.65GB) t=3247s
+  [Q ..alive] round=3 rank=8089 (41.10%) nz=53999936(~0.65GB) t=3277s
+  [Q ..alive] round=3 rank=8103 (41.17%) nz=54097808(~0.65GB) t=3307s
+  [Q ..alive] round=3 rank=8112 (41.21%) nz=54141424(~0.65GB) t=3337s
+  [Q ..alive] round=3 rank=8133 (41.32%) nz=54341019(~0.65GB) t=3367s
+  [Q ..alive] round=3 rank=8149 (41.40%) nz=54462890(~0.65GB) t=3397s
+  [Q ..alive] round=3 rank=8167 (41.49%) nz=54616871(~0.66GB) t=3427s
+  [Q ..alive] round=3 rank=8176 (41.54%) nz=54668066(~0.66GB) t=3457s
+  [Q ..alive] round=3 rank=8183 (41.57%) nz=54702471(~0.66GB) t=3487s
+  [Q ..alive] round=3 rank=8197 (41.65%) nz=54824953(~0.66GB) t=3517s
+  [Q ..alive] round=3 rank=8210 (41.71%) nz=54883485(~0.66GB) t=3547s
+  [Q ..alive] round=3 rank=8216 (41.74%) nz=54918207(~0.66GB) t=3577s
+  [Q ..alive] round=3 rank=8229 (41.81%) nz=55004298(~0.66GB) t=3607s
+  [Q ..alive] round=3 rank=8234 (41.83%) nz=55028730(~0.66GB) t=3638s
+  [Q ..alive] round=3 rank=8240 (41.86%) nz=55073122(~0.66GB) t=3668s
+  [Q ..alive] round=3 rank=8245 (41.89%) nz=55096941(~0.66GB) t=3698s
+  [Q ..alive] round=3 rank=8255 (41.94%) nz=55205839(~0.66GB) t=3728s
+  [Q ..alive] round=3 rank=8283 (42.08%) nz=55534098(~0.67GB) t=3758s
+  [Q ..alive] round=3 rank=8307 (42.20%) nz=55788271(~0.67GB) t=3788s
+  [Q ..alive] round=3 rank=8321 (42.28%) nz=55927581(~0.67GB) t=3818s
+  [Q ..alive] round=3 rank=8343 (42.39%) nz=56151007(~0.67GB) t=3848s
+  [Q ..alive] round=3 rank=8353 (42.44%) nz=56195968(~0.67GB) t=3878s
+  [Q ..alive] round=3 rank=8366 (42.50%) nz=56296318(~0.68GB) t=3908s
+  [Q ..alive] round=3 rank=8377 (42.56%) nz=56369130(~0.68GB) t=3939s
+  [Q ..alive] round=3 rank=8383 (42.59%) nz=56398548(~0.68GB) t=3969s
+  [Q ..alive] round=3 rank=8387 (42.61%) nz=56416507(~0.68GB) t=3999s
+  [Q ..alive] round=3 rank=8400 (42.68%) nz=56545529(~0.68GB) t=4029s
+  [Q ..alive] round=3 rank=8414 (42.75%) nz=56642079(~0.68GB) t=4059s
+  [Q ..alive] round=3 rank=8423 (42.79%) nz=56673088(~0.68GB) t=4089s
+  [Q ..alive] round=3 rank=8431 (42.83%) nz=56692515(~0.68GB) t=4119s
+  [Q ..alive] round=3 rank=8445 (42.91%) nz=56807122(~0.68GB) t=4149s
+  [Q ..alive] round=3 rank=8452 (42.94%) nz=56831379(~0.68GB) t=4179s
+  [Q ..alive] round=3 rank=8457 (42.97%) nz=56849396(~0.68GB) t=4209s
+  [Q ..alive] round=3 rank=8462 (42.99%) nz=56870213(~0.68GB) t=4239s
+  [Q ..alive] round=3 rank=8465 (43.01%) nz=56901398(~0.68GB) t=4269s
+  [Q ..alive] round=3 rank=8482 (43.09%) nz=57064196(~0.68GB) t=4299s
+  [Q ..alive] round=3 rank=8495 (43.16%) nz=57204505(~0.69GB) t=4329s
+  [Q ..alive] round=3 rank=8511 (43.24%) nz=57333561(~0.69GB) t=4359s
+  [Q ..alive] round=3 rank=8514 (43.26%) nz=57347388(~0.69GB) t=4390s
+  [Q ..alive] round=3 rank=8516 (43.27%) nz=57362803(~0.69GB) t=4420s
+  [Q ..alive] round=3 rank=8534 (43.36%) nz=57529494(~0.69GB) t=4450s
+  [Q ..alive] round=3 rank=8544 (43.41%) nz=57589233(~0.69GB) t=4480s
+  [Q ..alive] round=3 rank=8551 (43.44%) nz=57620144(~0.69GB) t=4510s
+  [Q ..alive] round=3 rank=8557 (43.47%) nz=57634753(~0.69GB) t=4540s
+  [Q ..alive] round=3 rank=8562 (43.50%) nz=57664823(~0.69GB) t=4570s
+  [Q ..alive] round=3 rank=8568 (43.53%) nz=57675043(~0.69GB) t=4600s
+  [Q ..alive] round=3 rank=8581 (43.60%) nz=57795856(~0.69GB) t=4630s
+  [Q ..alive] round=3 rank=8594 (43.66%) nz=57896611(~0.69GB) t=4660s
+  [Q ..alive] round=3 rank=8604 (43.71%) nz=57940650(~0.70GB) t=4690s
+  [Q ..alive] round=3 rank=8609 (43.74%) nz=57964813(~0.70GB) t=4720s
+  [Q ..alive] round=3 rank=8615 (43.77%) nz=58010289(~0.70GB) t=4751s
+  [Q ..alive] round=3 rank=8619 (43.79%) nz=58042136(~0.70GB) t=4781s
+  [Q ..alive] round=3 rank=8624 (43.81%) nz=58055985(~0.70GB) t=4811s
+  [Q ..alive] round=3 rank=8635 (43.87%) nz=58146445(~0.70GB) t=4841s
+  [Q ..alive] round=3 rank=8649 (43.94%) nz=58240421(~0.70GB) t=4871s
+  [Q ..alive] round=3 rank=8654 (43.97%) nz=58280430(~0.70GB) t=4901s
+  [Q ..alive] round=3 rank=8659 (43.99%) nz=58306549(~0.70GB) t=4931s
+  [Q ..alive] round=3 rank=8663 (44.01%) nz=58327424(~0.70GB) t=4961s
+  [Q ..alive] round=3 rank=8679 (44.09%) nz=58469275(~0.70GB) t=4991s
+  [Q ..alive] round=3 rank=8684 (44.12%) nz=58511037(~0.70GB) t=5021s
+  [Q ..alive] round=3 rank=8688 (44.14%) nz=58542698(~0.70GB) t=5051s
+  [Q ..alive] round=3 rank=8696 (44.18%) nz=58618029(~0.70GB) t=5081s
+  [Q ..alive] round=3 rank=8707 (44.24%) nz=58722923(~0.70GB) t=5111s
+  [Q ..alive] round=3 rank=8711 (44.26%) nz=58756822(~0.71GB) t=5141s
+  [Q ..alive] round=3 rank=8720 (44.30%) nz=58847353(~0.71GB) t=5171s
+  [Q ..alive] round=3 rank=8729 (44.35%) nz=58943914(~0.71GB) t=5201s
+  [Q ..alive] round=3 rank=8734 (44.37%) nz=58998121(~0.71GB) t=5232s
+  [Q ..alive] round=3 rank=8747 (44.44%) nz=59115283(~0.71GB) t=5262s
+  [Q ..alive] round=3 rank=8755 (44.48%) nz=59174686(~0.71GB) t=5292s
+  [Q round 3 done] rank=8757 (44.49%) nz=59188868(~0.71GB) t=5304s
+  [Q ..alive] round=4 rank=8776 (44.59%) nz=59369126(~0.71GB) t=5322s
+  [Q ..alive] round=4 rank=8785 (44.63%) nz=59472761(~0.71GB) t=5352s
+  [Q ..alive] round=4 rank=8798 (44.70%) nz=59572162(~0.71GB) t=5382s
+  [Q ..alive] round=4 rank=8811 (44.76%) nz=59662674(~0.72GB) t=5412s
+  [Q ..alive] round=4 rank=8821 (44.82%) nz=59733675(~0.72GB) t=5442s
+  [Q ..alive] round=4 rank=8830 (44.86%) nz=59782458(~0.72GB) t=5472s
+  [Q ..alive] round=4 rank=8834 (44.88%) nz=59802818(~0.72GB) t=5502s
+  [Q ..alive] round=4 rank=8845 (44.94%) nz=59884054(~0.72GB) t=5532s
+  [Q ..alive] round=4 rank=8854 (44.98%) nz=59939740(~0.72GB) t=5562s
+  [Q ..alive] round=4 rank=8859 (45.01%) nz=59949671(~0.72GB) t=5592s
+  [Q ..alive] round=4 rank=8866 (45.04%) nz=59980594(~0.72GB) t=5622s
+  [Q ..alive] round=4 rank=8870 (45.06%) nz=59987710(~0.72GB) t=5652s
+  [Q ..alive] round=4 rank=8877 (45.10%) nz=60042736(~0.72GB) t=5682s
+  [Q ..alive] round=4 rank=8889 (45.16%) nz=60124021(~0.72GB) t=5713s
+  [Q ..alive] round=4 rank=8894 (45.19%) nz=60151077(~0.72GB) t=5743s
+  [Q ..alive] round=4 rank=8900 (45.22%) nz=60162783(~0.72GB) t=5773s
+  [Q ..alive] round=4 rank=8903 (45.23%) nz=60165515(~0.72GB) t=5803s
+  [Q ..alive] round=4 rank=8912 (45.28%) nz=60216439(~0.72GB) t=5833s
+  [Q ..alive] round=4 rank=8916 (45.30%) nz=60225018(~0.72GB) t=5863s
+  [Q ..alive] round=4 rank=8922 (45.33%) nz=60241634(~0.72GB) t=5893s
+  [Q ..alive] round=4 rank=8926 (45.35%) nz=60255646(~0.72GB) t=5923s
+  [Q ..alive] round=4 rank=8929 (45.36%) nz=60280974(~0.72GB) t=5953s
+  [Q ..alive] round=4 rank=8932 (45.38%) nz=60306433(~0.72GB) t=5983s
+  [Q round 4 done] rank=8934 (45.39%) nz=60320035(~0.72GB) t=5997s
+  [Q ..alive] round=5 rank=8943 (45.44%) nz=60370902(~0.72GB) t=6013s
+  [Q ..alive] round=5 rank=8947 (45.46%) nz=60383313(~0.72GB) t=6044s
+  [Q ..alive] round=5 rank=8951 (45.48%) nz=60385809(~0.72GB) t=6074s
+  [Q round 5 done] rank=8952 (45.48%) nz=60386193(~0.72GB) t=6086s
+  [Q round 6 done] rank=8953 (45.49%) nz=60386449(~0.72GB) t=6093s
+  [Q round 7 done] rank=8953 (45.49%) nz=60386449(~0.72GB) t=6093s
+  PASS1 COMPLETE: final rank_Q=8953 dim_C=10730 (rounds=8)
+
+[PASS 2] char 2 (rank_p per round):
+  [F round 0 seed] rank=815 nz=1347860(~0.02GB) t=1s
+  [F ..alive] round=1 rank=3769 (19.15%) nz=11205504(~0.13GB) t=30s
+  [F ..alive] round=1 rank=4295 (21.82%) nz=13223530(~0.16GB) t=60s
+  [F ..alive] round=1 rank=4764 (24.20%) nz=14852812(~0.18GB) t=90s
+  [F round 1 done] rank=4807 (24.42%) nz=14973158(~0.18GB) t=97s
+  [F ..alive] round=2 rank=5076 (25.79%) nz=16663872(~0.20GB) t=120s
+  [F ..alive] round=2 rank=5259 (26.72%) nz=17785522(~0.21GB) t=150s
+  [F ..alive] round=2 rank=5405 (27.46%) nz=18615952(~0.22GB) t=180s
+  [F ..alive] round=2 rank=5511 (28.00%) nz=19154324(~0.23GB) t=210s
+  [F ..alive] round=2 rank=5581 (28.35%) nz=19481710(~0.23GB) t=240s
+  [F ..alive] round=2 rank=5631 (28.61%) nz=19716982(~0.24GB) t=270s
+  [F ..alive] round=2 rank=5685 (28.88%) nz=19963140(~0.24GB) t=300s
+  [F ..alive] round=2 rank=5862 (29.78%) nz=21026696(~0.25GB) t=330s
+  [F ..alive] round=2 rank=5997 (30.47%) nz=21834802(~0.26GB) t=360s
+  [F ..alive] round=2 rank=6101 (31.00%) nz=22326256(~0.27GB) t=390s
+  [F ..alive] round=2 rank=6154 (31.27%) nz=22526410(~0.27GB) t=420s
+  [F ..alive] round=2 rank=6214 (31.57%) nz=22828224(~0.27GB) t=450s
+  [F ..alive] round=2 rank=6255 (31.78%) nz=22959954(~0.28GB) t=480s
+  [F ..alive] round=2 rank=6291 (31.96%) nz=23100984(~0.28GB) t=510s
+  [F ..alive] round=2 rank=6326 (32.14%) nz=23253468(~0.28GB) t=540s
+  [F ..alive] round=2 rank=6345 (32.24%) nz=23337298(~0.28GB) t=571s
+  [F ..alive] round=2 rank=6361 (32.32%) nz=23428730(~0.28GB) t=601s
+  [F ..alive] round=2 rank=6455 (32.79%) nz=23970590(~0.29GB) t=631s
+  [F ..alive] round=2 rank=6518 (33.11%) nz=24287878(~0.29GB) t=661s
+  [F ..alive] round=2 rank=6600 (33.53%) nz=24816846(~0.30GB) t=691s
+  [F ..alive] round=2 rank=6650 (33.79%) nz=25032310(~0.30GB) t=721s
+  [F ..alive] round=2 rank=6685 (33.96%) nz=25185114(~0.30GB) t=751s
+  [F ..alive] round=2 rank=6723 (34.16%) nz=25334974(~0.30GB) t=781s
+  [F ..alive] round=2 rank=6748 (34.28%) nz=25418258(~0.31GB) t=811s
+  [F ..alive] round=2 rank=6769 (34.39%) nz=25492656(~0.31GB) t=841s
+  [F ..alive] round=2 rank=6785 (34.47%) nz=25550284(~0.31GB) t=871s
+  [F ..alive] round=2 rank=6820 (34.65%) nz=25729124(~0.31GB) t=901s
+  [F ..alive] round=2 rank=6893 (35.02%) nz=26113500(~0.31GB) t=931s
+  [F ..alive] round=2 rank=6934 (35.23%) nz=26287752(~0.32GB) t=961s
+  [F ..alive] round=2 rank=6982 (35.47%) nz=26524204(~0.32GB) t=991s
+  [F ..alive] round=2 rank=7009 (35.61%) nz=26668966(~0.32GB) t=1021s
+  [F ..alive] round=2 rank=7047 (35.80%) nz=26846608(~0.32GB) t=1051s
+  [F ..alive] round=2 rank=7064 (35.89%) nz=26903804(~0.32GB) t=1081s
+  [F ..alive] round=2 rank=7079 (35.97%) nz=26952398(~0.32GB) t=1111s
+  [F ..alive] round=2 rank=7091 (36.03%) nz=27004842(~0.32GB) t=1141s
+  [F ..alive] round=2 rank=7162 (36.39%) nz=27385570(~0.33GB) t=1171s
+  [F ..alive] round=2 rank=7206 (36.61%) nz=27580454(~0.33GB) t=1201s
+  [F ..alive] round=2 rank=7240 (36.78%) nz=27738568(~0.33GB) t=1231s
+  [F ..alive] round=2 rank=7256 (36.86%) nz=27796314(~0.33GB) t=1261s
+  [F ..alive] round=2 rank=7282 (37.00%) nz=27920296(~0.34GB) t=1291s
+  [F ..alive] round=2 rank=7292 (37.05%) nz=27959444(~0.34GB) t=1322s
+  [F ..alive] round=2 rank=7342 (37.30%) nz=28212188(~0.34GB) t=1352s
+  [F ..alive] round=2 rank=7384 (37.51%) nz=28433200(~0.34GB) t=1382s
+  [F ..alive] round=2 rank=7414 (37.67%) nz=28575774(~0.34GB) t=1412s
+  [F ..alive] round=2 rank=7434 (37.77%) nz=28660196(~0.34GB) t=1442s
+  [F ..alive] round=2 rank=7447 (37.83%) nz=28722612(~0.34GB) t=1472s
+  [F ..alive] round=2 rank=7498 (38.09%) nz=29000716(~0.35GB) t=1502s
+  [F ..alive] round=2 rank=7537 (38.29%) nz=29213154(~0.35GB) t=1532s
+  [F ..alive] round=2 rank=7560 (38.41%) nz=29315072(~0.35GB) t=1562s
+  [F ..alive] round=2 rank=7573 (38.47%) nz=29373102(~0.35GB) t=1592s
+  [F ..alive] round=2 rank=7625 (38.74%) nz=29659260(~0.36GB) t=1622s
+  [F ..alive] round=2 rank=7666 (38.95%) nz=29890460(~0.36GB) t=1652s
+  [F ..alive] round=2 rank=7690 (39.07%) nz=30017944(~0.36GB) t=1682s
+  [F ..alive] round=2 rank=7761 (39.43%) nz=30346896(~0.36GB) t=1712s
+  [F round 2 done] rank=7779 (39.52%) nz=30418470(~0.37GB) t=1734s
+  [F ..alive] round=3 rank=7804 (39.65%) nz=30572846(~0.37GB) t=1742s
+  [F ..alive] round=3 rank=7846 (39.86%) nz=30849616(~0.37GB) t=1772s
+  [F ..alive] round=3 rank=7894 (40.11%) nz=31132184(~0.37GB) t=1802s
+  [F ..alive] round=3 rank=7923 (40.25%) nz=31276798(~0.38GB) t=1832s
+  [F ..alive] round=3 rank=7955 (40.42%) nz=31449250(~0.38GB) t=1862s
+  [F ..alive] round=3 rank=7982 (40.55%) nz=31564876(~0.38GB) t=1892s
+  [F ..alive] round=3 rank=8016 (40.73%) nz=31746732(~0.38GB) t=1922s
+  [F ..alive] round=3 rank=8046 (40.88%) nz=31916672(~0.38GB) t=1952s
+  [F ..alive] round=3 rank=8075 (41.03%) nz=32053474(~0.38GB) t=1982s
+  [F ..alive] round=3 rank=8100 (41.15%) nz=32127916(~0.39GB) t=2012s
+  [F ..alive] round=3 rank=8116 (41.23%) nz=32176308(~0.39GB) t=2043s
+  [F ..alive] round=3 rank=8149 (41.40%) nz=32319776(~0.39GB) t=2073s
+  [F ..alive] round=3 rank=8170 (41.51%) nz=32406434(~0.39GB) t=2103s
+  [F ..alive] round=3 rank=8183 (41.57%) nz=32440508(~0.39GB) t=2133s
+  [F ..alive] round=3 rank=8205 (41.69%) nz=32522908(~0.39GB) t=2163s
+  [F ..alive] round=3 rank=8217 (41.75%) nz=32553918(~0.39GB) t=2193s
+  [F ..alive] round=3 rank=8234 (41.83%) nz=32606210(~0.39GB) t=2223s
+  [F ..alive] round=3 rank=8244 (41.88%) nz=32635414(~0.39GB) t=2253s
+  [F ..alive] round=3 rank=8260 (41.97%) nz=32729750(~0.39GB) t=2283s
+  [F ..alive] round=3 rank=8302 (42.18%) nz=32958038(~0.40GB) t=2313s
+  [F ..alive] round=3 rank=8333 (42.34%) nz=33121368(~0.40GB) t=2343s
+  [F ..alive] round=3 rank=8353 (42.44%) nz=33192926(~0.40GB) t=2373s
+  [F ..alive] round=3 rank=8374 (42.54%) nz=33272646(~0.40GB) t=2403s
+  [F ..alive] round=3 rank=8385 (42.60%) nz=33302488(~0.40GB) t=2433s
+  [F ..alive] round=3 rank=8399 (42.67%) nz=33365138(~0.40GB) t=2463s
+  [F ..alive] round=3 rank=8419 (42.77%) nz=33429808(~0.40GB) t=2493s
+  [F ..alive] round=3 rank=8431 (42.83%) nz=33445528(~0.40GB) t=2523s
+  [F ..alive] round=3 rank=8448 (42.92%) nz=33508954(~0.40GB) t=2553s
+  [F ..alive] round=3 rank=8458 (42.97%) nz=33525742(~0.40GB) t=2583s
+  [F ..alive] round=3 rank=8465 (43.01%) nz=33552208(~0.40GB) t=2613s
+  [F ..alive] round=3 rank=8494 (43.15%) nz=33699510(~0.40GB) t=2643s
+  [F ..alive] round=3 rank=8511 (43.24%) nz=33769224(~0.41GB) t=2673s
+  [F ..alive] round=3 rank=8516 (43.27%) nz=33784382(~0.41GB) t=2704s
+  [F ..alive] round=3 rank=8538 (43.38%) nz=33884824(~0.41GB) t=2734s
+  [F ..alive] round=3 rank=8549 (43.43%) nz=33911306(~0.41GB) t=2764s
+  [F ..alive] round=3 rank=8558 (43.48%) nz=33929224(~0.41GB) t=2794s
+  [F ..alive] round=3 rank=8568 (43.53%) nz=33942794(~0.41GB) t=2824s
+  [F ..alive] round=3 rank=8590 (43.64%) nz=34041386(~0.41GB) t=2854s
+  [F ..alive] round=3 rank=8604 (43.71%) nz=34077354(~0.41GB) t=2884s
+  [F ..alive] round=3 rank=8615 (43.77%) nz=34111884(~0.41GB) t=2914s
+  [F ..alive] round=3 rank=8623 (43.81%) nz=34133682(~0.41GB) t=2944s
+  [F ..alive] round=3 rank=8635 (43.87%) nz=34180964(~0.41GB) t=2974s
+  [F ..alive] round=3 rank=8653 (43.96%) nz=34245626(~0.41GB) t=3004s
+  [F ..alive] round=3 rank=8660 (44.00%) nz=34262818(~0.41GB) t=3034s
+  [F ..alive] round=3 rank=8676 (44.08%) nz=34324442(~0.41GB) t=3064s
+  [F ..alive] round=3 rank=8684 (44.12%) nz=34364480(~0.41GB) t=3094s
+  [F ..alive] round=3 rank=8695 (44.18%) nz=34413134(~0.41GB) t=3124s
+  [F ..alive] round=3 rank=8708 (44.24%) nz=34474646(~0.41GB) t=3154s
+  [F ..alive] round=3 rank=8720 (44.30%) nz=34532210(~0.41GB) t=3184s
+  [F ..alive] round=3 rank=8733 (44.37%) nz=34602182(~0.42GB) t=3214s
+  [F ..alive] round=3 rank=8748 (44.44%) nz=34670950(~0.42GB) t=3244s
+  [F round 3 done] rank=8757 (44.49%) nz=34703890(~0.42GB) t=3270s
+  [F ..alive] round=4 rank=8765 (44.53%) nz=34741896(~0.42GB) t=3275s
+  [F ..alive] round=4 rank=8791 (44.66%) nz=34859074(~0.42GB) t=3305s
+  [F ..alive] round=4 rank=8804 (44.73%) nz=34919376(~0.42GB) t=3335s
+  [F ..alive] round=4 rank=8822 (44.82%) nz=34979120(~0.42GB) t=3365s
+  [F ..alive] round=4 rank=8833 (44.88%) nz=35009998(~0.42GB) t=3395s
+  [F ..alive] round=4 rank=8849 (44.96%) nz=35070314(~0.42GB) t=3425s
+  [F ..alive] round=4 rank=8859 (45.01%) nz=35086338(~0.42GB) t=3455s
+  [F ..alive] round=4 rank=8868 (45.05%) nz=35104506(~0.42GB) t=3485s
+  [F ..alive] round=4 rank=8877 (45.10%) nz=35132746(~0.42GB) t=3515s
+  [F ..alive] round=4 rank=8893 (45.18%) nz=35184728(~0.42GB) t=3545s
+  [F ..alive] round=4 rank=8900 (45.22%) nz=35193572(~0.42GB) t=3575s
+  [F ..alive] round=4 rank=8911 (45.27%) nz=35216662(~0.42GB) t=3605s
+  [F ..alive] round=4 rank=8918 (45.31%) nz=35227030(~0.42GB) t=3635s
+  [F ..alive] round=4 rank=8926 (45.35%) nz=35241700(~0.42GB) t=3665s
+  [F ..alive] round=4 rank=8932 (45.38%) nz=35267254(~0.42GB) t=3695s
+  [F round 4 done] rank=8934 (45.39%) nz=35274128(~0.42GB) t=3712s
+  [F ..alive] round=5 rank=8943 (45.44%) nz=35299512(~0.42GB) t=3725s
+  [F ..alive] round=5 rank=8949 (45.47%) nz=35306454(~0.42GB) t=3755s
+  [F round 5 done] rank=8952 (45.48%) nz=35307798(~0.42GB) t=3772s
+  [F round 6 done] rank=8953 (45.49%) nz=35308054(~0.42GB) t=3777s
+  [F round 7 done] rank=8953 (45.49%) nz=35308054(~0.42GB) t=3777s
+  PASS2 COMPLETE: final rank_p=8953 dim_F2=10730 (rounds=8)
+
+[SCAR] round : rank_Q  rank_p  scar(=rank_Q-rank_p)
+    0   :    815     815  0
+    1   :   4807    4807  0
+    2   :   7779    7779  0
+    3   :   8757    8757  0
+    4   :   8934    8934  0
+    5   :   8952    8952  0
+    6   :   8953    8953  0
+    7   :   8953    8953  0
+[SCAR] stabilized at round 1
+
+================ VERDICT ================
+dim_C = 10730
+dim_F2 = 10730
+VERDICT = PRIMITIVE (scar=0, no torsion)

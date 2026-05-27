@@ -1,0 +1,220 @@
+================ ROSETTA STAR  n=6 m=6  DIM=78125  partitions=105 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 S5).
+char-p: MONOMIAL-basis phi-reduction + TURBINE flow + SONICSTAR-FOLD dense-rebound fold.
+FIX: replaces Jordan-mould (u^{m-1}=0) with correct phi-reduction (t^{m-1}=-(1+...+t^{m-2})).
+     Jordan = correct when m=prime power. Phi-reduction = correct for ALL m.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000003 -> dim_C = 59392
+   P=1000033 -> dim_C = 59392
+   P=1000039 -> dim_C = 59392
+   P=1000081 -> dim_C = 59392
+   P=1000099 -> dim_C = 59392
+   cross-prime: CONSISTENT   dim_C = 59392   [Method A time 0.11 s over 5 primes]
+
+[METHOD B] dim_Fp via ROSETTA TURBINE (phi-reduction, primes dividing m: 2 3)
+
+  char 2 : ROSETTA turbine + sonicstar-fold
+  [ROSETTA start] streaming 105 partitions, char 2
+  [ROSETTA flow] part=6/105 rank=2745 echelon_nz=9311085 peak_bytes=134271958(~0.13GB) t=6s
+  [ROSETTA flow] part=10/105 rank=4025 echelon_nz=15466085 peak_bytes=134271958(~0.13GB) t=12s
+  [ROSETTA flow] part=13/105 rank=4705 echelon_nz=19518775 peak_bytes=134288342(~0.13GB) t=18s
+  [ROSETTA flow] part=15/105 rank=5005 echelon_nz=20970415 peak_bytes=134288342(~0.13GB) t=23s
+  [ROSETTA flow] part=16/105 rank=5505 echelon_nz=32070394 peak_bytes=134288342(~0.13GB) t=30s
+  [ROSETTA flow] part=17/105 rank=5905 echelon_nz=43718063 peak_bytes=134288342(~0.13GB) t=45s
+  [ROSETTA flow] part=18/105 rank=6225 echelon_nz=53854313 peak_bytes=134288342(~0.13GB) t=68s
+  [ROSETTA flow] part=19/105 rank=6625 echelon_nz=63886000 peak_bytes=134288342(~0.13GB) t=78s
+  [ROSETTA flow] part=20/105 rank=6945 echelon_nz=73280439 peak_bytes=201423952(~0.20GB) t=102s
+  [ROSETTA flow] part=21/105 rank=7201 echelon_nz=80934366 peak_bytes=201423952(~0.20GB) t=137s
+  [ROSETTA flow] part=22/105 rank=7521 echelon_nz=89512035 peak_bytes=201423952(~0.20GB) t=147s
+  [ROSETTA flow] part=23/105 rank=7777 echelon_nz=97835781 peak_bytes=201423952(~0.20GB) t=188s
+  [ROSETTA flow] part=24/105 rank=7969 echelon_nz=104064116 peak_bytes=201423952(~0.20GB) t=240s
+  [ROSETTA flow] part=25/105 rank=8225 echelon_nz=112214892 peak_bytes=201456720(~0.20GB) t=261s
+  [ROSETTA flow] part=26/105 rank=8417 echelon_nz=118184732 peak_bytes=201456720(~0.20GB) t=303s
+  [ROSETTA flow] part=27/105 rank=8561 echelon_nz=122759431 peak_bytes=201456720(~0.20GB) t=357s
+  [ROSETTA flow] part=28/105 rank=8769 echelon_nz=128334261 peak_bytes=201456720(~0.20GB) t=368s
+  [ROSETTA flow] part=29/105 rank=8913 echelon_nz=132605035 peak_bytes=201456720(~0.20GB) t=392s
+  [ROSETTA flow] part=30/105 rank=9009 echelon_nz=135425671 peak_bytes=268584969(~0.27GB) t=421s
+  [ROSETTA flow] part=31/105 rank=9409 echelon_nz=145253473 peak_bytes=268584969(~0.27GB) t=462s
+  [ROSETTA flow] part=32/105 rank=9729 echelon_nz=154622103 peak_bytes=268584969(~0.27GB) t=528s
+  [ROSETTA flow] part=33/105 rank=9985 echelon_nz=161797742 peak_bytes=268584969(~0.27GB) t=604s
+  [ROSETTA flow] part=34/105 rank=10305 echelon_nz=171332469 peak_bytes=268584969(~0.27GB) t=648s
+  [ROSETTA flow] part=35/105 rank=10561 echelon_nz=178911843 peak_bytes=268584969(~0.27GB) t=731s
+  [ROSETTA flow] part=36/105 rank=10765 echelon_nz=184271601 peak_bytes=268584969(~0.27GB) t=795s
+  [ROSETTA flow] part=37/105 rank=11005 echelon_nz=190816812 peak_bytes=268584969(~0.27GB) t=842s
+  [ROSETTA flow] part=38/105 rank=11213 echelon_nz=196927490 peak_bytes=268584969(~0.27GB) t=947s
+  [ROSETTA flow] part=39/105 rank=11369 echelon_nz=201323998 peak_bytes=335716221(~0.34GB) t=1040s
+  [ROSETTA flow] part=40/105 rank=11561 echelon_nz=206766003 peak_bytes=335716221(~0.34GB) t=1121s
+  [ROSETTA flow] part=41/105 rank=11705 echelon_nz=210345704 peak_bytes=335716221(~0.34GB) t=1226s
+  [ROSETTA flow] part=42/105 rank=11825 echelon_nz=213628706 peak_bytes=335716221(~0.34GB) t=1316s
+  [ROSETTA flow] part=43/105 rank=11981 echelon_nz=217536274 peak_bytes=335716221(~0.34GB) t=1352s
+  [ROSETTA flow] part=44/105 rank=12089 echelon_nz=220464876 peak_bytes=335716221(~0.34GB) t=1407s
+  [ROSETTA flow] part=45/105 rank=12161 echelon_nz=222188772 peak_bytes=335716221(~0.34GB) t=1459s
+  [ROSETTA flow] part=46/105 rank=12481 echelon_nz=230444168 peak_bytes=335716221(~0.34GB) t=1517s
+  [ROSETTA flow] part=47/105 rank=12737 echelon_nz=237232709 peak_bytes=335716221(~0.34GB) t=1614s
+  [ROSETTA flow] part=48/105 rank=12941 echelon_nz=242154511 peak_bytes=335716221(~0.34GB) t=1717s
+  [ROSETTA flow] part=49/105 rank=13181 echelon_nz=248766368 peak_bytes=335716221(~0.34GB) t=1802s
+  [ROSETTA flow] part=50/105 rank=13373 echelon_nz=253910514 peak_bytes=335716221(~0.34GB) t=1925s
+  [ROSETTA flow] part=51/105 rank=13525 echelon_nz=257561116 peak_bytes=335716221(~0.34GB) t=2000s
+  [ROSETTA flow] part=52/105 rank=13705 echelon_nz=262376540 peak_bytes=335716221(~0.34GB) t=2086s
+  [ROSETTA flow] part=53/105 rank=13877 echelon_nz=266977144 peak_bytes=335716221(~0.34GB) t=2229s
+  [ROSETTA flow] part=54/105 rank=13997 echelon_nz=269980564 peak_bytes=402835472(~0.40GB) t=2346s
+  [ROSETTA flow] part=55/105 rank=14141 echelon_nz=273677012 peak_bytes=402835472(~0.40GB) t=2468s
+  [ROSETTA flow] part=56/105 rank=14261 echelon_nz=276609914 peak_bytes=402835472(~0.40GB) t=2609s
+  [ROSETTA flow] part=57/105 rank=14345 echelon_nz=278619650 peak_bytes=402835472(~0.40GB) t=2727s
+  [ROSETTA flow] part=58/105 rank=14461 echelon_nz=281183786 peak_bytes=402835472(~0.40GB) t=2786s
+  [ROSETTA flow] part=59/105 rank=14545 echelon_nz=283209436 peak_bytes=402835472(~0.40GB) t=2870s
+  [ROSETTA flow] part=60/105 rank=14593 echelon_nz=284179686 peak_bytes=402835472(~0.40GB) t=2957s
+  [ROSETTA flow] part=61/105 rank=14853 echelon_nz=290781634 peak_bytes=402835472(~0.40GB) t=3018s
+  [ROSETTA flow] part=62/105 rank=15057 echelon_nz=295770038 peak_bytes=402835472(~0.40GB) t=3140s
+  [ROSETTA flow] part=63/105 rank=15209 echelon_nz=299033820 peak_bytes=402835472(~0.40GB) t=3256s
+  [ROSETTA flow] part=64/105 rank=15389 echelon_nz=303551414 peak_bytes=402835472(~0.40GB) t=3354s
+  [ROSETTA flow] part=65/105 rank=15545 echelon_nz=307419350 peak_bytes=402835472(~0.40GB) t=3507s
+  [ROSETTA flow] part=66/105 rank=15661 echelon_nz=310018286 peak_bytes=402835472(~0.40GB) t=3603s
+  [ROSETTA flow] part=67/105 rank=15781 echelon_nz=312865382 peak_bytes=402835472(~0.40GB) t=3709s
+  [ROSETTA flow] part=68/105 rank=15901 echelon_nz=315758656 peak_bytes=402835472(~0.40GB) t=3860s
+  [ROSETTA flow] part=69/105 rank=15981 echelon_nz=317513856 peak_bytes=402835472(~0.40GB) t=3975s
+  [ROSETTA flow] part=70/105 rank=16101 echelon_nz=320410518 peak_bytes=402835472(~0.40GB) t=4125s
+  [ROSETTA flow] part=71/105 rank=16185 echelon_nz=322283560 peak_bytes=402835472(~0.40GB) t=4273s
+  [ROSETTA flow] part=72/105 rank=16245 echelon_nz=323480520 peak_bytes=402835472(~0.40GB) t=4392s
+  [ROSETTA flow] part=73/105 rank=16337 echelon_nz=325386710 peak_bytes=402835472(~0.40GB) t=4478s
+  [ROSETTA flow] part=74/105 rank=16393 echelon_nz=326459070 peak_bytes=402901008(~0.40GB) t=4575s
+  [ROSETTA flow] part=75/105 rank=16425 echelon_nz=326915268 peak_bytes=402901008(~0.40GB) t=4677s
+  [ROSETTA flow] part=76/105 rank=16633 echelon_nz=331171926 peak_bytes=402901008(~0.40GB) t=4753s
+  [ROSETTA flow] part=77/105 rank=16789 echelon_nz=334399768 peak_bytes=402901008(~0.40GB) t=4840s
+  [ROSETTA flow] part=78/105 rank=16905 echelon_nz=336617572 peak_bytes=470010249(~0.47GB) t=4920s
+  [ROSETTA flow] part=79/105 rank=17049 echelon_nz=339822382 peak_bytes=470010249(~0.47GB) t=5035s
+  [ROSETTA flow] part=80/105 rank=17157 echelon_nz=342180498 peak_bytes=470010249(~0.47GB) t=5158s
+  [ROSETTA flow] part=81/105 rank=17249 echelon_nz=343990676 peak_bytes=470010249(~0.47GB) t=5223s
+  [ROSETTA flow] part=82/105 rank=17345 echelon_nz=345993730 peak_bytes=470010249(~0.47GB) t=5345s
+  [ROSETTA flow] part=83/105 rank=17429 echelon_nz=347798170 peak_bytes=470010249(~0.47GB) t=5459s
+  [ROSETTA flow] part=84/105 rank=17485 echelon_nz=348824188 peak_bytes=470010249(~0.47GB) t=5542s
+  [ROSETTA flow] part=85/105 rank=17557 echelon_nz=350356376 peak_bytes=470010249(~0.47GB) t=5669s
+  [ROSETTA flow] part=86/105 rank=17605 echelon_nz=351274300 peak_bytes=470010249(~0.47GB) t=5786s
+  [ROSETTA flow] part=87/105 rank=17637 echelon_nz=351755952 peak_bytes=470010249(~0.47GB) t=5873s
+  [ROSETTA flow] part=88/105 rank=17713 echelon_nz=353141348 peak_bytes=470010249(~0.47GB) t=5937s
+  [ROSETTA flow] part=89/105 rank=17753 echelon_nz=353742312 peak_bytes=470010249(~0.47GB) t=6015s
+  [ROSETTA flow] part=90/105 rank=17769 echelon_nz=353780112 peak_bytes=470010249(~0.47GB) t=6094s
+  [ROSETTA flow] part=91/105 rank=17941 echelon_nz=355000490 peak_bytes=470010249(~0.47GB) t=6107s
+  [ROSETTA flow] part=92/105 rank=18061 echelon_nz=356119978 peak_bytes=470010249(~0.47GB) t=6127s
+  [ROSETTA flow] part=93/105 rank=18141 echelon_nz=356670858 peak_bytes=470010249(~0.47GB) t=6149s
+  [ROSETTA flow] part=94/105 rank=18261 echelon_nz=357534696 peak_bytes=470010249(~0.47GB) t=6169s
+  [ROSETTA flow] part=95/105 rank=18345 echelon_nz=358317551 peak_bytes=470010249(~0.47GB) t=6200s
+  [ROSETTA flow] part=96/105 rank=18401 echelon_nz=358752757 peak_bytes=470010249(~0.47GB) t=6231s
+  [ROSETTA flow] part=97/105 rank=18481 echelon_nz=359176891 peak_bytes=470010249(~0.47GB) t=6251s
+  [ROSETTA flow] part=98/105 rank=18541 echelon_nz=359813143 peak_bytes=470010249(~0.47GB) t=6289s
+  [ROSETTA flow] part=99/105 rank=18573 echelon_nz=360065721 peak_bytes=470010249(~0.47GB) t=6329s
+  [ROSETTA flow] part=100/105 rank=18629 echelon_nz=360581359 peak_bytes=470010249(~0.47GB) t=6360s
+  [ROSETTA flow] part=101/105 rank=18661 echelon_nz=360858180 peak_bytes=470010249(~0.47GB) t=6399s
+  [ROSETTA flow] part=102/105 rank=18677 echelon_nz=361001716 peak_bytes=470010249(~0.47GB) t=6439s
+  [ROSETTA flow] part=103/105 rank=18717 echelon_nz=361344576 peak_bytes=470010249(~0.47GB) t=6471s
+  [ROSETTA flow] part=104/105 rank=18733 echelon_nz=361474768 peak_bytes=470010249(~0.47GB) t=6511s
+  [ROSETTA flow] part=105/105 rank=18733 echelon_nz=361474768 peak_bytes=470010249(~0.47GB) t=6551s
+  [ROSETTA done] rank=18733 echelon_nz=361474768 peak_bytes=470010249(~0.47GB) t=6551s
+  char 2 COMPLETE: rank_p=18733 dim_F2=59392  PEAK bytes=470010249 (~0.47 GB)
+
+  char 3 : ROSETTA turbine + sonicstar-fold
+  [ROSETTA start] streaming 105 partitions, char 3
+  [ROSETTA flow] part=5/105 rank=2425 echelon_nz=9505530 peak_bytes=134271958(~0.13GB) t=5s
+  [ROSETTA flow] part=9/105 rank=3705 echelon_nz=16475720 peak_bytes=134271958(~0.13GB) t=12s
+  [ROSETTA flow] part=12/105 rank=4445 echelon_nz=22123120 peak_bytes=134288342(~0.13GB) t=19s
+  [ROSETTA flow] part=14/105 rank=4880 echelon_nz=25145390 peak_bytes=134288342(~0.13GB) t=24s
+  [ROSETTA flow] part=16/105 rank=5505 echelon_nz=40208599 peak_bytes=134288342(~0.13GB) t=38s
+  [ROSETTA flow] part=17/105 rank=5905 echelon_nz=55598053 peak_bytes=134288342(~0.13GB) t=61s
+  [ROSETTA flow] part=18/105 rank=6225 echelon_nz=69106520 peak_bytes=201440711(~0.20GB) t=96s
+  [ROSETTA flow] part=19/105 rank=6625 echelon_nz=82222545 peak_bytes=201440711(~0.20GB) t=111s
+  [ROSETTA flow] part=20/105 rank=6945 echelon_nz=94676145 peak_bytes=201440711(~0.20GB) t=148s
+  [ROSETTA flow] part=21/105 rank=7201 echelon_nz=104884205 peak_bytes=201440711(~0.20GB) t=205s
+  [ROSETTA flow] part=22/105 rank=7521 echelon_nz=116181394 peak_bytes=201440711(~0.20GB) t=220s
+  [ROSETTA flow] part=23/105 rank=7777 echelon_nz=127258934 peak_bytes=201440711(~0.20GB) t=286s
+  [ROSETTA flow] part=24/105 rank=7969 echelon_nz=135572062 peak_bytes=268585780(~0.27GB) t=372s
+  [ROSETTA flow] part=25/105 rank=8225 echelon_nz=146447568 peak_bytes=268618548(~0.27GB) t=408s
+  [ROSETTA flow] part=26/105 rank=8417 echelon_nz=154401018 peak_bytes=268618548(~0.27GB) t=476s
+  [ROSETTA flow] part=27/105 rank=8561 echelon_nz=160540958 peak_bytes=268618548(~0.27GB) t=566s
+  [ROSETTA flow] part=28/105 rank=8765 echelon_nz=167869501 peak_bytes=268618548(~0.27GB) t=583s
+  [ROSETTA flow] part=29/105 rank=8909 echelon_nz=173577008 peak_bytes=268618548(~0.27GB) t=622s
+  [ROSETTA flow] part=30/105 rank=9009 echelon_nz=177489011 peak_bytes=268618548(~0.27GB) t=668s
+  [ROSETTA flow] part=31/105 rank=9409 echelon_nz=190586219 peak_bytes=268618548(~0.27GB) t=737s
+  [ROSETTA flow] part=32/105 rank=9729 echelon_nz=203079234 peak_bytes=335737511(~0.34GB) t=850s
+  [ROSETTA flow] part=33/105 rank=9985 echelon_nz=212735043 peak_bytes=335737511(~0.34GB) t=982s
+  [ROSETTA flow] part=34/105 rank=10305 echelon_nz=225465901 peak_bytes=335737511(~0.34GB) t=1059s
+  [ROSETTA flow] part=35/105 rank=10561 echelon_nz=235582322 peak_bytes=335737511(~0.34GB) t=1202s
+  [ROSETTA flow] part=36/105 rank=10765 echelon_nz=242739668 peak_bytes=335737511(~0.34GB) t=1312s
+  [ROSETTA flow] part=37/105 rank=11005 echelon_nz=251549962 peak_bytes=335737511(~0.34GB) t=1393s
+  [ROSETTA flow] part=38/105 rank=11213 echelon_nz=259660386 peak_bytes=335737511(~0.34GB) t=1574s
+  [ROSETTA flow] part=39/105 rank=11369 echelon_nz=265514085 peak_bytes=335737511(~0.34GB) t=1735s
+  [ROSETTA flow] part=40/105 rank=11561 echelon_nz=272753085 peak_bytes=402901690(~0.40GB) t=1875s
+  [ROSETTA flow] part=41/105 rank=11705 echelon_nz=277540791 peak_bytes=402901690(~0.40GB) t=2057s
+  [ROSETTA flow] part=42/105 rank=11825 echelon_nz=281944177 peak_bytes=402901690(~0.40GB) t=2216s
+  [ROSETTA flow] part=43/105 rank=11978 echelon_nz=287044919 peak_bytes=402901690(~0.40GB) t=2277s
+  [ROSETTA flow] part=44/105 rank=12086 echelon_nz=290965107 peak_bytes=402901690(~0.40GB) t=2371s
+  [ROSETTA flow] part=45/105 rank=12161 echelon_nz=293337876 peak_bytes=402901690(~0.40GB) t=2463s
+  [ROSETTA flow] part=46/105 rank=12481 echelon_nz=304429664 peak_bytes=402901690(~0.40GB) t=2563s
+  [ROSETTA flow] part=47/105 rank=12737 echelon_nz=313432660 peak_bytes=402901690(~0.40GB) t=2729s
+  [ROSETTA flow] part=48/105 rank=12941 echelon_nz=319842188 peak_bytes=402901690(~0.40GB) t=2909s
+  [ROSETTA flow] part=49/105 rank=13181 echelon_nz=328623245 peak_bytes=402901690(~0.40GB) t=3057s
+  [ROSETTA flow] part=50/105 rank=13373 echelon_nz=335464622 peak_bytes=470026251(~0.47GB) t=3270s
+  [ROSETTA flow] part=51/105 rank=13525 echelon_nz=340333572 peak_bytes=470026251(~0.47GB) t=3399s
+  [ROSETTA flow] part=52/105 rank=13705 echelon_nz=346696809 peak_bytes=470026251(~0.47GB) t=3551s
+  [ROSETTA flow] part=53/105 rank=13877 echelon_nz=352834824 peak_bytes=470026251(~0.47GB) t=3798s
+  [ROSETTA flow] part=54/105 rank=13997 echelon_nz=356859038 peak_bytes=470026251(~0.47GB) t=3998s
+  [ROSETTA flow] part=55/105 rank=14141 echelon_nz=361776203 peak_bytes=470026251(~0.47GB) t=4212s
+  [ROSETTA flow] part=56/105 rank=14261 echelon_nz=365694114 peak_bytes=470026251(~0.47GB) t=4458s
+  [ROSETTA flow] part=57/105 rank=14345 echelon_nz=368378557 peak_bytes=470026251(~0.47GB) t=4664s
+  [ROSETTA flow] part=58/105 rank=14459 echelon_nz=371753955 peak_bytes=470026251(~0.47GB) t=4765s
+  [ROSETTA flow] part=59/105 rank=14543 echelon_nz=374478499 peak_bytes=470026251(~0.47GB) t=4912s
+  [ROSETTA flow] part=60/105 rank=14593 echelon_nz=375851308 peak_bytes=470026251(~0.47GB) t=5064s
+  [ROSETTA flow] part=61/105 rank=14848 echelon_nz=384456954 peak_bytes=470026251(~0.47GB) t=5178s
+  [ROSETTA flow] part=62/105 rank=15053 echelon_nz=390976655 peak_bytes=470026251(~0.47GB) t=5394s
+  [ROSETTA flow] part=63/105 rank=15206 echelon_nz=395296917 peak_bytes=470026251(~0.47GB) t=5602s
+  [ROSETTA flow] part=64/105 rank=15386 echelon_nz=401414692 peak_bytes=470026251(~0.47GB) t=5776s
+  [ROSETTA flow] part=65/105 rank=15542 echelon_nz=406477266 peak_bytes=537163571(~0.54GB) t=6044s
+  [ROSETTA flow] part=66/105 rank=15658 echelon_nz=409885164 peak_bytes=537163571(~0.54GB) t=6212s
+  [ROSETTA flow] part=67/105 rank=15781 echelon_nz=413832720 peak_bytes=537163571(~0.54GB) t=6402s
+  [ROSETTA flow] part=68/105 rank=15901 echelon_nz=417687374 peak_bytes=537163571(~0.54GB) t=6667s
+  [ROSETTA flow] part=69/105 rank=15981 echelon_nz=420020426 peak_bytes=537163571(~0.54GB) t=6869s
+  [ROSETTA flow] part=70/105 rank=16101 echelon_nz=423858530 peak_bytes=537163571(~0.54GB) t=7134s
+  [ROSETTA flow] part=71/105 rank=16185 echelon_nz=426373078 peak_bytes=537163571(~0.54GB) t=7398s
+  [ROSETTA flow] part=72/105 rank=16245 echelon_nz=428018803 peak_bytes=537163571(~0.54GB) t=7612s
+  [ROSETTA flow] part=73/105 rank=16335 echelon_nz=430514155 peak_bytes=537163571(~0.54GB) t=7763s
+  [ROSETTA flow] part=74/105 rank=16391 echelon_nz=431994829 peak_bytes=537229107(~0.54GB) t=7938s
+  [ROSETTA flow] part=75/105 rank=16425 echelon_nz=432723347 peak_bytes=537229107(~0.54GB) t=8119s
+  [ROSETTA flow] part=76/105 rank=16629 echelon_nz=438166837 peak_bytes=537229107(~0.54GB) t=8263s
+  [ROSETTA flow] part=77/105 rank=16782 echelon_nz=442482624 peak_bytes=537229107(~0.54GB) t=8420s
+  [ROSETTA flow] part=78/105 rank=16897 echelon_nz=445427876 peak_bytes=537229107(~0.54GB) t=8567s
+  [ROSETTA flow] part=79/105 rank=17041 echelon_nz=449593985 peak_bytes=537229107(~0.54GB) t=8777s
+  [ROSETTA flow] part=80/105 rank=17149 echelon_nz=452720149 peak_bytes=537229107(~0.54GB) t=8999s
+  [ROSETTA flow] part=81/105 rank=17239 echelon_nz=455097683 peak_bytes=537229107(~0.54GB) t=9117s
+  [ROSETTA flow] part=82/105 rank=17338 echelon_nz=457852520 peak_bytes=537229107(~0.54GB) t=9342s
+  [ROSETTA flow] part=83/105 rank=17422 echelon_nz=460253758 peak_bytes=537229107(~0.54GB) t=9547s
+  [ROSETTA flow] part=84/105 rank=17478 echelon_nz=461693271 peak_bytes=537229107(~0.54GB) t=9697s
+  [ROSETTA flow] part=85/105 rank=17553 echelon_nz=463810659 peak_bytes=537229107(~0.54GB) t=9927s
+  [ROSETTA flow] part=86/105 rank=17603 echelon_nz=465135787 peak_bytes=537229107(~0.54GB) t=10142s
+  [ROSETTA flow] part=87/105 rank=17637 echelon_nz=465926975 peak_bytes=537229107(~0.54GB) t=10301s
+  [ROSETTA flow] part=88/105 rank=17709 echelon_nz=467738208 peak_bytes=537229107(~0.54GB) t=10420s
+  [ROSETTA flow] part=89/105 rank=17749 echelon_nz=468666109 peak_bytes=537229107(~0.54GB) t=10565s
+  [ROSETTA flow] part=90/105 rank=17769 echelon_nz=469001509 peak_bytes=537229107(~0.54GB) t=10712s
+  [ROSETTA flow] part=91/105 rank=17931 echelon_nz=470442523 peak_bytes=604340790(~0.60GB) t=10734s
+  [ROSETTA flow] part=92/105 rank=18046 echelon_nz=471909243 peak_bytes=604340790(~0.60GB) t=10770s
+  [ROSETTA flow] part=93/105 rank=18126 echelon_nz=472665655 peak_bytes=604340790(~0.60GB) t=10810s
+  [ROSETTA flow] part=94/105 rank=18241 echelon_nz=473737359 peak_bytes=604340790(~0.60GB) t=10846s
+  [ROSETTA flow] part=95/105 rank=18323 echelon_nz=474782726 peak_bytes=604340790(~0.60GB) t=10901s
+  [ROSETTA flow] part=96/105 rank=18380 echelon_nz=475364804 peak_bytes=604340790(~0.60GB) t=10958s
+  [ROSETTA flow] part=97/105 rank=18459 echelon_nz=475908906 peak_bytes=604340790(~0.60GB) t=10994s
+  [ROSETTA flow] part=98/105 rank=18519 echelon_nz=476753500 peak_bytes=604340790(~0.60GB) t=11063s
+  [ROSETTA flow] part=99/105 rank=18553 echelon_nz=477117333 peak_bytes=604340790(~0.60GB) t=11134s
+  [ROSETTA flow] part=100/105 rank=18610 echelon_nz=477837278 peak_bytes=604340790(~0.60GB) t=11188s
+  [ROSETTA flow] part=101/105 rank=18644 echelon_nz=478204050 peak_bytes=604340790(~0.60GB) t=11258s
+  [ROSETTA flow] part=102/105 rank=18664 echelon_nz=478431538 peak_bytes=604340790(~0.60GB) t=11330s
+  [ROSETTA flow] part=103/105 rank=18705 echelon_nz=478904843 peak_bytes=604340790(~0.60GB) t=11388s
+  [ROSETTA flow] part=104/105 rank=18725 echelon_nz=479109085 peak_bytes=604340790(~0.60GB) t=11459s
+  [ROSETTA flow] part=105/105 rank=18733 echelon_nz=479172347 peak_bytes=604340790(~0.60GB) t=11532s
+  [ROSETTA done] rank=18733 echelon_nz=479172347 peak_bytes=604340790(~0.60GB) t=11532s
+  char 3 COMPLETE: rank_p=18733 dim_F3=59392  PEAK bytes=604340790 (~0.60 GB)
+
+================ VERDICT ================
+dim_C  = 59392   (Method A eigenbasis, cross-prime)
+dim_F2 = 59392
+dim_F3 = 59392
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

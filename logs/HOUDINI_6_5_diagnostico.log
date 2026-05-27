@@ -1,0 +1,166 @@
+================ HOUDINI  n=6 m=5  DIM=16384  partitions=105 ================
+Author: Rafael Amichis Luengo (Madrid).  Method: Degtyarev-Shimada (arXiv:1405.4683 §5).
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000081 -> dim_C = 11484
+   P=1000121 -> dim_C = 11484
+   P=1000151 -> dim_C = 11484
+   P=1000171 -> dim_C = 11484
+   P=1000211 -> dim_C = 11484
+   cross-prime: CONSISTENT   dim_C = 11484   [Method A time 0.04 s over 5 primes]
+
+[METHOD B] dim_Fp via real reduction + scar (primes dividing m: 5)
+
+  PASS 1 (char large, rank_Q per round):
+  [Q round 0 seed] rank=105 nz=159652(~0.00GB) t=0s
+  [Q round 1 done] rank=831 (5.07%) nz=2260156(~0.03GB) t=0s
+  [Q ..alive] round=2 rank=1877 (11.46%) nz=10990696(~0.13GB) t=30s
+  [Q ..alive] round=2 rank=2332 (14.23%) nz=14762438(~0.18GB) t=60s
+  [Q round 2 done] rank=2571 (15.69%) nz=16450157(~0.20GB) t=80s
+  [Q ..alive] round=3 rank=2664 (16.26%) nz=17623631(~0.21GB) t=90s
+  [Q ..alive] round=3 rank=2819 (17.21%) nz=19581363(~0.23GB) t=120s
+  [Q ..alive] round=3 rank=2923 (17.84%) nz=20919948(~0.25GB) t=150s
+  [Q ..alive] round=3 rank=3049 (18.61%) nz=22548806(~0.27GB) t=180s
+  [Q ..alive] round=3 rank=3159 (19.28%) nz=23886899(~0.29GB) t=210s
+  [Q ..alive] round=3 rank=3240 (19.78%) nz=24753662(~0.30GB) t=240s
+  [Q ..alive] round=3 rank=3341 (20.39%) nz=25886127(~0.31GB) t=270s
+  [Q ..alive] round=3 rank=3432 (20.95%) nz=26944654(~0.32GB) t=300s
+  [Q ..alive] round=3 rank=3520 (21.48%) nz=27880276(~0.33GB) t=330s
+  [Q ..alive] round=3 rank=3604 (22.00%) nz=28643629(~0.34GB) t=360s
+  [Q ..alive] round=3 rank=3693 (22.54%) nz=29539600(~0.35GB) t=390s
+  [Q ..alive] round=3 rank=3777 (23.05%) nz=30294449(~0.36GB) t=420s
+  [Q ..alive] round=3 rank=3866 (23.60%) nz=31058839(~0.37GB) t=450s
+  [Q ..alive] round=3 rank=3948 (24.10%) nz=31713547(~0.38GB) t=480s
+  [Q ..alive] round=3 rank=4026 (24.57%) nz=32276442(~0.39GB) t=511s
+  [Q ..alive] round=3 rank=4110 (25.09%) nz=32813641(~0.39GB) t=541s
+  [Q ..alive] round=3 rank=4168 (25.44%) nz=33091052(~0.40GB) t=571s
+  [Q ..alive] round=3 rank=4251 (25.95%) nz=33714436(~0.40GB) t=601s
+  [Q round 3 done] rank=4268 (26.05%) nz=33818508(~0.41GB) t=615s
+  [Q ..alive] round=4 rank=4315 (26.34%) nz=34334516(~0.41GB) t=631s
+  [Q ..alive] round=4 rank=4364 (26.64%) nz=34815033(~0.42GB) t=661s
+  [Q ..alive] round=4 rank=4418 (26.97%) nz=35316473(~0.42GB) t=691s
+  [Q ..alive] round=4 rank=4468 (27.27%) nz=35787729(~0.43GB) t=721s
+  [Q ..alive] round=4 rank=4491 (27.41%) nz=35966109(~0.43GB) t=751s
+  [Q ..alive] round=4 rank=4518 (27.58%) nz=36166155(~0.43GB) t=781s
+  [Q ..alive] round=4 rank=4565 (27.86%) nz=36637670(~0.44GB) t=811s
+  [Q ..alive] round=4 rank=4601 (28.08%) nz=36944471(~0.44GB) t=841s
+  [Q ..alive] round=4 rank=4631 (28.27%) nz=37133942(~0.45GB) t=871s
+  [Q ..alive] round=4 rank=4650 (28.38%) nz=37231021(~0.45GB) t=901s
+  [Q ..alive] round=4 rank=4676 (28.54%) nz=37427807(~0.45GB) t=931s
+  [Q ..alive] round=4 rank=4714 (28.77%) nz=37692703(~0.45GB) t=961s
+  [Q ..alive] round=4 rank=4735 (28.90%) nz=37787051(~0.45GB) t=991s
+  [Q ..alive] round=4 rank=4759 (29.05%) nz=37897220(~0.45GB) t=1021s
+  [Q ..alive] round=4 rank=4783 (29.19%) nz=37977809(~0.46GB) t=1051s
+  [Q ..alive] round=4 rank=4803 (29.32%) nz=38097196(~0.46GB) t=1081s
+  [Q ..alive] round=4 rank=4819 (29.41%) nz=38178993(~0.46GB) t=1111s
+  [Q ..alive] round=4 rank=4830 (29.48%) nz=38239723(~0.46GB) t=1141s
+  [Q round 4 done] rank=4833 (29.50%) nz=38246025(~0.46GB) t=1151s
+  [Q ..alive] round=5 rank=4859 (29.66%) nz=38452041(~0.46GB) t=1171s
+  [Q ..alive] round=5 rank=4873 (29.74%) nz=38522581(~0.46GB) t=1202s
+  [Q ..alive] round=5 rank=4887 (29.83%) nz=38602539(~0.46GB) t=1232s
+  [Q ..alive] round=5 rank=4896 (29.88%) nz=38616652(~0.46GB) t=1262s
+  [Q round 5 done] rank=4897 (29.89%) nz=38616946(~0.46GB) t=1277s
+  [Q round 6 done] rank=4900 (29.91%) nz=38626581(~0.46GB) t=1288s
+  [Q round 7 done] rank=4900 (29.91%) nz=38626581(~0.46GB) t=1288s
+  PASS1 COMPLETE: rank_Q=4900 dim_C(real)=11484
+
+  PASS 2 (char 5, rank_p per round):
+  [F round 0 seed] rank=105 nz=159652(~0.00GB) t=0s
+  [F round 1 done] rank=831 (5.07%) nz=2256774(~0.03GB) t=0s
+  [F ..alive] round=2 rank=1842 (11.24%) nz=10125081(~0.12GB) t=30s
+  [F ..alive] round=2 rank=2249 (13.73%) nz=13090377(~0.16GB) t=60s
+  [F ..alive] round=2 rank=2527 (15.42%) nz=14921221(~0.18GB) t=90s
+  [F round 2 done] rank=2571 (15.69%) nz=15144482(~0.18GB) t=99s
+  [F ..alive] round=3 rank=2702 (16.49%) nz=16499838(~0.20GB) t=120s
+  [F ..alive] round=3 rank=2817 (17.19%) nz=17713035(~0.21GB) t=150s
+  [F ..alive] round=3 rank=2885 (17.61%) nz=18431666(~0.22GB) t=180s
+  [F ..alive] round=3 rank=2942 (17.96%) nz=19014138(~0.23GB) t=210s
+  [F ..alive] round=3 rank=3032 (18.51%) nz=19966680(~0.24GB) t=240s
+  [F ..alive] round=3 rank=3108 (18.97%) nz=20734259(~0.25GB) t=270s
+  [F ..alive] round=3 rank=3177 (19.39%) nz=21402674(~0.26GB) t=300s
+  [F ..alive] round=3 rank=3222 (19.67%) nz=21776219(~0.26GB) t=331s
+  [F ..alive] round=3 rank=3278 (20.01%) nz=22228390(~0.27GB) t=361s
+  [F ..alive] round=3 rank=3341 (20.39%) nz=22826848(~0.27GB) t=391s
+  [F ..alive] round=3 rank=3393 (20.71%) nz=23318444(~0.28GB) t=421s
+  [F ..alive] round=3 rank=3456 (21.09%) nz=23891345(~0.29GB) t=451s
+  [F ..alive] round=3 rank=3508 (21.41%) nz=24320548(~0.29GB) t=481s
+  [F ..alive] round=3 rank=3552 (21.68%) nz=24644695(~0.30GB) t=511s
+  [F ..alive] round=3 rank=3608 (22.02%) nz=25071784(~0.30GB) t=541s
+  [F ..alive] round=3 rank=3668 (22.39%) nz=25570173(~0.31GB) t=571s
+  [F ..alive] round=3 rank=3711 (22.65%) nz=25861429(~0.31GB) t=601s
+  [F ..alive] round=3 rank=3764 (22.97%) nz=26306034(~0.32GB) t=631s
+  [F ..alive] round=3 rank=3808 (23.24%) nz=26497223(~0.32GB) t=661s
+  [F ..alive] round=3 rank=3866 (23.60%) nz=26979903(~0.32GB) t=691s
+  [F ..alive] round=3 rank=3921 (23.93%) nz=27354947(~0.33GB) t=721s
+  [F ..alive] round=3 rank=3956 (24.15%) nz=27554239(~0.33GB) t=751s
+  [F ..alive] round=3 rank=4002 (24.43%) nz=27786485(~0.33GB) t=781s
+  [F ..alive] round=3 rank=4054 (24.74%) nz=28117236(~0.34GB) t=812s
+  [F ..alive] round=3 rank=4102 (25.04%) nz=28359266(~0.34GB) t=842s
+  [F ..alive] round=3 rank=4137 (25.25%) nz=28511617(~0.34GB) t=872s
+  [F ..alive] round=3 rank=4169 (25.45%) nz=28623789(~0.34GB) t=902s
+  [F ..alive] round=3 rank=4225 (25.79%) nz=28977777(~0.35GB) t=932s
+  [F ..alive] round=3 rank=4260 (26.00%) nz=29165232(~0.35GB) t=962s
+  [F round 3 done] rank=4268 (26.05%) nz=29206935(~0.35GB) t=979s
+  [F ..alive] round=4 rank=4298 (26.23%) nz=29462965(~0.35GB) t=992s
+  [F ..alive] round=4 rank=4332 (26.44%) nz=29750493(~0.36GB) t=1022s
+  [F ..alive] round=4 rank=4354 (26.57%) nz=29925372(~0.36GB) t=1052s
+  [F ..alive] round=4 rank=4387 (26.78%) nz=30193709(~0.36GB) t=1082s
+  [F ..alive] round=4 rank=4411 (26.92%) nz=30356647(~0.36GB) t=1112s
+  [F ..alive] round=4 rank=4441 (27.11%) nz=30567632(~0.37GB) t=1142s
+  [F ..alive] round=4 rank=4468 (27.27%) nz=30784565(~0.37GB) t=1172s
+  [F ..alive] round=4 rank=4477 (27.33%) nz=30836887(~0.37GB) t=1202s
+  [F ..alive] round=4 rank=4494 (27.43%) nz=30943471(~0.37GB) t=1232s
+  [F ..alive] round=4 rank=4507 (27.51%) nz=31012559(~0.37GB) t=1262s
+  [F ..alive] round=4 rank=4519 (27.58%) nz=31095690(~0.37GB) t=1292s
+  [F ..alive] round=4 rank=4551 (27.78%) nz=31341837(~0.38GB) t=1322s
+  [F ..alive] round=4 rank=4576 (27.93%) nz=31546144(~0.38GB) t=1352s
+  [F ..alive] round=4 rank=4590 (28.02%) nz=31637629(~0.38GB) t=1382s
+  [F ..alive] round=4 rank=4613 (28.16%) nz=31780977(~0.38GB) t=1412s
+  [F ..alive] round=4 rank=4623 (28.22%) nz=31821405(~0.38GB) t=1442s
+  [F ..alive] round=4 rank=4640 (28.32%) nz=31899985(~0.38GB) t=1472s
+  [F ..alive] round=4 rank=4650 (28.38%) nz=31942806(~0.38GB) t=1502s
+  [F ..alive] round=4 rank=4659 (28.44%) nz=31990492(~0.38GB) t=1533s
+  [F ..alive] round=4 rank=4677 (28.55%) nz=32105812(~0.39GB) t=1563s
+  [F ..alive] round=4 rank=4694 (28.65%) nz=32202059(~0.39GB) t=1593s
+  [F ..alive] round=4 rank=4714 (28.77%) nz=32312815(~0.39GB) t=1623s
+  [F ..alive] round=4 rank=4729 (28.86%) nz=32368693(~0.39GB) t=1653s
+  [F ..alive] round=4 rank=4738 (28.92%) nz=32391889(~0.39GB) t=1683s
+  [F ..alive] round=4 rank=4754 (29.02%) nz=32459335(~0.39GB) t=1713s
+  [F ..alive] round=4 rank=4762 (29.06%) nz=32488157(~0.39GB) t=1743s
+  [F ..alive] round=4 rank=4773 (29.13%) nz=32506384(~0.39GB) t=1773s
+  [F ..alive] round=4 rank=4786 (29.21%) nz=32558602(~0.39GB) t=1803s
+  [F ..alive] round=4 rank=4801 (29.30%) nz=32629707(~0.39GB) t=1833s
+  [F ..alive] round=4 rank=4808 (29.35%) nz=32654342(~0.39GB) t=1863s
+  [F ..alive] round=4 rank=4819 (29.41%) nz=32704761(~0.39GB) t=1893s
+  [F ..alive] round=4 rank=4821 (29.43%) nz=32708792(~0.39GB) t=1923s
+  [F ..alive] round=4 rank=4832 (29.49%) nz=32755397(~0.39GB) t=1953s
+  [F round 4 done] rank=4833 (29.50%) nz=32758591(~0.39GB) t=1963s
+  [F ..alive] round=5 rank=4849 (29.60%) nz=32857449(~0.39GB) t=1983s
+  [F ..alive] round=5 rank=4862 (29.68%) nz=32937649(~0.40GB) t=2013s
+  [F ..alive] round=5 rank=4871 (29.73%) nz=32975152(~0.40GB) t=2043s
+  [F ..alive] round=5 rank=4875 (29.75%) nz=32989031(~0.40GB) t=2073s
+  [F ..alive] round=5 rank=4884 (29.81%) nz=33037653(~0.40GB) t=2103s
+  [F ..alive] round=5 rank=4889 (29.84%) nz=33045620(~0.40GB) t=2134s
+  [F ..alive] round=5 rank=4895 (29.88%) nz=33051570(~0.40GB) t=2164s
+  [F ..alive] round=5 rank=4897 (29.89%) nz=33056357(~0.40GB) t=2194s
+  [F round 5 done] rank=4897 (29.89%) nz=33056357(~0.40GB) t=2199s
+  [F round 6 done] rank=4900 (29.91%) nz=33064209(~0.40GB) t=2220s
+  [F round 7 done] rank=4900 (29.91%) nz=33064209(~0.40GB) t=2220s
+  PASS2(char 5) COMPLETE: rank_p=4900 dim_F5=11484
+
+  [SCAR vs char-large] round : rank_Q  rank_p  scar
+      0  :    105     105  0
+      1  :    831     831  0
+      2  :   2571    2571  0
+      3  :   4268    4268  0
+      4  :   4833    4833  0
+      5  :   4897    4897  0
+      6  :   4900    4900  0
+      7  :   4900    4900  0
+  [SCAR] stabilized at round 1
+
+================ VERDICT ================
+dim_C  = 11484   (Method A eigenbasis, cross-prime; AND char-large real reduction agree)
+dim_F5 = 11484
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

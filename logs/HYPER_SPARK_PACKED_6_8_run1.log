@@ -1,0 +1,76 @@
+================ HOUDINI HYPER SPARK  n=6 m=8  DIM=823543  partitions=105 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 §5).
+char-p: Jordan-mould starter + TURBINE flow + HYPER-SPARK dense-rebound fold.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000033 -> dim_C = 720264
+   P=1000081 -> dim_C = 720264
+   P=1000121 -> dim_C = 720264
+   P=1000193 -> dim_C = 720264
+   P=1000249 -> dim_C = 720264
+   cross-prime: CONSISTENT   dim_C = 720264   [Method A time 0.81 s over 5 primes]
+
+[METHOD B] dim_Fp via TURBINE + HYPER-SPARK (primes dividing m: 2)
+
+  char 2 : turbine flow + hyper-spark
+  [SPARK start] streaming 105 partitions, char 2
+  [SPARK ..flow] part=9/105 rank=17605 echelon_nz=13259078 peak=14301217(~0.07GB) t=6s
+  [SPARK ..flow] part=16/105 rank=26929 echelon_nz=26046011 peak=27088150(~0.14GB) t=11s
+  [SPARK ..flow] part=24/105 rank=38197 echelon_nz=35573213 peak=36615352(~0.18GB) t=16s
+  [SPARK ..flow] part=29/105 rank=42913 echelon_nz=44958251 peak=46000390(~0.23GB) t=22s
+  [SPARK ..flow] part=36/105 rank=52663 echelon_nz=55668558 peak=56710697(~0.28GB) t=28s
+  [SPARK ..flow] part=39/105 rank=55789 echelon_nz=59848132 peak=60890271(~0.30GB) t=33s
+  [SPARK ..flow] part=41/105 rank=57469 echelon_nz=63339984 peak=64382123(~0.32GB) t=39s
+  [SPARK ..flow] part=44/105 rank=59749 echelon_nz=68127009 peak=69169148(~0.35GB) t=47s
+  [SPARK ..flow] part=49/105 rank=66007 echelon_nz=81997016 peak=83039155(~0.42GB) t=53s
+  [SPARK ..flow] part=52/105 rank=68947 echelon_nz=91171008 peak=92213147(~0.46GB) t=62s
+  [SPARK ..flow] part=53/105 rank=69727 echelon_nz=93059961 peak=94102100(~0.47GB) t=69s
+  [SPARK ..flow] part=55/105 rank=71407 echelon_nz=98134335 peak=99176474(~0.50GB) t=78s
+  [SPARK ..flow] part=56/105 rank=72037 echelon_nz=100159527 peak=101201666(~0.51GB) t=88s
+  [SPARK ..flow] part=58/105 rank=73437 echelon_nz=106333730 peak=107375869(~0.54GB) t=100s
+  [SPARK ..flow] part=59/105 rank=73921 echelon_nz=107322980 peak=108365119(~0.54GB) t=110s
+  [SPARK ..flow] part=62/105 rank=77252 echelon_nz=117978718 peak=119020857(~0.60GB) t=116s
+  [SPARK ..flow] part=64/105 rank=79232 echelon_nz=129562412 peak=130604551(~0.65GB) t=124s
+  [SPARK ..flow] part=65/105 rank=80006 echelon_nz=137093598 peak=138135737(~0.69GB) t=133s
+  [SPARK ..flow] part=67/105 rank=81631 echelon_nz=149973120 peak=151015259(~0.76GB) t=148s
+  [SPARK ..flow] part=68/105 rank=82255 echelon_nz=156581657 peak=157623796(~0.79GB) t=164s
+  [SPARK ..flow] part=69/105 rank=83035 echelon_nz=161384429 peak=162426568(~0.81GB) t=172s
+  [SPARK ..flow] part=70/105 rank=83665 echelon_nz=168426602 peak=169468741(~0.85GB) t=189s
+  [SPARK ..flow] part=71/105 rank=84175 echelon_nz=174521486 peak=175563625(~0.88GB) t=209s
+  [SPARK ..flow] part=72/105 rank=84825 echelon_nz=180175802 peak=181217941(~0.91GB) t=220s
+  [SPARK ..flow] part=73/105 rank=85329 echelon_nz=186244068 peak=187286207(~0.94GB) t=242s
+  [SPARK ..flow] part=74/105 rank=85717 echelon_nz=188365862 peak=189408001(~0.95GB) t=265s
+  [SPARK ..flow] part=76/105 rank=87752 echelon_nz=199659913 peak=200702052(~1.00GB) t=271s
+  [SPARK ..flow] part=77/105 rank=88523 echelon_nz=206439830 peak=207481969(~1.04GB) t=277s
+  [SPARK ..flow] part=79/105 rank=90173 echelon_nz=227930000 peak=228972139(~1.14GB) t=294s
+  [SPARK ..flow] part=80/105 rank=90823 echelon_nz=241046728 peak=242088867(~1.21GB) t=311s
+  [SPARK ..flow] part=82/105 rank=92178 echelon_nz=263697840 peak=264739979(~1.32GB) t=343s
+  [SPARK ..flow] part=83/105 rank=92682 echelon_nz=276424384 peak=277466523(~1.39GB) t=377s
+  [SPARK ..flow] part=84/105 rank=93287 echelon_nz=286113926 peak=287156065(~1.44GB) t=393s
+  [SPARK ..flow] part=85/105 rank=93771 echelon_nz=298775747 peak=299817886(~1.50GB) t=425s
+  [SPARK ..flow] part=86/105 rank=94159 echelon_nz=310914075 peak=311956214(~1.56GB) t=465s
+  [SPARK ..flow] part=87/105 rank=94709 echelon_nz=320761141 peak=321803280(~1.61GB) t=484s
+  [SPARK ..flow] part=88/105 rank=95117 echelon_nz=333264974 peak=334307113(~1.67GB) t=526s
+  [SPARK ..flow] part=89/105 rank=95413 echelon_nz=339264354 peak=340306493(~1.70GB) t=570s
+  [SPARK ..flow] part=91/105 rank=97134 echelon_nz=358305031 peak=359347170(~1.80GB) t=579s
+  [SPARK ..flow] part=92/105 rank=97756 echelon_nz=367224633 peak=368266772(~1.84GB) t=587s
+  [SPARK ..flow] part=93/105 rank=98527 echelon_nz=379060511 peak=380102650(~1.90GB) t=593s
+  [SPARK ..flow] part=94/105 rank=99153 echelon_nz=399963334 peak=401005473(~2.01GB) t=615s
+  [SPARK ..flow] part=95/105 rank=99658 echelon_nz=419610054 peak=420652193(~2.10GB) t=642s
+  [SPARK ..flow] part=96/105 rank=100279 echelon_nz=428416885 peak=429459024(~2.15GB) t=649s
+  [SPARK ..flow] part=97/105 rank=100789 echelon_nz=451381347 peak=452423486(~2.26GB) t=694s
+  [SPARK ..flow] part=98/105 rank=101177 echelon_nz=468114468 peak=469156607(~2.35GB) t=747s
+  [SPARK ..flow] part=99/105 rank=101682 echelon_nz=483599498 peak=484641637(~2.42GB) t=772s
+  [SPARK ..flow] part=100/105 rank=102070 echelon_nz=501192872 peak=502235011(~2.51GB) t=826s
+  [SPARK ..flow] part=101/105 rank=102366 echelon_nz=516115190 peak=517157329(~2.59GB) t=890s
+  [SPARK ..flow] part=102/105 rank=102775 echelon_nz=530219844 peak=531261983(~2.66GB) t=922s
+  [SPARK ..flow] part=103/105 rank=103071 echelon_nz=546247580 peak=547289719(~2.74GB) t=989s
+  [SPARK ..flow] part=104/105 rank=103279 echelon_nz=553580702 peak=554622841(~2.77GB) t=1059s
+  [SPARK done] rank=103279 echelon_nz=553580702 peak=554622841(~2.77GB) t=1059s
+  char 2 COMPLETE: rank_p=103279 dim_F2=720264  TURBINE LIVE PEAK nz=554622841 (~2.77 GB)
+
+================ VERDICT ================
+dim_C  = 720264   (Method A eigenbasis, cross-prime)
+dim_F2 = 720264
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.
