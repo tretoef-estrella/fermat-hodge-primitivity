@@ -1,1 +1,40 @@
-prueba
+=====================================================================
+ PRUEBA DEL RESULTADO VIRGEN  (n=10, m=3)
+ Fermat X_10^3 : x_0^3 + ... + x_11^3 = 0
+=====================================================================
+
+RESULTADO: dim_C B_K = dim_F3 B_K = 1124  =>  VERDICT = PRIMITIVE
+Significado: los ciclos algebraicos lineales estandar GENERAN el
+reticulo integral de clases de Hodge del Fermat de dimension 10, grado 3.
+(Caso NO tabulado por Degtyarev-Shimada, arXiv:1405.4683, que paro en (8,3).)
+
+--- CADENA DE AUDITORIA (por que este numero se defiende) ---
+
+1) CALIBRACION vs LITERATURA (motor reproduce valores publicados):
+   (4,3) -> 12   [match paper]
+   (4,4) -> 102  [match paper]
+   (4,5) -> 624  [match paper]
+   (8,3) -> 260  [match paper, control n alto]
+
+2) REPRODUCIBILIDAD: identico en dos maquinas (contenedor Linux + Mac M2 de Rafa).
+
+3) INVARIANCIA CROSS-PRIME (dim_C es invariante, no artefacto de un primo):
+   (10,3) con P=1000003 -> 1124
+   (10,3) con P=1000033 -> 1124
+   (10,3) con P=1000037 -> 1124
+   (10,3) con P=999983  -> 1124
+   (10,3) con P=1299709 -> 1124
+   (4,5) control: los 5 primos -> 624 (perfecto)
+
+--- LIMITES HONESTOS (lo que esto NO es) ---
+- NO es una demostracion revisada por pares. Es un resultado COMPUTACIONAL.
+- m=3 esta en {3,4,6} (variedades de rango maximo): PRIMITIVE era el resultado
+  ESPERABLE teoricamente. Confirma la teoria en un casillero nuevo; no es anomalia.
+- Un hallazgo de mayor impacto seria un VERDICT=TORSION inesperado, que solo podria
+  aparecer (si existe) en casos mayores aun no alcanzables: (8,4),(6,6),(4,13).
+
+--- METODO ---
+Degtyarev-Shimada computational criterion (arXiv:1405.4683, Sec.5):
+L(X) primitiva en H_n(X) <=> dim_C B_K == dim_Fp B_K para todo p|m,
+donde B_K = Rbar/(rho_J:J), Rbar = k[t_1..t_{n+1}]/(phi(t_i)).
+Motor: HODGE_ENGINE_v3 (sparse tensorial). Aritmetica modular exacta, sin floating point.
