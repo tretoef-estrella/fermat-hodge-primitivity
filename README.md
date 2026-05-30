@@ -16,7 +16,7 @@ This is the record of that campaign: what was computed, how, and exactly what is
 
 | | |
 |---|---|
-| **Cells given a complete PRIMITIVE verdict** | 13 — `(10,3)`, `(8,4)`, `(8,5)`, `(6,5)`, `(6,6)`, `(6,7)`, `(6,8)`, `(6,9)`, and the composite fourfolds `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` |
+| **Cells given a complete PRIMITIVE verdict** | 16 — `(10,3)`, `(8,4)`, `(8,5)`, `(6,5)`, `(6,6)`, `(6,7)`, `(6,8)`, `(6,9)`, the composite fourfolds `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)`, and the prime-degree fourfolds `(4,13)`, `(4,17)`, `(4,19)` |
 | **Deepest single computation** | `(6,9)`: a **3.45-billion-entry** closure, held at **1.07 bytes per entry** |
 | **First composite-degree cell ever verified** | `(6,6)` — `m = 6 = 2 × 3`, the degree the literature avoids; the composite régime is now a whole front (`(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` all PRIMITIVE) |
 | **New structural result** | the *prime-power reduction frontier* (the *Frontier*) — where the verification method silently fails — and its constructive dual, the **CRT block split** (LETHAL DUAL), which turns the same factorization into a RAM lever |
@@ -69,6 +69,9 @@ Each verdict below is a *complete* verdict: the complex dimension `dim_C` **and*
 | (4,10) | 59,049 | 51,288 | PRIMITIVE | 0.20 GB | 177 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_10_run1.log) |
 | (4,12) | 161,051 | 145,950 | PRIMITIVE | 0.60 GB | 1,402 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_12_run1.log) |
 | (4,14) | 371,293 | 345,252 | PRIMITIVE | 2.22 GB | 13,410 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_14_run1.log) |
+| (4,13) | 248,832 | 228,912 | PRIMITIVE | 0.14 GB | 41 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_13_run1.log) |
+| (4,17) | 1,048,576 | 998,016 | PRIMITIVE | 0.79 GB | 797 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_17_run1.log) |
+| (4,19) | 1,889,568 | 1,815,948 | PRIMITIVE | 1.68 GB | 8,079 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_19_run1.log) |
 
 Notes, kept honest:
 - `(6,6)` has **two** prime-field computations (char 2 and char 3, since 6 = 2 × 3); both returned the same rank, partition by partition. Its peaks and times are listed per characteristic.
@@ -76,6 +79,8 @@ Notes, kept honest:
 - The "rank" reduced at each verdict is the *closing rank* `= DIM − dim_C` (e.g. `(8,5)`: `262,144 − 198,640 = 63,504`, held flat from partition 892 to 945 — the tail partitions add zero, confirming the span is complete).
 - `(10,3)`'s log records flat 14 MB RAM but no second-resolution wall time; "minutes" is the honest description.
 - The single largest object ever reduced in the campaign is `(6,9)`'s closure: **3.45 billion nonzero entries held on an 8 GB machine at 1.07 bytes per entry.**
+
+**On the prime-degree fourfolds `(4,13)`, `(4,17)`, `(4,19)`.** These are decided by JULIOCESAR INMORTAL, whose Jordan-pruning relation `uᵐ⁻¹ = 0` is the *true* ring relation precisely because the degree is prime (φ does not factor — a single block, no CRT splitting to corrupt the pruning). They are valid PRIMITIVE verdicts and part of the census, but **prime degree is covered by the AMV/Aoki filters** — a swan cannot hide there. They are census, not hunt.
 
 **The composite fourfold front and the (4,15) half-cell (LETHAL DUAL, this campaign).** The five `(4,m)` rows above are composite-degree fourfolds decided by the **CRT block split** (see *The Frontier's constructive dual* below). Four of them — `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` — fail the Aljovin–Movasati–Villaflor condition (degree composite, not 4, `gcd(m,(n+1)!) ≠ 1`) and lie beyond the Degtyarev–Shimada §5 table: **virgin integral verdicts**. `(4,4)` falls in AMV's `d=4` case and is here **independently confirmed**.
 
