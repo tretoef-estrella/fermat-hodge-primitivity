@@ -1,0 +1,54 @@
+================ LETHAL DUAL ENGINE  n=4 m=12  DIM=161051  partitions=15 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 S5).
+char-p: CRT block split of F_p[t]/phi = A x B (phi = (t-1)^a * g^b). Blocks reduced one at a
+        time and released; RAM peak = largest single block. No extension-field arithmetic.
+GATE every run: sum of per-block ranks must equal the monolithic rank, else VOID.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000033 -> dim_C = 145950
+   P=1000081 -> dim_C = 145950
+   P=1000117 -> dim_C = 145950
+   P=1000213 -> dim_C = 145950
+   P=1000249 -> dim_C = 145950
+   cross-prime: CONSISTENT   dim_C = 145950   [0.02 s over 5 primes]
+
+[METHOD B] dim_Fp via LETHAL DUAL (CRT block split, primes dividing m: 2 3)
+
+  char 2 : LETHAL DUAL CRT block split
+  [CRT] char 2 : phi splits  dimA=3  dimB=8  idempotents VALID
+  [LDE start] char 2 : 32 CRT blocks, sequential (peak = largest single block)
+  [LDE flow] block=4/32 rank(block)=152 rank_total=597 block_bytes=67148768(~0.067GB) peak=134306360(~0.134GB) t=6s
+  [LDE flow] block=8/32 rank(block)=504 rank_total=1557 block_bytes=67136832(~0.067GB) peak=134306360(~0.134GB) t=12s
+  [LDE flow] block=12/32 rank(block)=504 rank_total=2517 block_bytes=67136832(~0.067GB) peak=134306360(~0.134GB) t=19s
+  [LDE flow] block=15/32 rank(block)=504 rank_total=3677 block_bytes=67136832(~0.067GB) peak=134306360(~0.134GB) t=27s
+  [LDE flow] block=19/32 rank(block)=152 rank_total=4637 block_bytes=67148768(~0.067GB) peak=134306360(~0.134GB) t=33s
+  [LDE flow] block=22/32 rank(block)=504 rank_total=5797 block_bytes=67136832(~0.067GB) peak=134306360(~0.134GB) t=41s
+  [LDE flow] block=24/32 rank(block)=504 rank_total=6805 block_bytes=67145472(~0.067GB) peak=134306360(~0.134GB) t=47s
+  [LDE flow] block=27/32 rank(block)=504 rank_total=7965 block_bytes=67136832(~0.067GB) peak=134306360(~0.134GB) t=55s
+  [LDE flow] block=29/32 rank(block)=504 rank_total=8973 block_bytes=67136832(~0.067GB) peak=134306360(~0.134GB) t=61s
+  [LDE flow] block=32/32 rank(block)=5120 rank_total=15101 block_bytes=201463210(~0.201GB) peak=268599210(~0.269GB) t=297s
+  [LDE done] char 2 rank_total=15101 peak=268599210(~0.269GB) biggest_block=#31 rank=5120 (~0.201GB) t=297s
+  char 2 COMPLETE: rank_p=15101 dim_F2=145950  PEAK bytes=268599210 (~0.269 GB)
+
+  char 3 : LETHAL DUAL CRT block split
+  [CRT] char 3 : phi splits  dimA=2  dimB=9  idempotents VALID
+  [LDE start] char 3 : 32 CRT blocks, sequential (peak = largest single block)
+  [LDE flow] block=8/32 rank(block)=434 rank_total=778 block_bytes=67149792(~0.067GB) peak=134321920(~0.134GB) t=7s
+  [LDE flow] block=13/32 rank(block)=54 rank_total=1428 block_bytes=67160960(~0.067GB) peak=134321920(~0.134GB) t=12s
+  [LDE flow] block=15/32 rank(block)=434 rank_total=2296 block_bytes=67149792(~0.067GB) peak=134321920(~0.134GB) t=17s
+  [LDE flow] block=19/32 rank(block)=54 rank_total=2892 block_bytes=67160960(~0.067GB) peak=134337440(~0.134GB) t=23s
+  [LDE flow] block=22/32 rank(block)=434 rank_total=3814 block_bytes=67149792(~0.067GB) peak=134337440(~0.134GB) t=29s
+  [LDE flow] block=24/32 rank(block)=434 rank_total=4682 block_bytes=67169232(~0.067GB) peak=134337440(~0.134GB) t=35s
+  [LDE flow] block=27/32 rank(block)=434 rank_total=5604 block_bytes=67149792(~0.067GB) peak=134337440(~0.134GB) t=41s
+  [LDE flow] block=29/32 rank(block)=434 rank_total=6472 block_bytes=67149792(~0.067GB) peak=134337440(~0.134GB) t=47s
+  [LDE flow] block=31/32 rank(block)=434 rank_total=7340 block_bytes=67169232(~0.067GB) peak=134337440(~0.134GB) t=54s
+  [LDE flow] block=32/32 rank(block)=7761 rank_total=15101 block_bytes=537424838(~0.537GB) peak=604581538(~0.605GB) t=1105s
+  [LDE done] char 3 rank_total=15101 peak=604581538(~0.605GB) biggest_block=#31 rank=7761 (~0.537GB) t=1105s
+  char 3 COMPLETE: rank_p=15101 dim_F3=145950  PEAK bytes=604581538 (~0.605 GB)
+
+================ VERDICT ================
+dim_C  = 145950   (Method A eigenbasis, cross-prime)
+dim_F2 = 145950
+dim_F3 = 145950
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

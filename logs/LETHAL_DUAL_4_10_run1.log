@@ -1,0 +1,41 @@
+================ LETHAL DUAL ENGINE  n=4 m=10  DIM=59049  partitions=15 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 S5).
+char-p: CRT block split of F_p[t]/phi = A x B (phi = (t-1)^a * g^b). Blocks reduced one at a
+        time and released; RAM peak = largest single block. No extension-field arithmetic.
+GATE every run: sum of per-block ranks must equal the monolithic rank, else VOID.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000081 -> dim_C = 51288
+   P=1000121 -> dim_C = 51288
+   P=1000151 -> dim_C = 51288
+   P=1000171 -> dim_C = 51288
+   P=1000211 -> dim_C = 51288
+   cross-prime: CONSISTENT   dim_C = 51288   [0.02 s over 5 primes]
+
+[METHOD B] dim_Fp via LETHAL DUAL (CRT block split, primes dividing m: 2 5)
+
+  char 2 : LETHAL DUAL CRT block split
+  [CRT] char 2 : phi splits  dimA=1  dimB=8  idempotents VALID
+  [LDE start] char 2 : 32 CRT blocks, sequential (peak = largest single block)
+  [LDE flow] block=24/32 rank(block)=168 rank_total=1625 block_bytes=67149888(~0.067GB) peak=134299264(~0.134GB) t=5s
+  [LDE flow] block=32/32 rank(block)=5120 rank_total=7761 block_bytes=134285694(~0.134GB) peak=201430654(~0.201GB) t=122s
+  [LDE done] char 2 rank_total=7761 peak=201430654(~0.201GB) biggest_block=#31 rank=5120 (~0.134GB) t=122s
+  char 2 COMPLETE: rank_p=7761 dim_F2=51288  PEAK bytes=201430654 (~0.201 GB)
+
+  char 5 : LETHAL DUAL CRT block split
+  [CRT] char 5 : phi splits  dimA=4  dimB=5  idempotents VALID
+  [LDE start] char 5 : 32 CRT blocks, sequential (peak = largest single block)
+  [LDE flow] block=5/32 rank(block)=180 rank_total=1120 block_bytes=67125888(~0.067GB) peak=134263264(~0.134GB) t=5s
+  [LDE flow] block=13/32 rank(block)=180 rank_total=2688 block_bytes=67131888(~0.067GB) peak=134263264(~0.134GB) t=10s
+  [LDE flow] block=20/32 rank(block)=244 rank_total=4204 block_bytes=67131888(~0.067GB) peak=134279764(~0.134GB) t=16s
+  [LDE flow] block=26/32 rank(block)=244 rank_total=5540 block_bytes=67131888(~0.067GB) peak=134279764(~0.134GB) t=21s
+  [LDE flow] block=32/32 rank(block)=1001 rank_total=7761 block_bytes=67143210(~0.067GB) peak=134282836(~0.134GB) t=55s
+  [LDE done] char 5 rank_total=7761 peak=134282836(~0.134GB) biggest_block=#31 rank=1001 (~0.067GB) t=55s
+  char 5 COMPLETE: rank_p=7761 dim_F5=51288  PEAK bytes=134282836 (~0.134 GB)
+
+================ VERDICT ================
+dim_C  = 51288   (Method A eigenbasis, cross-prime)
+dim_F2 = 51288
+dim_F5 = 51288
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

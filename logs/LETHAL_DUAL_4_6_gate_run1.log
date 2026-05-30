@@ -1,0 +1,34 @@
+================ LETHAL DUAL ENGINE  n=4 m=6  DIM=3125  partitions=15 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 S5).
+char-p: CRT block split of F_p[t]/phi = A x B (phi = (t-1)^a * g^b). Blocks reduced one at a
+        time and released; RAM peak = largest single block. No extension-field arithmetic.
+GATE every run: sum of per-block ranks must equal the monolithic rank, else VOID.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000003 -> dim_C = 2124
+   P=1000033 -> dim_C = 2124
+   P=1000039 -> dim_C = 2124
+   P=1000081 -> dim_C = 2124
+   P=1000099 -> dim_C = 2124
+   cross-prime: CONSISTENT   dim_C = 2124   [0.00 s over 5 primes]
+
+[METHOD B] dim_Fp via LETHAL DUAL (CRT block split, primes dividing m: 2 3)
+
+  char 2 : LETHAL DUAL CRT block split
+  [CRT] char 2 : phi splits  dimA=1  dimB=4  idempotents VALID
+  [LDE start] char 2 : 32 CRT blocks, sequential (peak = largest single block)
+  [LDE done] char 2 rank_total=1001 peak=134223168(~0.134GB) biggest_block=#31 rank=400 (~0.067GB) t=0s
+  char 2 COMPLETE: rank_p=1001 dim_F2=2124  PEAK bytes=134223168 (~0.134 GB)
+
+  char 3 : LETHAL DUAL CRT block split
+  [CRT] char 3 : phi splits  dimA=2  dimB=3  idempotents VALID
+  [LDE start] char 3 : 32 CRT blocks, sequential (peak = largest single block)
+  [LDE done] char 3 rank_total=1001 peak=134225360(~0.134GB) biggest_block=#31 rank=141 (~0.067GB) t=0s
+  char 3 COMPLETE: rank_p=1001 dim_F3=2124  PEAK bytes=134225360 (~0.134 GB)
+
+================ VERDICT ================
+dim_C  = 2124   (Method A eigenbasis, cross-prime)
+dim_F2 = 2124
+dim_F3 = 2124
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

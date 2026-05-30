@@ -1,0 +1,60 @@
+================ JULIOCESARINMORTAL  n=4 m=17  DIM=1048576  partitions=15 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 §5).
+char-p: Jordan-mould starter + TURBINE flow + SONICSTAR-FOLD dense-rebound fold.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000213 -> dim_C = 998016
+   P=1000621 -> dim_C = 998016
+   P=1000723 -> dim_C = 998016
+   P=1000859 -> dim_C = 998016
+   P=1001267 -> dim_C = 998016
+   cross-prime: CONSISTENT   dim_C = 998016   [Method A time 0.15 s over 5 primes]
+
+[METHOD B] dim_Fp via TURBINE + SONICSTAR-FOLD (primes dividing m: 17)
+
+  char 17 : turbine flow + sonicstar-fold
+  [JULIOCESAR INMORTAL start] streaming 15 partitions, char 17 (mini-bellows 512 rows + LRU cache x64)
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m2/15[0m
+  RAM [1;92m[............] 0.07/5.42 GB [OK][0m  os:0.21GB   SPEED [1;92mFAST 9 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 7936   nz 21502368   seals 15   cold 0.01GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m3/15[0m
+  RAM [1;92m[............] 0.10/5.42 GB [OK][0m  os:0.25GB   SPEED [1;92mFAST 5 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 11520   nz 34880896   seals 22   cold 0.01GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m5/15[0m
+  RAM [1;92m[............] 0.12/5.42 GB [OK][0m  os:0.28GB   SPEED [1;92mFAST 4 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 18960   nz 55039366   seals 37   cold 0.02GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m7/15[0m
+  RAM [1;92m[............] 0.19/5.42 GB [OK][0m  os:0.38GB   SPEED [1;92mFAST 5 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 25904   nz 102801112   seals 50   cold 0.03GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m8/15[0m
+  RAM [1;92m[............] 0.21/5.42 GB [OK][0m  os:0.43GB   SPEED [1;92mFAST 7 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 29280   nz 112925186   seals 57   cold 0.03GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m9/15[0m
+  RAM [1;92m[#...........] 0.23/5.42 GB [OK][0m  os:0.46GB   SPEED [1;92mFAST 11 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 32416   nz 124631398   seals 63   cold 0.04GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m10/15[0m
+  RAM [1;92m[#...........] 0.27/5.42 GB [OK][0m  os:0.46GB   SPEED [1;92mFAST 8 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 35776   nz 164121851   seals 69   cold 0.05GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m11/15[0m
+  RAM [1;92m[#...........] 0.36/5.42 GB [OK][0m  os:0.68GB   SPEED [1;92mFAST 17 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 38912   nz 216784873   seals 76   cold 0.09GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m12/15[0m
+  RAM [1;92m[#...........] 0.42/5.42 GB [OK][0m  os:1.36GB   SPEED [1;92mFAST 60 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 41824   nz 273489788   seals 81   cold 0.14GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m13/15[0m
+  RAM [1;92m[#...........] 0.49/5.42 GB [OK][0m  os:1.36GB   SPEED [1;92mFAST 13 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 44960   nz 352405071   seals 87   cold 0.19GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m14/15[0m
+  RAM [1;92m[#...........] 0.58/5.42 GB [OK][0m  os:1.82GB   SPEED [1;92mFAST 70 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 47872   nz 493023459   seals 93   cold 0.32GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,17)[0m  part [1m15/15[0m
+  RAM [1;92m[##..........] 0.79/5.42 GB [OK][0m  os:2.58GB   SPEED [1;93mSLOW 579 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 50560   nz 650040578   seals 98   cold 0.48GB[0m
+[1;92m  JULIOCESAR INMORTAL done[0m  rank=50560  echelon_nz=650040578  peak=0.79GB  os=2.58GB  wall=797s
+  char 17 COMPLETE: rank_p=50560 dim_F17=998016  TURBINE LIVE PEAK bytes=787462994 (~0.79 GB)
+
+================ VERDICT ================
+dim_C  = 998016   (Method A eigenbasis, cross-prime)
+dim_F17 = 998016
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

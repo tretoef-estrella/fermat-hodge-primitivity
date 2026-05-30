@@ -1,0 +1,39 @@
+================ JULIOCESARINMORTAL  n=4 m=13  DIM=248832  partitions=15 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 §5).
+char-p: Jordan-mould starter + TURBINE flow + SONICSTAR-FOLD dense-rebound fold.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000039 -> dim_C = 228912
+   P=1000117 -> dim_C = 228912
+   P=1000273 -> dim_C = 228912
+   P=1000403 -> dim_C = 228912
+   P=1000429 -> dim_C = 228912
+   cross-prime: CONSISTENT   dim_C = 228912   [Method A time 0.05 s over 5 primes]
+
+[METHOD B] dim_Fp via TURBINE + SONICSTAR-FOLD (primes dividing m: 13)
+
+  char 13 : turbine flow + sonicstar-fold
+  [JULIOCESAR INMORTAL start] streaming 15 partitions, char 13 (mini-bellows 512 rows + LRU cache x64)
+[2m  JULIOCESARINMORTAL [1m(4,13)[0m  part [1m5/15[0m
+  RAM [1;92m[............] 0.02/5.42 GB [OK][0m  os:0.04GB   SPEED [1;92mFAST 1 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 7788   nz 8041235   seals 15   cold 0.00GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,13)[0m  part [1m9/15[0m
+  RAM [1;92m[............] 0.03/5.42 GB [OK][0m  os:0.07GB   SPEED [1;92mFAST 2 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 13080   nz 17219705   seals 25   cold 0.00GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,13)[0m  part [1m12/15[0m
+  RAM [1;92m[............] 0.06/5.42 GB [OK][0m  os:0.14GB   SPEED [1;92mFAST 3 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 16680   nz 34493594   seals 32   cold 0.01GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,13)[0m  part [1m14/15[0m
+  RAM [1;92m[............] 0.11/5.42 GB [OK][0m  os:0.19GB   SPEED [1;92mFAST 5 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 18960   nz 58813426   seals 37   cold 0.03GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,13)[0m  part [1m15/15[0m
+  RAM [1;92m[............] 0.14/5.42 GB [OK][0m  os:0.24GB   SPEED [1;92mFAST 10 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 19920   nz 74951589   seals 38   cold 0.05GB[0m
+[1;92m  JULIOCESAR INMORTAL done[0m  rank=19920  echelon_nz=74951589  peak=0.14GB  os=0.24GB  wall=41s
+  char 13 COMPLETE: rank_p=19920 dim_F13=228912  TURBINE LIVE PEAK bytes=139977854 (~0.14 GB)
+
+================ VERDICT ================
+dim_C  = 228912   (Method A eigenbasis, cross-prime)
+dim_F13 = 228912
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

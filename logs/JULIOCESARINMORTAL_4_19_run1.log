@@ -1,0 +1,69 @@
+================ JULIOCESARINMORTAL  n=4 m=19  DIM=1889568  partitions=15 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 §5).
+char-p: Jordan-mould starter + TURBINE flow + SONICSTAR-FOLD dense-rebound fold.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000199 -> dim_C = 1815948
+   P=1000313 -> dim_C = 1815948
+   P=1000427 -> dim_C = 1815948
+   P=1000541 -> dim_C = 1815948
+   P=1000579 -> dim_C = 1815948
+   cross-prime: CONSISTENT   dim_C = 1815948   [Method A time 0.29 s over 5 primes]
+
+[METHOD B] dim_Fp via TURBINE + SONICSTAR-FOLD (primes dividing m: 19)
+
+  char 19 : turbine flow + sonicstar-fold
+  [JULIOCESAR INMORTAL start] streaming 15 partitions, char 19 (mini-bellows 512 rows + LRU cache x64)
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m1/15[0m
+  RAM [1;92m[............] 0.06/5.42 GB [OK][0m  os:0.15GB   SPEED [2m... -- s/part[0m  ETA [1m--[0m
+[2m  rank 5832   nz 23392800   seals 11   cold 0.00GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m2/15[0m
+  RAM [1;92m[............] 0.15/5.42 GB [OK][0m  os:0.29GB   SPEED [1;92mFAST 15 s/part[0m  ETA [1m0.1 h[0m
+[2m  rank 11340   nz 47235276   seals 22   cold 0.01GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m3/15[0m
+  RAM [1;92m[............] 0.22/5.42 GB [OK][0m  os:0.34GB   SPEED [1;92mFAST 16 s/part[0m  ETA [1m0.1 h[0m
+[2m  rank 16524   nz 77107644   seals 32   cold 0.04GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m4/15[0m
+  RAM [1;92m[............] 0.22/5.42 GB [OK][0m  os:0.34GB   SPEED [1;92mFAST 12 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 22032   nz 99200844   seals 43   cold 0.04GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m5/15[0m
+  RAM [1;92m[#...........] 0.25/5.42 GB [OK][0m  os:0.34GB   SPEED [1;92mFAST 13 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 27234   nz 121718738   seals 53   cold 0.05GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m6/15[0m
+  RAM [1;92m[#...........] 0.34/5.42 GB [OK][0m  os:0.34GB   SPEED [1;92mFAST 14 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 32130   nz 149931530   seals 62   cold 0.06GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m7/15[0m
+  RAM [1;92m[#...........] 0.39/5.42 GB [OK][0m  os:0.36GB   SPEED [1;92mFAST 15 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 37314   nz 233585870   seals 72   cold 0.07GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m8/15[0m
+  RAM [1;92m[#...........] 0.39/5.42 GB [OK][0m  os:0.49GB   SPEED [1;92mFAST 22 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 42228   nz 256027735   seals 82   cold 0.08GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m9/15[0m
+  RAM [1;92m[#...........] 0.39/5.42 GB [OK][0m  os:0.49GB   SPEED [1;92mFAST 33 s/part[0m  ETA [1m0.1 h[0m
+[2m  rank 46836   nz 282580951   seals 91   cold 0.10GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m10/15[0m
+  RAM [1;92m[#...........] 0.51/5.42 GB [OK][0m  os:0.50GB   SPEED [1;92mFAST 22 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 51732   nz 377494426   seals 101   cold 0.13GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m11/15[0m
+  RAM [1;92m[#...........] 0.62/5.42 GB [OK][0m  os:1.15GB   SPEED [1;92mFAST 79 s/part[0m  ETA [1m0.1 h[0m
+[2m  rank 56340   nz 504850057   seals 110   cold 0.23GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m12/15[0m
+  RAM [1;92m[##..........] 0.77/5.42 GB [OK][0m  os:2.19GB   SPEED [1;93mSLOW 1493 s/part[0m  ETA [1m1.2 h[0m
+[2m  rank 60660   nz 644108897   seals 118   cold 0.36GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m13/15[0m
+  RAM [1;92m[##..........] 0.82/5.42 GB [OK][0m  os:2.60GB   SPEED [1;92mFAST 46 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 65268   nz 836003368   seals 127   cold 0.47GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m14/15[0m
+  RAM [1;92m[###.........] 1.18/5.42 GB [OK][0m  os:3.35GB   SPEED [1;93mSLOW 1343 s/part[0m  ETA [1m0.4 h[0m
+[2m  rank 69588   nz 1185655393   seals 135   cold 0.81GB[0m
+[2m  JULIOCESARINMORTAL [1m(4,19)[0m  part [1m15/15[0m
+  RAM [1;92m[####........] 1.68/5.42 GB [OK][0m  os:3.35GB   SPEED [1;93mSLOW 4945 s/part[0m  ETA [1m0.0 h[0m
+[2m  rank 73620   nz 1581608249   seals 143   cold 1.23GB[0m
+[1;92m  JULIOCESAR INMORTAL done[0m  rank=73620  echelon_nz=1581608249  peak=1.68GB  os=3.35GB  wall=8079s
+  char 19 COMPLETE: rank_p=73620 dim_F19=1815948  TURBINE LIVE PEAK bytes=1675168464 (~1.68 GB)
+
+================ VERDICT ================
+dim_C  = 1815948   (Method A eigenbasis, cross-prime)
+dim_F19 = 1815948
+VERDICT = PRIMITIVE
+=> L(X) primitive. Standard linear cycles GENERATE the integral Hodge lattice.

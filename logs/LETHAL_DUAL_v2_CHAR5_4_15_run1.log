@@ -1,0 +1,213 @@
+================ LETHAL DUAL v2 (CHAR-5-FIRST PROBE)  n=4 m=15  DIM=537824  partitions=15 ================
+Author: Rafael Amichis Luengo (Madrid). Method: Degtyarev-Shimada (arXiv:1405.4683 S5).
+char-p: CRT block split of F_p[t]/phi = A x B (phi = (t-1)^a * g^b). Blocks reduced one at a
+        time and released; RAM peak = largest single block. No extension-field arithmetic.
+GATE every run: sum of per-block ranks must equal the monolithic rank, else VOID.
+
+[METHOD A] dim_C via eigenbasis, cross-prime (primes = 1 mod m):
+   P=1000081 -> dim_C = 504924
+   P=1000171 -> dim_C = 504924
+   P=1000231 -> dim_C = 504924
+   P=1000291 -> dim_C = 504924
+   P=1000381 -> dim_C = 504924
+   cross-prime: CONSISTENT   dim_C = 504924   [0.08 s over 5 primes]
+
+[METHOD B] dim_Fp via LETHAL DUAL (CRT block split, primes dividing m: 5 3)
+
+  char 5 : LETHAL DUAL v2 CRT block split  (PROBE: largest prime first)
+  [TARGET] dim_C = 504924  ->  closing rank to hit = 32900  (= DIM - dim_C).  char 5 PRIMITIVE-half iff rank_total reaches exactly this.
+  [CRT] char 5 : phi splits  dimA=4  dimB=10  idempotents VALID
+  [LDE start] char 5 : 32 CRT blocks, sequential (peak = largest single block)
+  [LDE flow] block=1/32 (turbine) local_rank=6 R_rank=228 rank_total=0/32900 live=134461784(~0.134GB) peak=134462264(~0.134GB) t=6s
+  [LDE flow] block=1/32 (turbine) local_rank=6 R_rank=312 rank_total=0/32900 live=134462808(~0.134GB) peak=134463288(~0.134GB) t=12s
+  [LDE flow] block=1/32 (turbine) local_rank=64 R_rank=352 rank_total=0/32900 live=134463288(~0.134GB) peak=134463288(~0.134GB) t=17s
+  [LDE flow] block=1/32 (turbine) local_rank=32 R_rank=392 rank_total=0/32900 live=134463032(~0.134GB) peak=134463288(~0.134GB) t=22s
+  [LDE flow] block=2/32 (turbine) local_rank=154 R_rank=0 rank_total=400/32900 live=67231392(~0.067GB) peak=134463288(~0.134GB) t=27s
+  [LDE flow] block=3/32 (turbine) local_rank=6 R_rank=0 rank_total=760/32900 live=67230400(~0.067GB) peak=134463800(~0.134GB) t=32s
+  [LDE flow] block=3/32 (turbine) local_rank=96 R_rank=280 rank_total=760/32900 live=134463288(~0.134GB) peak=134463800(~0.134GB) t=37s
+  [LDE flow] block=4/32 (turbine) local_rank=95 R_rank=160 rank_total=1120/32900 live=134583764(~0.135GB) peak=134584276(~0.135GB) t=42s
+  [LDE flow] block=4/32 rank(block)=360 rank_total=1480/32900 block_bytes=67293162(~0.067GB) peak=134585300(~0.135GB) t=47s
+  [LDE flow] block=5/32 (turbine) local_rank=64 R_rank=280 rank_total=1480/32900 live=134463288(~0.134GB) peak=134585300(~0.135GB) t=52s
+  [LDE flow] block=6/32 (turbine) local_rank=38 R_rank=160 rank_total=1840/32900 live=134583508(~0.135GB) peak=134585300(~0.135GB) t=57s
+  [LDE flow] block=6/32 (turbine) local_rank=154 R_rank=280 rank_total=1840/32900 live=134585300(~0.135GB) peak=134585300(~0.135GB) t=63s
+  [LDE flow] block=7/32 (turbine) local_rank=122 R_rank=160 rank_total=2200/32900 live=134583764(~0.135GB) peak=134585300(~0.135GB) t=68s
+  [LDE flow] block=7/32 rank(block)=360 rank_total=2560/32900 block_bytes=67293162(~0.067GB) peak=134585300(~0.135GB) t=73s
+  [LDE flow] block=8/32 (turbine) local_rank=299 R_rank=0 rank_total=2560/32900 live=67293166(~0.067GB) peak=134585300(~0.135GB) t=78s
+  [LDE flow] block=8/32 (turbine) local_rank=180 R_rank=400 rank_total=2560/32900 live=134585300(~0.135GB) peak=134586324(~0.135GB) t=83s
+  [LDE flow] block=8/32 (turbine) local_rank=6 R_rank=760 rank_total=2560/32900 live=134586356(~0.135GB) peak=134588372(~0.135GB) t=92s
+  [LDE flow] block=8/32 (turbine) local_rank=334 R_rank=760 rank_total=2560/32900 live=134588372(~0.135GB) peak=134588372(~0.135GB) t=97s
+  [LDE flow] block=8/32 rank(block)=1080 rank_total=3640/32900 block_bytes=134637898(~0.135GB) peak=201931060(~0.202GB) t=103s
+  [LDE flow] block=9/32 (turbine) local_rank=64 R_rank=280 rank_total=3640/32900 live=134463288(~0.134GB) peak=201931060(~0.202GB) t=108s
+  [LDE flow] block=10/32 (turbine) local_rank=65 R_rank=160 rank_total=4000/32900 live=134583764(~0.135GB) peak=201931060(~0.202GB) t=114s
+  [LDE flow] block=10/32 (turbine) local_rank=160 R_rank=280 rank_total=4000/32900 live=134585300(~0.135GB) peak=201931060(~0.202GB) t=119s
+  [LDE flow] block=11/32 (turbine) local_rank=142 R_rank=160 rank_total=4360/32900 live=134584276(~0.135GB) peak=201931060(~0.202GB) t=124s
+  [LDE flow] block=12/32 (turbine) local_rank=6 R_rank=0 rank_total=4720/32900 live=67291150(~0.067GB) peak=201931060(~0.202GB) t=129s
+  [LDE flow] block=12/32 (turbine) local_rank=334 R_rank=0 rank_total=4720/32900 live=67293166(~0.067GB) peak=201931060(~0.202GB) t=134s
+  [LDE flow] block=12/32 (turbine) local_rank=220 R_rank=400 rank_total=4720/32900 live=134585300(~0.135GB) peak=201931060(~0.202GB) t=139s
+  [LDE flow] block=12/32 (turbine) local_rank=6 R_rank=760 rank_total=4720/32900 live=134586356(~0.135GB) peak=201931060(~0.202GB) t=147s
+  [LDE flow] block=12/32 (turbine) local_rank=334 R_rank=760 rank_total=4720/32900 live=134588372(~0.135GB) peak=201931060(~0.202GB) t=152s
+  [LDE flow] block=12/32 rank(block)=1080 rank_total=5800/32900 block_bytes=134553335(~0.135GB) peak=201931060(~0.202GB) t=158s
+  [LDE flow] block=13/32 (turbine) local_rank=6 R_rank=280 rank_total=5800/32900 live=134584308(~0.135GB) peak=201931060(~0.202GB) t=164s
+  [LDE flow] block=14/32 (turbine) local_rank=140 R_rank=0 rank_total=6160/32900 live=67292142(~0.067GB) peak=201931060(~0.202GB) t=170s
+  [LDE flow] block=14/32 (turbine) local_rank=399 R_rank=0 rank_total=6160/32900 live=67293166(~0.067GB) peak=201931060(~0.202GB) t=175s
+  [LDE flow] block=14/32 (turbine) local_rank=334 R_rank=400 rank_total=6160/32900 live=134586324(~0.135GB) peak=201931060(~0.202GB) t=180s
+  [LDE flow] block=14/32 (turbine) local_rank=6 R_rank=760 rank_total=6160/32900 live=134586356(~0.135GB) peak=201931060(~0.202GB) t=186s
+  [LDE flow] block=14/32 (turbine) local_rank=334 R_rank=760 rank_total=6160/32900 live=134588372(~0.135GB) peak=201931060(~0.202GB) t=191s
+  [LDE flow] block=14/32 rank(block)=1080 rank_total=7240/32900 block_bytes=134537239(~0.135GB) peak=201931060(~0.202GB) t=197s
+  [LDE flow] block=15/32 (turbine) local_rank=299 R_rank=0 rank_total=7240/32900 live=67293166(~0.067GB) peak=201931060(~0.202GB) t=202s
+  [LDE flow] block=15/32 (turbine) local_rank=180 R_rank=400 rank_total=7240/32900 live=134585300(~0.135GB) peak=201931060(~0.202GB) t=207s
+  [LDE flow] block=15/32 (turbine) local_rank=6 R_rank=760 rank_total=7240/32900 live=134586356(~0.135GB) peak=201931060(~0.202GB) t=215s
+  [LDE flow] block=15/32 (turbine) local_rank=334 R_rank=760 rank_total=7240/32900 live=134588372(~0.135GB) peak=201931060(~0.202GB) t=221s
+  [LDE flow] block=15/32 rank(block)=1080 rank_total=8320/32900 block_bytes=134844490(~0.135GB) peak=202137652(~0.202GB) t=227s
+  [LDE flow] block=16/32 (turbine) local_rank=262 R_rank=0 rank_total=8320/32900 live=67384291(~0.067GB) peak=202137652(~0.202GB) t=232s
+  [LDE flow] block=16/32 (turbine) local_rank=84 R_rank=400 rank_total=8320/32900 live=134767038(~0.135GB) peak=202137652(~0.202GB) t=237s
+  [LDE flow] block=16/32 (turbine) local_rank=356 R_rank=400 rank_total=8320/32900 live=134768574(~0.135GB) peak=202137652(~0.202GB) t=243s
+  [LDE flow] block=16/32 (turbine) local_rank=200 R_rank=760 rank_total=8320/32900 live=134769598(~0.135GB) peak=202137652(~0.202GB) t=249s
+  [LDE flow] block=16/32 (turbine) local_rank=394 R_rank=760 rank_total=8320/32900 live=134770622(~0.135GB) peak=202137652(~0.202GB) t=254s
+  [LDE flow] block=17/32 (turbine) local_rank=112 R_rank=0 rank_total=9400/32900 live=67230880(~0.067GB) peak=202137652(~0.202GB) t=259s
+  [LDE flow] block=17/32 (turbine) local_rank=159 R_rank=280 rank_total=9400/32900 live=134463800(~0.134GB) peak=202137652(~0.202GB) t=264s
+  [LDE flow] block=18/32 (turbine) local_rank=142 R_rank=160 rank_total=9760/32900 live=134584276(~0.135GB) peak=202137652(~0.202GB) t=269s
+  [LDE flow] block=19/32 (turbine) local_rank=65 R_rank=0 rank_total=10120/32900 live=67291630(~0.067GB) peak=202137652(~0.202GB) t=275s
+  [LDE flow] block=19/32 (turbine) local_rank=38 R_rank=280 rank_total=10120/32900 live=134584532(~0.135GB) peak=202137652(~0.202GB) t=280s
+  [LDE flow] block=20/32 (turbine) local_rank=180 R_rank=0 rank_total=10480/32900 live=67292142(~0.067GB) peak=202137652(~0.202GB) t=285s
+  [LDE flow] block=20/32 (turbine) local_rank=66 R_rank=400 rank_total=10480/32900 live=134584788(~0.135GB) peak=202137652(~0.202GB) t=291s
+  [LDE flow] block=20/32 (turbine) local_rank=362 R_rank=400 rank_total=10480/32900 live=134586324(~0.135GB) peak=202137652(~0.202GB) t=296s
+  [LDE flow] block=20/32 (turbine) local_rank=38 R_rank=760 rank_total=10480/32900 live=134586580(~0.135GB) peak=202137652(~0.202GB) t=301s
+  [LDE flow] block=20/32 (turbine) local_rank=334 R_rank=760 rank_total=10480/32900 live=134588372(~0.135GB) peak=202137652(~0.202GB) t=307s
+  [LDE flow] block=20/32 rank(block)=1080 rank_total=11560/32900 block_bytes=134543700(~0.135GB) peak=202137652(~0.202GB) t=313s
+  [LDE flow] block=21/32 (turbine) local_rank=6 R_rank=280 rank_total=11560/32900 live=134584308(~0.135GB) peak=202137652(~0.202GB) t=319s
+  [LDE flow] block=22/32 (turbine) local_rank=140 R_rank=0 rank_total=11920/32900 live=67292142(~0.067GB) peak=202137652(~0.202GB) t=324s
+  [LDE flow] block=22/32 (turbine) local_rank=394 R_rank=0 rank_total=11920/32900 live=67293166(~0.067GB) peak=202137652(~0.202GB) t=329s
+  [LDE flow] block=22/32 (turbine) local_rank=299 R_rank=400 rank_total=11920/32900 live=134586324(~0.135GB) peak=202137652(~0.202GB) t=334s
+  [LDE flow] block=22/32 (turbine) local_rank=6 R_rank=760 rank_total=11920/32900 live=134586356(~0.135GB) peak=202137652(~0.202GB) t=340s
+  [LDE flow] block=22/32 (turbine) local_rank=334 R_rank=760 rank_total=11920/32900 live=134588372(~0.135GB) peak=202137652(~0.202GB) t=346s
+  [LDE flow] block=22/32 rank(block)=1080 rank_total=13000/32900 block_bytes=134485499(~0.134GB) peak=202137652(~0.202GB) t=352s
+  [LDE flow] block=23/32 (turbine) local_rank=334 R_rank=0 rank_total=13000/32900 live=67293166(~0.067GB) peak=202137652(~0.202GB) t=358s
+  [LDE flow] block=23/32 (turbine) local_rank=220 R_rank=400 rank_total=13000/32900 live=134585300(~0.135GB) peak=202137652(~0.202GB) t=363s
+  [LDE flow] block=23/32 (turbine) local_rank=6 R_rank=760 rank_total=13000/32900 live=134586356(~0.135GB) peak=202137652(~0.202GB) t=370s
+  [LDE flow] block=23/32 (turbine) local_rank=334 R_rank=760 rank_total=13000/32900 live=134588372(~0.135GB) peak=202137652(~0.202GB) t=376s
+  [LDE flow] block=23/32 rank(block)=1080 rank_total=14080/32900 block_bytes=134846936(~0.135GB) peak=202140098(~0.202GB) t=382s
+  [LDE flow] block=24/32 (turbine) local_rank=316 R_rank=0 rank_total=14080/32900 live=67384291(~0.067GB) peak=202140098(~0.202GB) t=389s
+  [LDE flow] block=24/32 (turbine) local_rank=200 R_rank=400 rank_total=14080/32900 live=134767550(~0.135GB) peak=202140098(~0.202GB) t=395s
+  [LDE flow] block=24/32 (turbine) local_rank=394 R_rank=400 rank_total=14080/32900 live=134768574(~0.135GB) peak=202140098(~0.202GB) t=400s
+  [LDE flow] block=24/32 (turbine) local_rank=262 R_rank=760 rank_total=14080/32900 live=134770622(~0.135GB) peak=202140098(~0.202GB) t=406s
+  [LDE flow] block=24/32 rank(block)=1080 rank_total=15160/32900 block_bytes=134500226(~0.135GB) peak=202140098(~0.202GB) t=413s
+  [LDE flow] block=25/32 (turbine) local_rank=160 R_rank=160 rank_total=15160/32900 live=134584276(~0.135GB) peak=202140098(~0.202GB) t=418s
+  [LDE flow] block=26/32 (turbine) local_rank=101 R_rank=0 rank_total=15520/32900 live=67291630(~0.067GB) peak=202140098(~0.202GB) t=423s
+  [LDE flow] block=26/32 (turbine) local_rank=382 R_rank=0 rank_total=15520/32900 live=67293166(~0.067GB) peak=202140098(~0.202GB) t=429s
+  [LDE flow] block=26/32 (turbine) local_rank=299 R_rank=400 rank_total=15520/32900 live=134586324(~0.135GB) peak=202140098(~0.202GB) t=434s
+  [LDE flow] block=26/32 (turbine) local_rank=6 R_rank=760 rank_total=15520/32900 live=134586356(~0.135GB) peak=202140098(~0.202GB) t=440s
+  [LDE flow] block=26/32 (turbine) local_rank=334 R_rank=760 rank_total=15520/32900 live=134588372(~0.135GB) peak=202140098(~0.202GB) t=446s
+  [LDE flow] block=26/32 rank(block)=1080 rank_total=16600/32900 block_bytes=134630773(~0.135GB) peak=202140098(~0.202GB) t=452s
+  [LDE flow] block=27/32 (turbine) local_rank=334 R_rank=0 rank_total=16600/32900 live=67293166(~0.067GB) peak=202140098(~0.202GB) t=458s
+  [LDE flow] block=27/32 (turbine) local_rank=220 R_rank=400 rank_total=16600/32900 live=134585300(~0.135GB) peak=202140098(~0.202GB) t=463s
+  [LDE flow] block=27/32 (turbine) local_rank=6 R_rank=760 rank_total=16600/32900 live=134586356(~0.135GB) peak=202140098(~0.202GB) t=470s
+  [LDE flow] block=27/32 (turbine) local_rank=334 R_rank=760 rank_total=16600/32900 live=134588372(~0.135GB) peak=202140098(~0.202GB) t=476s
+  [LDE flow] block=27/32 rank(block)=1080 rank_total=17680/32900 block_bytes=134408738(~0.134GB) peak=202140098(~0.202GB) t=482s
+  [LDE flow] block=28/32 (turbine) local_rank=316 R_rank=0 rank_total=17680/32900 live=67384291(~0.067GB) peak=202140098(~0.202GB) t=489s
+  [LDE flow] block=28/32 (turbine) local_rank=200 R_rank=400 rank_total=17680/32900 live=134767550(~0.135GB) peak=202140098(~0.202GB) t=495s
+  [LDE flow] block=28/32 (turbine) local_rank=399 R_rank=400 rank_total=17680/32900 live=134768574(~0.135GB) peak=202140098(~0.202GB) t=500s
+  [LDE flow] block=28/32 (turbine) local_rank=262 R_rank=760 rank_total=17680/32900 live=134770622(~0.135GB) peak=202140098(~0.202GB) t=505s
+  [LDE flow] block=28/32 rank(block)=1080 rank_total=18760/32900 block_bytes=134597018(~0.135GB) peak=202140098(~0.202GB) t=512s
+  [LDE flow] block=29/32 (turbine) local_rank=334 R_rank=0 rank_total=18760/32900 live=67293166(~0.067GB) peak=202140098(~0.202GB) t=518s
+  [LDE flow] block=29/32 (turbine) local_rank=220 R_rank=400 rank_total=18760/32900 live=134585300(~0.135GB) peak=202140098(~0.202GB) t=523s
+  [LDE flow] block=29/32 (turbine) local_rank=6 R_rank=760 rank_total=18760/32900 live=134586356(~0.135GB) peak=202140098(~0.202GB) t=530s
+  [LDE flow] block=29/32 (turbine) local_rank=334 R_rank=760 rank_total=18760/32900 live=134588372(~0.135GB) peak=202140098(~0.202GB) t=536s
+  [LDE flow] block=29/32 rank(block)=1080 rank_total=19840/32900 block_bytes=134487424(~0.134GB) peak=202140098(~0.202GB) t=542s
+  [LDE flow] block=30/32 (turbine) local_rank=316 R_rank=0 rank_total=19840/32900 live=67384291(~0.067GB) peak=202140098(~0.202GB) t=548s
+  [LDE flow] block=30/32 (turbine) local_rank=200 R_rank=400 rank_total=19840/32900 live=134767550(~0.135GB) peak=202140098(~0.202GB) t=554s
+  [LDE flow] block=30/32 (turbine) local_rank=399 R_rank=400 rank_total=19840/32900 live=134768574(~0.135GB) peak=202140098(~0.202GB) t=559s
+  [LDE flow] block=30/32 (turbine) local_rank=262 R_rank=760 rank_total=19840/32900 live=134770622(~0.135GB) peak=202140098(~0.202GB) t=565s
+  [LDE flow] block=30/32 rank(block)=1080 rank_total=20920/32900 block_bytes=134592618(~0.135GB) peak=202140098(~0.202GB) t=572s
+  [LDE flow] block=31/32 (turbine) local_rank=316 R_rank=0 rank_total=20920/32900 live=67384291(~0.067GB) peak=202140098(~0.202GB) t=578s
+  [LDE flow] block=31/32 (turbine) local_rank=200 R_rank=400 rank_total=20920/32900 live=134767550(~0.135GB) peak=202140098(~0.202GB) t=584s
+  [LDE flow] block=31/32 (turbine) local_rank=400 R_rank=400 rank_total=20920/32900 live=134768574(~0.135GB) peak=202140098(~0.202GB) t=589s
+  [LDE flow] block=31/32 (turbine) local_rank=262 R_rank=760 rank_total=20920/32900 live=134770622(~0.135GB) peak=202140098(~0.202GB) t=594s
+  [LDE flow] block=31/32 rank(block)=1080 rank_total=22000/32900 block_bytes=134517683(~0.135GB) peak=202140098(~0.202GB) t=601s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=0 rank_total=22000/32900 live=67384291(~0.067GB) peak=202140098(~0.202GB) t=607s
+  [LDE flow] block=32/32 (turbine) local_rank=599 R_rank=0 rank_total=22000/32900 live=67386339(~0.067GB) peak=202140098(~0.202GB) t=615s
+  [LDE flow] block=32/32 (turbine) local_rank=856 R_rank=0 rank_total=22000/32900 live=67386339(~0.067GB) peak=202140098(~0.202GB) t=621s
+  [LDE flow] block=32/32 (turbine) local_rank=1000 R_rank=0 rank_total=22000/32900 live=67386339(~0.067GB) peak=202140098(~0.202GB) t=627s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=1000 rank_total=22000/32900 live=134770622(~0.135GB) peak=202140098(~0.202GB) t=633s
+  [LDE flow] block=32/32 (turbine) local_rank=599 R_rank=1000 rank_total=22000/32900 live=134772670(~0.135GB) peak=202140098(~0.202GB) t=640s
+  [LDE flow] block=32/32 (turbine) local_rank=856 R_rank=1000 rank_total=22000/32900 live=134772670(~0.135GB) peak=202140098(~0.202GB) t=647s
+  [LDE flow] block=32/32 (turbine) local_rank=999 R_rank=1000 rank_total=22000/32900 live=134772670(~0.135GB) peak=202140098(~0.202GB) t=652s
+  [LDE flow] block=32/32 (turbine) local_rank=144 R_rank=1900 rank_total=22000/32900 live=202148475(~0.202GB) peak=202151547(~0.202GB) t=657s
+  [LDE flow] block=32/32 (turbine) local_rank=401 R_rank=1900 rank_total=22000/32900 live=202149499(~0.202GB) peak=202151547(~0.202GB) t=663s
+  [LDE flow] block=32/32 (turbine) local_rank=599 R_rank=1900 rank_total=22000/32900 live=202151547(~0.202GB) peak=202151547(~0.202GB) t=668s
+  [LDE flow] block=32/32 (turbine) local_rank=856 R_rank=1900 rank_total=22000/32900 live=202151547(~0.202GB) peak=202151547(~0.202GB) t=675s
+  [LDE flow] block=32/32 (turbine) local_rank=1000 R_rank=1900 rank_total=22000/32900 live=202151547(~0.202GB) peak=202151547(~0.202GB) t=680s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=2700 rank_total=22000/32900 live=269474247(~0.269GB) peak=269478311(~0.269GB) t=689s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=2700 rank_total=22000/32900 live=269476263(~0.269GB) peak=269478311(~0.269GB) t=695s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=2700 rank_total=22000/32900 live=269476263(~0.269GB) peak=269478311(~0.269GB) t=700s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=2700 rank_total=22000/32900 live=269478311(~0.269GB) peak=269478311(~0.269GB) t=705s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=2700 rank_total=22000/32900 live=269478311(~0.269GB) peak=269478311(~0.269GB) t=711s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=3600 rank_total=22000/32900 live=606674722(~0.607GB) peak=606678786(~0.607GB) t=842s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=3600 rank_total=22000/32900 live=606676738(~0.607GB) peak=606678786(~0.607GB) t=848s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=3600 rank_total=22000/32900 live=606676738(~0.607GB) peak=606678786(~0.607GB) t=853s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=3600 rank_total=22000/32900 live=606678786(~0.607GB) peak=606678786(~0.607GB) t=858s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=3600 rank_total=22000/32900 live=606678786(~0.607GB) peak=606678786(~0.607GB) t=864s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=4410 rank_total=22000/32900 live=943430561(~0.943GB) peak=943434625(~0.943GB) t=1298s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=4410 rank_total=22000/32900 live=943432577(~0.943GB) peak=943434625(~0.943GB) t=1303s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=4410 rank_total=22000/32900 live=943432577(~0.943GB) peak=943434625(~0.943GB) t=1308s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=4410 rank_total=22000/32900 live=943434625(~0.943GB) peak=943434625(~0.943GB) t=1313s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=4410 rank_total=22000/32900 live=943434625(~0.943GB) peak=943434625(~0.943GB) t=1320s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=5130 rank_total=22000/32900 live=1212569535(~1.213GB) peak=1212573599(~1.213GB) t=1498s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=5130 rank_total=22000/32900 live=1212571551(~1.213GB) peak=1212573599(~1.213GB) t=1503s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=5130 rank_total=22000/32900 live=1212571551(~1.213GB) peak=1212573599(~1.213GB) t=1509s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=5130 rank_total=22000/32900 live=1212573599(~1.213GB) peak=1212573599(~1.213GB) t=1514s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=5130 rank_total=22000/32900 live=1212573599(~1.213GB) peak=1212573599(~1.213GB) t=1520s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=5930 rank_total=22000/32900 live=1549224121(~1.549GB) peak=1549228185(~1.549GB) t=2177s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=5930 rank_total=22000/32900 live=1549226137(~1.549GB) peak=1549228185(~1.549GB) t=2182s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=5930 rank_total=22000/32900 live=1549226137(~1.549GB) peak=1549228185(~1.549GB) t=2187s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=5930 rank_total=22000/32900 live=1549228185(~1.549GB) peak=1549228185(~1.549GB) t=2193s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=5930 rank_total=22000/32900 live=1549228185(~1.549GB) peak=1549228185(~1.549GB) t=2199s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=6660 rank_total=22000/32900 live=1818710124(~1.819GB) peak=1818714188(~1.819GB) t=3684s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=6660 rank_total=22000/32900 live=1818712140(~1.819GB) peak=1818714188(~1.819GB) t=3689s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=6660 rank_total=22000/32900 live=1818712140(~1.819GB) peak=1818714188(~1.819GB) t=3694s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=6660 rank_total=22000/32900 live=1818714188(~1.819GB) peak=1818714188(~1.819GB) t=3699s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=6660 rank_total=22000/32900 live=1818714188(~1.819GB) peak=1818714188(~1.819GB) t=3706s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=7300 rank_total=22000/32900 live=2087989669(~2.088GB) peak=2087993733(~2.088GB) t=4695s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=7300 rank_total=22000/32900 live=2087991685(~2.088GB) peak=2087993733(~2.088GB) t=4700s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=7300 rank_total=22000/32900 live=2087991685(~2.088GB) peak=2087993733(~2.088GB) t=4705s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=7300 rank_total=22000/32900 live=2087993733(~2.088GB) peak=2087993733(~2.088GB) t=4710s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=7300 rank_total=22000/32900 live=2087993733(~2.088GB) peak=2087993733(~2.088GB) t=4717s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=8020 rank_total=22000/32900 live=2290079532(~2.290GB) peak=2290083596(~2.290GB) t=6171s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=8020 rank_total=22000/32900 live=2290081548(~2.290GB) peak=2290083596(~2.290GB) t=6176s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=8020 rank_total=22000/32900 live=2290081548(~2.290GB) peak=2290083596(~2.290GB) t=6181s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=8020 rank_total=22000/32900 live=2290083596(~2.290GB) peak=2290083596(~2.290GB) t=6186s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=8020 rank_total=22000/32900 live=2290083596(~2.290GB) peak=2290083596(~2.290GB) t=6193s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=8660 rank_total=22000/32900 live=2559106022(~2.559GB) peak=2559110086(~2.559GB) t=7311s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=8660 rank_total=22000/32900 live=2559108038(~2.559GB) peak=2559110086(~2.559GB) t=7316s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=8660 rank_total=22000/32900 live=2559108038(~2.559GB) peak=2559110086(~2.559GB) t=7321s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=8660 rank_total=22000/32900 live=2559110086(~2.559GB) peak=2559110086(~2.559GB) t=7327s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=8660 rank_total=22000/32900 live=2559110086(~2.559GB) peak=2559110086(~2.559GB) t=7333s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=9220 rank_total=22000/32900 live=2760853373(~2.761GB) peak=2760857437(~2.761GB) t=8688s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=9220 rank_total=22000/32900 live=2760855389(~2.761GB) peak=2760857437(~2.761GB) t=8693s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=9220 rank_total=22000/32900 live=2760855389(~2.761GB) peak=2760857437(~2.761GB) t=8698s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=9220 rank_total=22000/32900 live=2760857437(~2.761GB) peak=2760857437(~2.761GB) t=8704s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=9220 rank_total=22000/32900 live=2760857437(~2.761GB) peak=2760857437(~2.761GB) t=8710s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=9860 rank_total=22000/32900 live=2895559067(~2.896GB) peak=2895563131(~2.896GB) t=8901s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=9860 rank_total=22000/32900 live=2895561083(~2.896GB) peak=2895563131(~2.896GB) t=8907s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=9860 rank_total=22000/32900 live=2895561083(~2.896GB) peak=2895563131(~2.896GB) t=8912s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=9860 rank_total=22000/32900 live=2895563131(~2.896GB) peak=2895563131(~2.896GB) t=8917s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=9860 rank_total=22000/32900 live=2895563131(~2.896GB) peak=2895563131(~2.896GB) t=8924s
+  [LDE flow] block=32/32 (turbine) local_rank=6 R_rank=10420 rank_total=22000/32900 live=3030584194(~3.031GB) peak=3030588258(~3.031GB) t=9300s
+  [LDE flow] block=32/32 (turbine) local_rank=306 R_rank=10420 rank_total=22000/32900 live=3030586210(~3.031GB) peak=3030588258(~3.031GB) t=9305s
+  [LDE flow] block=32/32 (turbine) local_rank=500 R_rank=10420 rank_total=22000/32900 live=3030586210(~3.031GB) peak=3030588258(~3.031GB) t=9311s
+  [LDE flow] block=32/32 (turbine) local_rank=694 R_rank=10420 rank_total=22000/32900 live=3030588258(~3.031GB) peak=3030588258(~3.031GB) t=9316s
+  [LDE flow] block=32/32 (turbine) local_rank=915 R_rank=10420 rank_total=22000/32900 live=3030588258(~3.031GB) peak=3030588258(~3.031GB) t=9323s
+  [LDE flow] block=32/32 rank(block)=10900 rank_total=32900/32900 block_bytes=3097591276(~3.098GB) peak=3164977611(~3.165GB) t=9802s
+  [LDE done] char 5 rank_total=32900 peak=3164977611(~3.165GB) biggest_block=#31 rank=10900 (~3.098GB) t=9802s
+  char 5 COMPLETE: rank_p=32900 dim_F5=504924  PEAK bytes=3164977611 (~3.165 GB)
+
+  [v2 PROBE] char 5 done. STOPPING here by design (probe largest prime only).
+  [v2 PROBE] Remaining prime(s) of m=15 NOT attacked this run: 3
+  [v2 PROBE] A FULL (n,m) verdict needs every prime of m to agree with dim_C.
+
+================ VERDICT ================
+dim_C  = 504924   (Method A eigenbasis, cross-prime)
+dim_F5 = 504924
+VERDICT (char 5 HALF) = PRIMITIVE
+=> char 5 half: dim_F5 == dim_C. This characteristic is PRIMITIVE and FITS on 8 GB.
+=> (n=4,m=15) is NOT yet fully decided: the remaining prime(s) still required for a full verdict.
