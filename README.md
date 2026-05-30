@@ -16,10 +16,10 @@ This is the record of that campaign: what was computed, how, and exactly what is
 
 | | |
 |---|---|
-| **Cells given a complete PRIMITIVE verdict** | 8 — `(10,3)`, `(8,4)`, `(6,5)`, `(6,6)`, `(6,7)`, `(6,8)`, `(6,9)`, `(8,5)` |
+| **Cells given a complete PRIMITIVE verdict** | 13 — `(10,3)`, `(8,4)`, `(8,5)`, `(6,5)`, `(6,6)`, `(6,7)`, `(6,8)`, `(6,9)`, and the composite fourfolds `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` |
 | **Deepest single computation** | `(6,9)`: a **3.45-billion-entry** closure, held at **1.07 bytes per entry** |
-| **First composite-degree cell ever verified** | `(6,6)` — `m = 6 = 2 × 3`, the degree the literature avoids |
-| **New structural result** | the *prime-power reduction frontier* (the *Frontier*) — where the verification method silently fails |
+| **First composite-degree cell ever verified** | `(6,6)` — `m = 6 = 2 × 3`, the degree the literature avoids; the composite régime is now a whole front (`(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` all PRIMITIVE) |
+| **New structural result** | the *prime-power reduction frontier* (the *Frontier*) — where the verification method silently fails — and its constructive dual, the **CRT block split** (LETHAL DUAL), which turns the same factorization into a RAM lever |
 | **Complex-half dimensions mapped** | 38 cells, in under an hour total, revealing a closed-form rank law |
 | **Storage cost driven down** | from 16 bytes per entry to **1.07** — a 15× compression, all in exact arithmetic |
 | **Hardware** | one 8 GB laptop, single thread, 25% CPU |
@@ -64,6 +64,11 @@ Each verdict below is a *complete* verdict: the complex dimension `dim_C` **and*
 | (6,8) | 823,543 | 720,264 | PRIMITIVE | 2.77 GB | 1,059 s | [HYPER SPARK PACKED](engines/HYPER_SPARK_PACKED.cpp) | [log](logs/HYPER_SPARK_PACKED_6_8_run1.log) |
 | (6,9) | 2,097,152 | 1,907,032 | PRIMITIVE | 3.71 GB | 11,472 s | [HOUDINI SONIC BOOM STAR](engines/HOUDINI_SONIC_BOOM_STAR.cpp) | [log](logs/HOUDINI_SONIC_BOOM_STAR_6_9_run1.log) |
 | (8,5) | 262,144 | 198,640 | PRIMITIVE | 2.57 GB | 4,601 s | [HOUDINI HYPER SPARK](engines/HOUDINI_HYPER_SPARK.cpp) | [log](logs/HOUDINI_HYPER_SPARK_8_5_run1.log) |
+| (4,4) | 243 | 102 | PRIMITIVE | 0.13 GB | seconds | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_4_gate_run1.log) |
+| (4,6) | 3,125 | 2,124 | PRIMITIVE | 0.13 GB | seconds | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_6_gate_run1.log) |
+| (4,10) | 59,049 | 51,288 | PRIMITIVE | 0.20 GB | 177 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_10_run1.log) |
+| (4,12) | 161,051 | 145,950 | PRIMITIVE | 0.60 GB | 1,402 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_12_run1.log) |
+| (4,14) | 371,293 | 345,252 | PRIMITIVE | 2.22 GB | 13,410 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_14_run1.log) |
 
 Notes, kept honest:
 - `(6,6)` has **two** prime-field computations (char 2 and char 3, since 6 = 2 × 3); both returned the same rank, partition by partition. Its peaks and times are listed per characteristic.
@@ -71,6 +76,10 @@ Notes, kept honest:
 - The "rank" reduced at each verdict is the *closing rank* `= DIM − dim_C` (e.g. `(8,5)`: `262,144 − 198,640 = 63,504`, held flat from partition 892 to 945 — the tail partitions add zero, confirming the span is complete).
 - `(10,3)`'s log records flat 14 MB RAM but no second-resolution wall time; "minutes" is the honest description.
 - The single largest object ever reduced in the campaign is `(6,9)`'s closure: **3.45 billion nonzero entries held on an 8 GB machine at 1.07 bytes per entry.**
+
+**The composite fourfold front and the (4,15) half-cell (LETHAL DUAL, this campaign).** The five `(4,m)` rows above are composite-degree fourfolds decided by the **CRT block split** (see *The Frontier's constructive dual* below). Four of them — `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` — fail the Aljovin–Movasati–Villaflor condition (degree composite, not 4, `gcd(m,(n+1)!) ≠ 1`) and lie beyond the Degtyarev–Shimada §5 table: **virgin integral verdicts**. `(4,4)` falls in AMV's `d=4` case and is here **independently confirmed**.
+
+One cell is deliberately recorded as **half-decided**, because honesty requires it: **`(4,15) = 3×5`**. Its complex half is `dim_C = 504,924`. The char-5 prime-field half **fits and closes**: `dim_F5 = 504,924 = dim_C`, peak 3.165 GB, PRIMITIVE in characteristic 5. The char-3 half is **RAM-bound beyond 8 GB** — its all-B block (`dimB = 12`, block size `12⁵`) projects to 7–9 GB on this machine and was not computed. This is a **hardware limit, not a torsion candidate**: char 3 produced no rank, and a non-terminating run carries no mathematical information. Recorded verdict: *char 5 PRIMITIVE (fits); char 3 RAM-bound > 8 GB; cell incomplete — one prime confirmed, one beyond machine; NOT torsion.* The cell is parked, not abandoned.
 
 ### The DOBERMAN sweep — the complex half, mapped across the mesh
 
@@ -143,6 +152,8 @@ The project's engineering is a single bloodline. Each engine was built only afte
 | **HOUDINI SUPER BLACKHOLE** | Delta-varint columns (store the *gap* between consecutive columns, not the absolute column — like noting a route as "+14, +1, +34" instead of full coordinates). On `(6,9)` char 3 it ran a closure the older method projected at ~7.7 GB down toward the low-GB band — but the char-3 tail explodes in the final 5% (part 95→97: ~3 GB → 5.51 GB) and it **aborted clean at the 5.4 GB guard, part 97**. A vein that opened the road and died near the summit; it did not decide a cell, and is recorded as such. | `(6,9)` attempt (incomplete) |
 | **HOUDINI SONIC BOOM STAR** | Varint columns **with the coefficient embedded** in the low bits — **1.07 bytes per entry** on `(6,9)`, the practical floor for a varint store. The production engine for the deep cells. | `(6,9)` |
 | **ROSETTA STAR** | The fix for composite degree (see below). Reduces in the monomial basis with the *true* ring relation, correct for any `m`. | `(6,6)` |
+| **LETHAL DUAL ENGINE** | The Frontier's constructive dual: since `φ` **factors** over `F_p` for `p \| m`, the ring splits by CRT into `2ⁿ⁺¹` independent blocks the shift respects; reduce them **one at a time and release** — RAM peak becomes the *largest single block*, not the whole closure. No extension-field arithmetic. | `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` |
+| **LETHAL DUAL — BIG MONSTER** | Same mathematics, hardened: the RAM guard runs **inside** the monster all-B block's turbine against a soft 5.0 GB budget, aborts clean (never segfaults mute), beats a heartbeat inside the big block, and prints the closing target as a scoreboard. | `(4,15)` char-5 half |
 | **HOUDINI SUPERNOVA** | An attempt to break the deep-cell time wall by reordering the fold (the tail spends 96.8% of its work on rows that collapse to zero). Measured honestly: it **tied STAR in time and was worse in RAM** (0.27 vs 0.20 GB at the same point of `(6,7)`), because the reorder moved the fill-in heavier. Gate-valid (rank correct, byte-exact) so the mathematics is sound, but as a production engine it is a regression. The name is on the board but **unearned** until a genuine block-reduction redesign beats STAR. Recorded so the next attempt does not repeat the fold-sort approach. | — (not a win) |
 | **HOUDINI ANTIGRAVITY** | Two further levers, both byte-exact: deferred-modulo arithmetic (1.55× faster on (6,5)), and **the accordion** — the echelon is split into bellows, cold ones compressed and "capped," expanded only when touched (the cold 45% take only 10% of the work). Built and gate-validated; its big-cell log is the next run. | live vein |
 
@@ -211,6 +222,12 @@ In short: every cell conquered before `(6,6)` had a degree that was a power of a
 The diagnosis: the Jordan-mould's pruning rule `uᵐ⁻¹ = 0` is the *true* ring relation **if and only if `m` is a power of a single prime**. When `m` has two distinct prime factors, the relation factors (a Chinese-Remainder splitting of the ring), the pruning imposes a false constraint, and the rank silently inflates. We call this the **prime-power reduction frontier** — henceforth, for brevity, **the Frontier**.
 
 A new engine, **ROSETTA STAR**, reduces in the monomial basis with the correct relation for any degree, and recovered the true verdict: `(6,6)` is **PRIMITIVE** by both primes, byte-exact, on the 8 GB laptop. The full story, the literature search that fixes priority honestly, and exactly what is new versus what is classical, are in the linked document.
+
+### The Frontier's constructive dual — the CRT block split (LETHAL DUAL)
+
+The Frontier is a *destructive* fact: `φ` factoring over `F_p` is **why** the old pruning lies on composite degree. The same fact has a *constructive* face. For a prime `p | m`, `φ(t) = (t−1)ᵃ · g(t)ᵇ` over `F_p`, and the two factors are **coprime** — so by the Chinese Remainder Theorem the quotient ring splits as a direct product `A × B`. The shift operator respects the split; tensored over the `n+1` variables, the whole space breaks into `2ⁿ⁺¹` independent blocks, and the ideal closure becomes a **direct sum** over them. Independent summands can be reduced **one at a time and released**, so the memory peak collapses from *the whole closure* to *the largest single block*. Measured on `(4,6)`: the largest block peaks at **0.15×–0.39×** of the monolithic closure, byte-exact, with the sum of block-ranks equal to the monolithic rank (the split is exact). The cost is paid in CPU, not RAM — and the Mac is hard with time. This is the engine (**LETHAL DUAL**) that opened the entire composite-fourfold front, and the same factorization that *breaks* Jordan now *buys back* the memory.
+
+A boundary was also mapped, honestly: a block's reach is set by the **worst prime's `dimB`**, not by the cell's total size. On `(4,15)` the char-3 all-B block (`dimB = 12`) is the first measured to exceed 8 GB — the cell is half-decided (char 5 PRIMITIVE, char 3 RAM-bound), and the all-B block provably does **not** split further (it is a *local* ring: `g` irreducible, no idempotents). The wall there is hardware and representation, not mathematics.
 
 ---
 
