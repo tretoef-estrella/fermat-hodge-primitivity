@@ -2,9 +2,9 @@
 
 ### Verifying the Integral Hodge Conjecture for high-dimensional Fermat varieties on a single 8 GB laptop
 
-> A psychologist in Madrid, with no formal training as a mathematician, sat down at a MacBook Air — the thin consumer laptop, 8 GB of memory, one thread, deliberately throttled to a quarter of its power — and went after a problem the published literature had never reached. The tool for it, a criterion from 2016, was supposed to need real computers. He had a laptop and a refusal to quit. Over a series of sessions he decided eight cells of the problem, byte for byte, including one in a degree the entire field steers around — and, along the way, found a place where the standard method silently lies, that nobody had marked on any map.
+> A psychologist in Madrid, with no formal training as a mathematician, sat down at a MacBook Air — the thin consumer laptop, 8 GB of memory, one thread, deliberately throttled to a quarter of its power — and went after a problem the published computations had stopped short of. The tool for it, a criterion from 2016, was tested by its authors only up to a small table. He had a laptop and a refusal to quit. Over a series of sessions he decided sixteen cells of the problem, byte for byte — most of them past where the criterion had ever been run — and, along the way, found a place where the fast version of the method silently lies, that nobody had marked on any map.
 
-This is the record of that campaign: what was computed, how, and exactly what is new.
+This is the record of that campaign: what was computed, how, and exactly what is new versus what is confirmation.
 
 **Architect:** Rafael Amichis Luengo (Madrid) · [tretoef@gmail.com](mailto:tretoef@gmail.com) · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
 **Method base:** Degtyarev–Shimada combinatorial primitivity criterion (*J. Math. Soc. Japan* **68:3** (2016), 975–996; arXiv:1405.4683)
@@ -17,10 +17,11 @@ This is the record of that campaign: what was computed, how, and exactly what is
 | | |
 |---|---|
 | **Cells given a complete PRIMITIVE verdict** | 16 — `(10,3)`, `(8,4)`, `(8,5)`, `(6,5)`, `(6,6)`, `(6,7)`, `(6,8)`, `(6,9)`, the composite fourfolds `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)`, and the prime-degree fourfolds `(4,13)`, `(4,17)`, `(4,19)` |
+| **Cells decided beyond the Degtyarev–Shimada §5 table** | 11 of the 16 — every cell except `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)`, `(6,5)`, which lie inside the published table and are here **independently confirmed** |
 | **Deepest single computation** | `(6,9)`: a **3.45-billion-entry** closure, held at **1.07 bytes per entry** |
-| **First composite-degree cell ever verified** | `(6,6)` — `m = 6 = 2 × 3`, the degree the literature avoids; the composite régime is now a whole front (`(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` all PRIMITIVE) |
-| **New structural result** | the *prime-power reduction frontier* (the *Frontier*) — where the verification method silently fails — and its constructive dual, the **CRT block split** (LETHAL DUAL), which turns the same factorization into a RAM lever |
-| **Complex-half dimensions mapped** | 38 cells, in under an hour total, revealing a closed-form rank law |
+| **First composite-degree cell decided beyond the published table** | `(6,6)` — `m = 6 = 2 × 3`; the first cell where the *Frontier* manifests and is crossed |
+| **New structural result** | the *prime-power reduction frontier* (the *Frontier*) — where the fast verification method silently fails — and its constructive dual, the **CRT block split** (LETHAL DUAL), which turns the same factorization into a RAM lever |
+| **Complex-half dimensions mapped** | 38 cells, in under an hour total, confirming a closed-form rank law |
 | **Storage cost driven down** | from 16 bytes per entry to **1.07** — a 15× compression, all in exact arithmetic |
 | **Hardware** | one 8 GB laptop, single thread, 25% CPU |
 
@@ -34,61 +35,64 @@ For Fermat varieties — the surfaces and higher-dimensional analogues cut out b
 
 The two halves are not equally cheap. The complex half collapses to a fast eigenbasis scan. The prime-field half requires honest Gaussian elimination over a finite field on a sparse system whose size explodes with the cell — millions to billions of nonzero entries. **That second half is the entire engineering problem of this project**, and it is where every record here was won: not by buying a bigger machine, but by repeatedly redesigning the computation so that a cell which "could not fit in 8 GB" suddenly fit, exactly, byte-for-byte.
 
-Every number in this document comes from a run log in the repository. Nothing is from memory, and nothing is rounded to flatter.
+Every number in this document comes from a run log in the repository. Nothing is from memory, and nothing is rounded to flatter — and where the published literature already holds a result, it is named as confirmation, not as discovery.
 
 ---
 
 ## Where the published frontier was, and where this campaign went
 
-To be precise about what is new, here is the published state of the art, checked against the primary sources:
+To be precise about what is new, here is the published state of the art, checked against the primary sources — and, crucially, against the exact computational table Degtyarev and Shimada published:
 
-- **Degtyarev–Shimada (2016)** [1] state the criterion and verify it by computer in **many cases up to their table, which stops at dimension n = 8, degree m = 3** (`(8,3)`).
+- **Degtyarev–Shimada (2016)** [1] state the criterion and, in their §5, report verifying it by computer in exactly these cases (their page 17, verbatim): **`(4,m)` for `3 ≤ m ≤ 12`, plus `(6,3)`, `(6,4)`, `(6,5)`, `(8,3)`.** That published table is the line this campaign measures itself against.
 - **Aljovin–Movasati–Villaflor (2019)** [6] give an independent algorithm and a *theoretical* guarantee, but only under the condition **"d prime, or d = 4, or gcd(d, (n+1)!) = 1"**, and their implementation reaches only dimension **n ≤ 4**.
 - **For surfaces (n = 2)** the problem — originally posed by **Aoki and Shioda in 1983** [3] — is *completely settled*: Schütt–Shioda–van Luijk [4] and Degtyarev [5] proved the lines generate the Néron–Severi group **if and only if m ≤ 4 or gcd(m, 6) = 1**. The surface literature deliberately works in degrees coprime to 6.
 
-The lineage is worth seeing whole. Shioda asked in 1979 [2] whether the standard cycles generate the Hodge lattice of Fermat varieties; Aoki and Shioda sharpened the surface case in 1983; the surface verdict was closed by Schütt–Shioda–van Luijk and Degtyarev; and Degtyarev–Shimada turned the higher-dimensional question into a computable criterion in 2016. **This campaign is the next link in that chain.** Its cells are fourfolds and higher (`n = 4, 6, 8, 10`), in degrees the surface results do not touch, and deep into a region where **no published computation reaches**. The first virgin cell, `(10,3)`, sits outside every published table. The headline result, `(6,6)`, lives in a degree (`m = 6 = 2 × 3`) that the entire lines/primitivity literature explicitly avoids — and revealed, in the process, a boundary of the computational method itself that nobody had marked.
+The lineage is worth seeing whole. Shioda asked in 1979 [2] whether the standard cycles generate the Hodge lattice of Fermat varieties; Aoki and Shioda sharpened the surface case in 1983; the surface verdict was closed by Schütt–Shioda–van Luijk and Degtyarev; and Degtyarev–Shimada turned the higher-dimensional question into a computable criterion in 2016, verified up to the §5 table above. **This campaign is the next link in that chain.** Eleven of its sixteen decided cells lie *beyond* that table — fourfolds and higher (`n = 4, 6, 8, 10`) in degrees and dimensions the published computation never reached. The deepest virgin cell, `(6,9)`, is a 3.45-billion-entry closure. The structural headline, `(6,6)`, lives in a composite degree (`m = 6 = 2 × 3`) past the table — and revealed, in the process, a boundary of the *fast* computational method itself that nobody had marked.
+
+A word on honesty before the tables. Five of the sixteen cells — `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)`, `(6,5)` — lie *inside* the Degtyarev–Shimada §5 table. They are **not** new verdicts. They are reported here as **independent confirmation**: the same answers DS obtained in 2015 with Gröbner-basis software, reproduced byte-exact a decade later on a throttled 8 GB consumer laptop by a completely different reduction engine. Independent reproduction on minimal hardware is a real and citable result — but it is confirmation, and it is labelled as confirmation throughout. The genuinely new verdicts are the other eleven.
 
 ---
 
 ## The cells conquered
 
-Each verdict below is a *complete* verdict: the complex dimension `dim_C` **and** the prime-field dimension `dim_Fp` for every prime dividing `m`, computed independently and found equal. Every cell is **PRIMITIVE** — the linear cycles generate the integral Hodge lattice. Peak RAM and wall time are read directly from the run log named in the last column. All ran on the 8 GB MacBook Air, single thread, 25% CPU. **Every engine and every log is in this repository — check it yourself: the engine column links to the source, the log column to the raw run output.**
+Each verdict below is a *complete* verdict: the complex dimension `dim_C` **and** the prime-field dimension `dim_Fp` for every prime dividing `m`, computed independently and found equal. Every cell is **PRIMITIVE** — the linear cycles generate the integral Hodge lattice. Peak RAM and wall time are read directly from the run log named in the last column. All ran on the 8 GB MacBook Air, single thread, 25% CPU. The **status** column states plainly whether the cell is new (beyond the DS §5 table) or an independent confirmation of a published one. **Every engine and every log is in this repository — check it yourself: the engine column links to the source, the log column to the raw run output.**
 
-| Cell (n,m) | DIM = (m−1)ⁿ⁺¹ | dim_C = dim_Fp | Verdict | Peak RAM | Wall time | Engine | Log |
-|---|---|---|---|---|---|---|---|
-| (10,3) | 2,048 | 1,124 | PRIMITIVE | 14 MB | minutes | [HODGE_ENGINE_v3](engines/HODGE_ENGINE_v3.cpp) | [log](logs/PRUEBA_RECORD_10_3.txt) |
-| (8,4) | 19,683 | 10,730 | PRIMITIVE | 0.72 GB | ~2 h 45 m | [HOUDINI](engines/HOUDINI.cpp) | [log](logs/CIC_8_4_run1.log) |
-| (6,5) | 16,384 | 11,484 | PRIMITIVE | 0.46 GB | ~58 m | [HOUDINI](engines/HOUDINI.cpp) | [log](logs/HOUDINI_6_5_diagnostico.log) |
-| (6,6) | 78,125 | 59,392 | PRIMITIVE | 0.47 / 0.60 GB | 6,551 s / 11,532 s | [**ROSETTA STAR**](engines/ROSETTA_STAR.cpp) | [log](logs/ROSETTA_STAR_6_6_run1.log) |
-| (6,7) | 279,936 | 235,206 | PRIMITIVE | 2.48 GB | 487 s | [HOUDINI HYPER SPARK](engines/HOUDINI_HYPER_SPARK.cpp) | [log](logs/HOUDINI_HYPER_SPARK_6_7_run1.log) |
-| (6,8) | 823,543 | 720,264 | PRIMITIVE | 2.77 GB | 1,059 s | [HYPER SPARK PACKED](engines/HYPER_SPARK_PACKED.cpp) | [log](logs/HYPER_SPARK_PACKED_6_8_run1.log) |
-| (6,9) | 2,097,152 | 1,907,032 | PRIMITIVE | 3.71 GB | 11,472 s | [HOUDINI SONIC BOOM STAR](engines/HOUDINI_SONIC_BOOM_STAR.cpp) | [log](logs/HOUDINI_SONIC_BOOM_STAR_6_9_run1.log) |
-| (8,5) | 262,144 | 198,640 | PRIMITIVE | 2.57 GB | 4,601 s | [HOUDINI HYPER SPARK](engines/HOUDINI_HYPER_SPARK.cpp) | [log](logs/HOUDINI_HYPER_SPARK_8_5_run1.log) |
-| (4,4) | 243 | 102 | PRIMITIVE | 0.13 GB | seconds | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_4_gate_run1.log) |
-| (4,6) | 3,125 | 2,124 | PRIMITIVE | 0.13 GB | seconds | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_6_gate_run1.log) |
-| (4,10) | 59,049 | 51,288 | PRIMITIVE | 0.20 GB | 177 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_10_run1.log) |
-| (4,12) | 161,051 | 145,950 | PRIMITIVE | 0.60 GB | 1,402 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_12_run1.log) |
-| (4,14) | 371,293 | 345,252 | PRIMITIVE | 2.22 GB | 13,410 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_14_run1.log) |
-| (4,13) | 248,832 | 228,912 | PRIMITIVE | 0.14 GB | 41 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_13_run1.log) |
-| (4,17) | 1,048,576 | 998,016 | PRIMITIVE | 0.79 GB | 797 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_17_run1.log) |
-| (4,19) | 1,889,568 | 1,815,948 | PRIMITIVE | 1.68 GB | 8,079 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_19_run1.log) |
+| Cell (n,m) | DIM = (m−1)ⁿ⁺¹ | dim_C = dim_Fp | Verdict | Status vs DS §5 | Peak RAM | Wall time | Engine | Log |
+|---|---|---|---|---|---|---|---|---|
+| (10,3) | 2,048 | 1,124 | PRIMITIVE | **new** (beyond table) | 14 MB | minutes | [HODGE_ENGINE_v3](engines/HODGE_ENGINE_v3.cpp) | [log](logs/PRUEBA_RECORD_10_3.txt) |
+| (8,4) | 19,683 | 10,730 | PRIMITIVE | **new** (beyond table) | 0.72 GB | ~2 h 45 m | [HOUDINI](engines/HOUDINI.cpp) | [log](logs/CIC_8_4_run1.log) |
+| (6,5) | 16,384 | 11,484 | PRIMITIVE | confirms DS §5 | 0.46 GB | ~58 m | [HOUDINI](engines/HOUDINI.cpp) | [log](logs/HOUDINI_6_5_diagnostico.log) |
+| (6,6) | 78,125 | 59,392 | PRIMITIVE | **new** (beyond table) | 0.47 / 0.60 GB | 6,551 s / 11,532 s | [**ROSETTA STAR**](engines/ROSETTA_STAR.cpp) | [log](logs/ROSETTA_STAR_6_6_run1.log) |
+| (6,7) | 279,936 | 235,206 | PRIMITIVE | **new** (beyond table) | 2.48 GB | 487 s | [HOUDINI HYPER SPARK](engines/HOUDINI_HYPER_SPARK.cpp) | [log](logs/HOUDINI_HYPER_SPARK_6_7_run1.log) |
+| (6,8) | 823,543 | 720,264 | PRIMITIVE | **new** (beyond table) | 2.77 GB | 1,059 s | [HYPER SPARK PACKED](engines/HYPER_SPARK_PACKED.cpp) | [log](logs/HYPER_SPARK_PACKED_6_8_run1.log) |
+| (6,9) | 2,097,152 | 1,907,032 | PRIMITIVE | **new** (beyond table) | 3.71 GB | 11,472 s | [HOUDINI SONIC BOOM STAR](engines/HOUDINI_SONIC_BOOM_STAR.cpp) | [log](logs/HOUDINI_SONIC_BOOM_STAR_6_9_run1.log) |
+| (8,5) | 262,144 | 198,640 | PRIMITIVE | **new** (beyond table) | 2.57 GB | 4,601 s | [HOUDINI HYPER SPARK](engines/HOUDINI_HYPER_SPARK.cpp) | [log](logs/HOUDINI_HYPER_SPARK_8_5_run1.log) |
+| (4,4) | 243 | 102 | PRIMITIVE | confirms DS §5 | 0.13 GB | seconds | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_4_gate_run1.log) |
+| (4,6) | 3,125 | 2,124 | PRIMITIVE | confirms DS §5 | 0.13 GB | seconds | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_6_gate_run1.log) |
+| (4,10) | 59,049 | 51,288 | PRIMITIVE | confirms DS §5 | 0.20 GB | 177 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_10_run1.log) |
+| (4,12) | 161,051 | 145,950 | PRIMITIVE | confirms DS §5 | 0.60 GB | 1,402 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_12_run1.log) |
+| (4,14) | 371,293 | 345,252 | PRIMITIVE | **new** (beyond table) | 2.22 GB | 13,410 s | [**LETHAL DUAL**](engines/LETHAL_DUAL_ENGINE.cpp) | [log](logs/LETHAL_DUAL_4_14_run1.log) |
+| (4,13) | 248,832 | 228,912 | PRIMITIVE | **new** (beyond table) | 0.14 GB | 41 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_13_run1.log) |
+| (4,17) | 1,048,576 | 998,016 | PRIMITIVE | **new** (beyond table) | 0.79 GB | 797 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_17_run1.log) |
+| (4,19) | 1,889,568 | 1,815,948 | PRIMITIVE | **new** (beyond table) | 1.68 GB | 8,079 s | [JULIOCESAR INMORTAL](engines/JULIOCESARINMORTAL.cpp) | [log](logs/JULIOCESARINMORTAL_4_19_run1.log) |
 
 Notes, kept honest:
+- **The five confirmations vs the eleven new verdicts.** `(4,4)`, `(4,6)`, `(4,10)`, `(4,12)` (all `(4,m)` with `m ≤ 12`) and `(6,5)` lie inside the DS §5 table; their PRIMITIVE verdicts were first obtained by Degtyarev and Shimada and are here reproduced byte-exact by an independent engine on consumer hardware. The other eleven cells lie beyond the table and are new computational verdicts. Both counts are stated rather than blurred.
 - `(6,6)` has **two** prime-field computations (char 2 and char 3, since 6 = 2 × 3); both returned the same rank, partition by partition. Its peaks and times are listed per characteristic.
 - `(8,4)` and `(6,5)` each have two reduction passes (char-large and char-p). The listed peak is the larger of the two — the char-large pass — which is the true maximum of the cell; the char-p pass peaked lower (`(8,4)`: 0.42 GB; `(6,5)`: 0.40 GB). The listed time is the sum of both passes.
 - The "rank" reduced at each verdict is the *closing rank* `= DIM − dim_C` (e.g. `(8,5)`: `262,144 − 198,640 = 63,504`, held flat from partition 892 to 945 — the tail partitions add zero, confirming the span is complete).
 - `(10,3)`'s log records flat 14 MB RAM but no second-resolution wall time; "minutes" is the honest description.
 - The single largest object ever reduced in the campaign is `(6,9)`'s closure: **3.45 billion nonzero entries held on an 8 GB machine at 1.07 bytes per entry.**
 
-**On the prime-degree fourfolds `(4,13)`, `(4,17)`, `(4,19)`.** These are decided by JULIOCESAR INMORTAL, whose Jordan-pruning relation `uᵐ⁻¹ = 0` is the *true* ring relation precisely because the degree is prime (φ does not factor — a single block, no CRT splitting to corrupt the pruning). They are valid PRIMITIVE verdicts and part of the census, but **prime degree is covered by the AMV/Aoki filters** — a swan cannot hide there. They are census, not hunt.
+**On the prime-degree fourfolds `(4,13)`, `(4,17)`, `(4,19)`.** These are decided by JULIOCESAR INMORTAL, whose Jordan-pruning relation `uᵐ⁻¹ = 0` is the *true* ring relation precisely because the degree is prime (φ does not factor — a single block, no CRT splitting to corrupt the pruning). They lie beyond the DS §5 table, so they are new verdicts; but **prime degree is also covered by the AMV/Aoki rational-generation results** — a torsion swan cannot hide there. They are honest census, not hunt: new data points, but in a region theory already expected to be white.
 
-**The composite fourfold front and the (4,15) half-cell (LETHAL DUAL, this campaign).** The five `(4,m)` rows above are composite-degree fourfolds decided by the **CRT block split** (see *The Frontier's constructive dual* below). Four of them — `(4,6)`, `(4,10)`, `(4,12)`, `(4,14)` — fail the Aljovin–Movasati–Villaflor condition (degree composite, not 4, `gcd(m,(n+1)!) ≠ 1`) and lie beyond the Degtyarev–Shimada §5 table: **virgin integral verdicts**. `(4,4)` falls in AMV's `d=4` case and is here **independently confirmed**.
+**The composite fourfold front and the (4,15) half-cell (LETHAL DUAL, this campaign).** The five `(4,m)` rows decided by the **CRT block split** (see *The Frontier's constructive dual* below) split cleanly by status. **`(4,6)`, `(4,10)`, `(4,12)` lie inside the DS §5 table** (`m ≤ 12`) and are **independent confirmations** of published composite-degree verdicts — reproduced byte-exact on 8 GB by a different method. **`(4,14)` lies beyond the table and is a genuinely new composite-degree verdict.** `(4,4)` (`m = 4`, a prime power) also lies in the table and falls additionally in AMV's `d = 4` case; it too is independently confirmed. Stating this split honestly matters: the composite-degree *front* is real and is this campaign's forward direction, but not every composite cell already computed here is virgin — three of them stand on Degtyarev and Shimada's own published shoulders, and say so.
 
-One cell is deliberately recorded as **half-decided**, because honesty requires it: **`(4,15) = 3×5`**. Its complex half is `dim_C = 504,924`. The char-5 prime-field half **fits and closes**: `dim_F5 = 504,924 = dim_C`, peak 3.165 GB, PRIMITIVE in characteristic 5. The char-3 half is **RAM-bound beyond 8 GB** — its all-B block (`dimB = 12`, block size `12⁵`) projects to 7–9 GB on this machine and was not computed. This is a **hardware limit, not a torsion candidate**: char 3 produced no rank, and a non-terminating run carries no mathematical information. Recorded verdict: *char 5 PRIMITIVE (fits); char 3 RAM-bound > 8 GB; cell incomplete — one prime confirmed, one beyond machine; NOT torsion.* The cell is parked, not abandoned.
+One cell is deliberately recorded as **half-decided**, because honesty requires it: **`(4,15) = 3×5`**. Its complex half is `dim_C = 504,924`. The char-5 prime-field half **fits and closes**: `dim_F5 = 504,924 = dim_C`, peak 3.165 GB, PRIMITIVE in characteristic 5. The char-3 half is **RAM-bound beyond 8 GB** — its all-B block (`dimB = 12`, block size `12⁵`) projects to 7–9 GB on this machine and was not computed. This is a **hardware limit, not a torsion candidate**: char 3 produced no rank, and a non-terminating run carries no mathematical information. Recorded verdict: *char 5 PRIMITIVE (fits); char 3 RAM-bound > 8 GB; cell incomplete — one prime confirmed, one beyond machine; NOT torsion.* The cell is parked, not abandoned. `(4,15)` also lies beyond the DS §5 table, so closing its char-3 half would be a new verdict.
 
 ### The DOBERMAN sweep — the complex half, mapped across the mesh
 
-Beyond the full verdicts, the sweep engine **DOBERMAN** computed the *complex half* `dim_C` for **38 cells** in well under an hour of total wall time, RAM flat throughout. These are not complete verdicts — the prime-field half is the expensive one — but they map the entire territory, pre-stage every future target, and (see "What the sweep revealed" below) exposed a closed-form law. Every line is from the run log; `wall_s` is the time for that cell's complex half alone.
+Beyond the full verdicts, the sweep engine **DOBERMAN** computed the *complex half* `dim_C` for **38 cells** in well under an hour of total wall time, RAM flat throughout. These are not complete verdicts — the prime-field half is the expensive one — but they map the entire territory, pre-stage every future target, and (see "What the sweep confirmed" below) match a closed-form law. Every line is from the run log; `wall_s` is the time for that cell's complex half alone.
 
 | Cell (n,m) | DIM | partitions | dim_C | off {3,4,6}? | m prime? | torsion-suspect? | wall (s) |
 |---|---|---|---|---|---|---|---|
@@ -133,11 +137,23 @@ Beyond the full verdicts, the sweep engine **DOBERMAN** computed the *complex ha
 
 The deepest cell here, `(10,6)`, has its complex half computed from over **two million partitions** in under fifteen minutes. The "torsion-suspect" column flags cells where theory does *not* force primitivity (degree prime and/or outside {3,4,6}) — these are where a surprise could in principle live, and they are the campaign's forward targets.
 
-### What the sweep revealed — a closed-form law
+### What the sweep confirmed — a closed-form law, and whose it is
 
-The 38-cell sweep was not just a census; it exposed structure. Across the whole mesh, **`rank(n,m) = DIM − dim_C` is a polynomial in `m` of degree `d+1` whose leading coefficient is exactly the partition count `(2d+1)!!`** — split by the parity of `m`, with the two top-degree coefficients shared across both parities. This was verified on the two complete rows of the sweep: the full `n = 4` row (13 degrees, `m = 3…15`) and the full `n = 6` row (12 degrees, `m = 3…14`), every point polynomially regular with **zero outliers**. The hunt for a "black sheep" cell whose `dim_C` breaks the family pattern returned none. This is the family-scale confirmation that torsion is invisible to the complex half — it lives only in the prime-field Jordan structure, which no eigenbasis read can see. (Honest scope: the law extends a remark in Degtyarev–Shimada and is established empirically across these two rows, not proven in general.)
+The 38-cell sweep is a fast census, and it let the campaign confirm a closed-form law for the complex half. Here honesty about priority is essential, and it is stated plainly.
 
-A note on counts, for precision: the sweep evaluated `dim_C` for **38 cells** in one run; of those, roughly **27 are virgin** values not present in any published table (the rest are calibration cells with known values). "38 cells swept" and "~27 new `dim_C`" are two different counts of two different things, and both are honest — the first is the run, the second is the novelty within it.
+**The rank formula is Degtyarev and Shimada's, not this campaign's.** Their **Remark 4.4** (page 14 of [1]) gives the rank of `L(X)` in closed form, verbatim:
+
+- `rank = 3m² − 9m + 6 + δₘ` for `n = 2`;
+- `rank = 15m³ − 90m² + 175m − 100 + (15m − 39)δₘ` for `n = 4`;
+- `rank = 105m⁴ − 1050m³ + 3955m² − 6335m + 3325 + (210m² − 1302m + 2010)δₘ` for `n = 6`;
+
+where `δₘ ∈ {0,1}` satisfies `δₘ ≡ m − 1 (mod 2)`. The leading coefficient is the partition count `(2d+1)!!`, also from DS.
+
+What this campaign did is **independent numerical verification** of that published formula: the `n = 4` and `n = 6` rows of the DOBERMAN sweep reproduce DS Remark 4.4 byte-exact across every degree computed, with **zero outliers** — `15m³ − 90m² + 175m − 100` for odd `m` (`δₘ = 0`) and `…+ 190m − 139` for even `m` (`δₘ = 1`), and likewise for `n = 6`. This is a genuine and useful check — DS's own §5 table reached only `m ≤ 12` in the `n = 4` row, and this sweep confirms their formula well past that — but it is *verification of their result*, not a discovery of a new one. The formula is theirs; the byte-exact confirmation across an extended range, and the calculator that evaluates it instantly, are this campaign's contribution. **No claim of a new formula is made.**
+
+The verification carries one real consequence worth stating: because every decided cell is PRIMITIVE, `dim_Fp = dim_C` on each, so DS's formula also gives — for free, with no reduction — the value the *expensive* prime-field half must equal **if** a cell is primitive. That makes the formula a ready-made target line for the swan hunt: a torsion cell would be precisely one whose measured `dim_Fp` departs from the formula. The formula cannot *find* torsion (it is the complex half, blind to the prime-field Jordan structure by construction), but it tells the hunt exactly what number to disbelieve.
+
+A note on counts, for precision: the sweep evaluated `dim_C` for **38 cells** in one run; of those, roughly **27 are values not present in any published table** (the rest are calibration cells with known values). "38 cells swept" and "~27 cells past the published tables" are two different counts of two different things, and both are honest — the first is the run, the second is its reach.
 
 ---
 
@@ -150,7 +166,7 @@ The project's engineering is a single bloodline. Each engine was built only afte
 | **HODGE_ENGINE_v3** | Sparse tensorial generation + incremental Gaussian elimination — kills the dense `O(DIM²)` wall of naive approaches. | `(10,3)` and the calibration cells |
 | **HOUDINI** | The escape act: compute the complex half in an **eigenbasis** where the ideal is block-diagonal, so `dim_C` falls out in milliseconds with no linear algebra at all. The prime half stays as honest reduction. | `(8,4)`, `(6,5)` |
 | **DOBERMAN** | Family-wide sweep of the cheap complex half across every cell under a size ceiling, cheapest-first. | 38 cells' `dim_C` |
-| **HOUDINI NAPKIN** | The **Jordan-mould starter**: work in the basis `u = t − 1`, where for `p \| m` each variable is nilpotent (`uᵐ⁻¹ = 0` exactly). Dead terms that would exceed the nilpotent ceiling are **never generated** — the mathematics kills them before they are born, instead of building them and reducing them away. (2.17× lighter.) | (8,5) attempt |
+| **HOUDINI NAPKIN** | The **Jordan-mould starter**: work in the basis `u = t − 1`, where for `p \| m` each variable is nilpotent (`uᵐ⁻¹ = 0` exactly). Dead terms that would exceed the nilpotent ceiling are **never generated** — the mathematics kills them before they are born, instead of building them and reducing them away. (2.17× lighter.) **Valid only for prime-power `m` — see the Frontier.** | (8,5) attempt |
 | **HOUDINI NAPKIN TURBINA** | **Flow, not accumulation.** Each partition's small closure is saturated alone, folded into one shared echelon, and its intermediates discarded before the next enters. The live mass is never "all 945 pieces at once" — it is the echelon plus one piece. (≈5× lighter than NAPKIN on (6,5).) | (8,5) method |
 | **HOUDINI HYPER SPARK** | The **dense-rebound fold**: stop rebuilding a sparse vector on every Gaussian collision. Scatter each row once into a dense scratch, subtract pivots in place on their own columns only, read the leading column from a tiny heap. Diagnosed, not hunched: the old fold touched 4.89 **billion** nonzeros to keep a 1.75M echelon, with 82% of rows collapsing to zero — that count named the fix. (2.1× faster than TURBINA.) | `(8,5)`, `(6,7)` |
 | **HYPER SPARK PACKED** | Shrink the *envelope*: store each echelon entry in 5 bytes instead of 16. Same gasoline, a third of the tank. | `(6,8)` |
@@ -174,7 +190,7 @@ A note on reading this table, for honesty: not every engine decided a cell. Of t
 
 For each cell, two numbers are computed and compared:
 
-1. **The complex half (`dim_C`).** Over a prime `P ≡ 1 (mod m)` a primitive `m`-th root of unity exists, the shift operators become simultaneously diagonalizable, and the whole problem factorizes character-by-character. No linear algebra, no memory wall — milliseconds. Computed over several such primes and cross-checked (cross-prime verification is mandatory).
+1. **The complex half (`dim_C`).** Over a prime `P ≡ 1 (mod m)` a primitive `m`-th root of unity exists, the shift operators become simultaneously diagonalizable, and the whole problem factorizes character-by-character. No linear algebra, no memory wall — milliseconds. Computed over several such primes and cross-checked (cross-prime verification is mandatory). This is the quantity DS give in closed form (Theorem 1.4 and Remark 4.4); here it is computed directly and, on `n = 4` and `n = 6`, checked against their formula.
 
 2. **The prime-field half (`dim_Fp`), for each `p \| m`.** Here no root of unity exists; the operator is a single nilpotent Jordan block, not diagonalizable. The dimension must be found by real sparse Gaussian elimination over `F_p` on the closure of the generators under all variable-shifts. This is the expensive half, and the home of every engine above.
 
@@ -182,7 +198,7 @@ If `dim_C = dim_Fp` for all `p \| m`, the cell is **PRIMITIVE**. The campaign's 
 
 **A hard limit, stated up front rather than buried.** Every cell verified so far is PRIMITIVE, so the gap between the two halves (the "scar") has only ever been measured at zero. This means the method is, to date, an audited **primitivity *confirmator***, not a validated **torsion *detector***: it is confirmed to report "no torsion" correctly, but it has never been tested reporting torsion where torsion exists, because no such Fermat cell is known. Therefore, before any future nonzero scar could be trusted as a real torsion verdict, a synthetic positive control — a fabricated system with known torsion — must be shown to make the detector fire correctly. This is logged as a binding requirement, not a footnote, and no result in this repository depends on the scar as a detector.
 
-The torsion the campaign hunts is called **the swan** — the rare cell where the two halves disagree, nesting (if it exists at all) only where theory does *not* force primitivity. The whole effort is, in one sentence, the search for a black swan among cells everyone expects to be white, conducted with enough rigour that a white verdict is trustworthy and a black one would be real.
+The torsion the campaign hunts is called **the swan** — the rare cell where the two halves disagree, nesting (if it exists at all) only where theory does *not* force primitivity. By DS Corollary 1.5, any such torsion can involve only primes dividing `m`; and the rational-generation results make prime degrees barren ground. The hunt therefore points at composite degrees with two or more distinct prime factors, past `{3,4,6}` and past the DS §5 table. The whole effort is, in one sentence, the search for a black swan among cells everyone expects to be white, conducted with enough rigour that a white verdict is trustworthy and a black one would be real.
 
 ---
 
@@ -212,6 +228,7 @@ These are not failures to hide; they are the map of the wall. Each was a real id
 - **The vacuum cleaner** (Wiedemann / LEONIDAS). Store nothing; recompute the operator matrix-free, keeping RAM flat. RAM *did* stay flat (megabytes). But the operator's column count grows ≈7× per shift-depth and saturates only at depth 5–6 — on the deep cells, an unpayable per-step traversal. The wall moved from RAM to time and stayed exactly the same size.
 - **The lightning rod / blockchain** (fold the pivot index into a dense plane, no hash lookup). Real and clean — but a measured 3% gain, because the hash was never the bottleneck. Recorded as a micro-win, not soldered: no new engine for 3%.
 - **The impact driver — "destorgolpe"** (read the Smith normal form / elementary divisors of the small block in one blow). Bit, but was a 100% false positive on every primitive control — it detects the universal cyclotomic collapse, not the torsion.
+- **The S_{n+2} symmetry reduction.** The Degtyarev–Shimada partition set is fully invariant under permuting the `n+2` variables — proven, zero breaks — so the closure decomposes over the symmetric group's irreducibles. Tempting as a route to shrink the monster all-B block. Measured to death: the per-variable shift does **not** commute with the symmetry individually, so naive orbit reduction undercounts the rank; the full isotypic (Specht) decomposition does preserve rank, but the largest isotypic block is ~29% of the space, a real reduction factor of only **3.2–3.5×** — not worth the representation-theory machinery, with F_p-invertibility risk in the Young symmetrizers on top. The symmetry is real and beautiful and gives almost nothing. Dead, with a number.
 - **Splitting the space into parcels.** Blocks entangle under the shift action; the nonzero count is invariant. One of the earliest and most-confirmed walls.
 
 The meta-lesson, recorded as doctrine: **the graveyard of one metaphor does not predict the fate of another.** Cutting the *space* into blocks was dead; banding the *process* in time was a different cut and had to be measured fresh (it partitioned beautifully and still died, but for a new, measured reason). And the deepest invariant of the campaign emerged from this graveyard: the nonzero-count of the ideal closure is unchanged by prime, by basis, by elimination order, by partition-subset, and by grading — it is intrinsic to the mathematics. That is *why* the engines had to attack storage cost and flow, not the count itself.
@@ -222,15 +239,17 @@ The meta-lesson, recorded as doctrine: **the graveyard of one metaphor does not 
 
 The most recent and most structural result has its own document: **[THE_FRONTIER_6_6.md](THE_FRONTIER_6_6.md)**.
 
-In short: every cell conquered before `(6,6)` had a degree that was a power of a single prime (`m = 4, 5, 7, 8, 9`). `(6,6)` is the first with **two distinct primes** in the degree (`6 = 2 × 3`), and the standard engine returned an *impossible* answer on it — saturating completely in characteristic 2, and to a different wrong value in characteristic 3. That asymmetry was the clue: a generic overflow would fail the same way in both. It does not.
+In short: every cell conquered before `(6,6)` had a degree that was a power of a single prime (`m = 4, 5, 7, 8, 9`). `(6,6)` is the first with **two distinct primes** in the degree (`6 = 2 × 3`) attacked by the fast engine, and the standard engine returned an *impossible* answer on it — saturating completely in characteristic 2, and to a different wrong value in characteristic 3. That asymmetry was the clue: a generic overflow would fail the same way in both. It does not.
 
 The diagnosis: the Jordan-mould's pruning rule `uᵐ⁻¹ = 0` is the *true* ring relation **if and only if `m` is a power of a single prime**. When `m` has two distinct prime factors, the relation factors (a Chinese-Remainder splitting of the ring), the pruning imposes a false constraint, and the rank silently inflates. We call this the **prime-power reduction frontier** — henceforth, for brevity, **the Frontier**.
+
+This is the genuinely new structural contribution of the campaign, and its priority is fixed carefully in the linked document. The underlying cyclotomic fact — that `φ(u+1)` is a pure power of `u` exactly when `m` is a prime power — is classical and is claimed by no one here. What is new is identifying *that* line as the precise point where this Hodge-verification reduction fails **silently** (a plausible wrong number, not a crash), proving the corruption is graded by characteristic (the full/partial/clean signature), and building the cure. Degtyarev and Shimada used Gröbner bases, not this pruning, so the Frontier is a property of the *fast engine lineage*, not of their method — which is exactly why it appears nowhere in their paper.
 
 A new engine, **ROSETTA STAR**, reduces in the monomial basis with the correct relation for any degree, and recovered the true verdict: `(6,6)` is **PRIMITIVE** by both primes, byte-exact, on the 8 GB laptop. The full story, the literature search that fixes priority honestly, and exactly what is new versus what is classical, are in the linked document.
 
 ### The Frontier's constructive dual — the CRT block split (LETHAL DUAL)
 
-The Frontier is a *destructive* fact: `φ` factoring over `F_p` is **why** the old pruning lies on composite degree. The same fact has a *constructive* face. For a prime `p | m`, `φ(t) = (t−1)ᵃ · g(t)ᵇ` over `F_p`, and the two factors are **coprime** — so by the Chinese Remainder Theorem the quotient ring splits as a direct product `A × B`. The shift operator respects the split; tensored over the `n+1` variables, the whole space breaks into `2ⁿ⁺¹` independent blocks, and the ideal closure becomes a **direct sum** over them. Independent summands can be reduced **one at a time and released**, so the memory peak collapses from *the whole closure* to *the largest single block*. Measured on `(4,6)`: the largest block peaks at **0.15×–0.39×** of the monolithic closure, byte-exact, with the sum of block-ranks equal to the monolithic rank (the split is exact). The cost is paid in CPU, not RAM — and the Mac is hard with time. This is the engine (**LETHAL DUAL**) that opened the entire composite-fourfold front, and the same factorization that *breaks* Jordan now *buys back* the memory.
+The Frontier is a *destructive* fact: `φ` factoring over `F_p` is **why** the old pruning lies on composite degree. The same fact has a *constructive* face. For a prime `p | m`, `φ(t) = (t−1)ᵃ · g(t)ᵇ` over `F_p`, and the two factors are **coprime** — so by the Chinese Remainder Theorem the quotient ring splits as a direct product `A × B`. The shift operator respects the split; tensored over the `n+1` variables, the whole space breaks into `2ⁿ⁺¹` independent blocks, and the ideal closure becomes a **direct sum** over them. Independent summands can be reduced **one at a time and released**, so the memory peak collapses from *the whole closure* to *the largest single block*. Measured on `(4,6)`: the largest block peaks at **0.15×–0.39×** of the monolithic closure, byte-exact, with the sum of block-ranks equal to the monolithic rank (the split is exact). The cost is paid in CPU, not RAM — and the Mac is hard with time. This is the engine (**LETHAL DUAL**) that carried the composite-fourfold computations on consumer hardware, and the same factorization that *breaks* Jordan now *buys back* the memory. (Of those composite cells, `(4,6)`, `(4,10)`, `(4,12)` confirm DS §5 byte-exact and `(4,14)` is a new verdict — see "The cells conquered.")
 
 A boundary was also mapped, honestly: a block's reach is set by the **worst prime's `dimB`**, not by the cell's total size. On `(4,15)` the char-3 all-B block (`dimB = 12`) is the first measured to exceed 8 GB — the cell is half-decided (char 5 PRIMITIVE, char 3 RAM-bound), and the all-B block provably does **not** split further (it is a *local* ring: `g` irreducible, no idempotents). The wall there is hardware and representation, not mathematics.
 
@@ -238,7 +257,7 @@ A boundary was also mapped, honestly: a block's reach is set by the **worst prim
 
 ## Reproducibility
 
-Every engine here is a single self-contained C++ file — exact modular arithmetic, no floating point anywhere, single-threaded. Pick any cell from the table above, build its engine, and reproduce the exact verdict. For example, the headline result `(6,6)`:
+Every engine here is a single self-contained C++ file — exact modular arithmetic, no floating point anywhere, single-threaded. Pick any cell from the table above, build its engine, and reproduce the exact verdict. For example, the structural result `(6,6)`:
 
 ```
 g++ -O3 -march=native -std=c++17 -funroll-loops engines/ROSETTA_STAR.cpp -o ROSETTA_STAR
@@ -267,7 +286,7 @@ Every verdict in this README is reproducible from the matching engine + log. Not
 - **Cross-prime mandatory** for the complex half.
 - **Byte-exact validation gates** against known cells before any engine is trusted.
 - **Failed approaches are documented, not hidden** — the dead veins are part of the scientific record.
-- **Priority fixed by literature search before any claim.** The classical facts are cited as classical; only the genuinely new contribution is named as new.
+- **Priority fixed by literature search before any claim.** The classical facts are cited as classical; the rank formula is credited to Degtyarev–Shimada Remark 4.4; published verdicts are labelled confirmation; only the genuinely new contribution — the Frontier and the engineering — is named as new.
 
 ---
 
@@ -275,7 +294,7 @@ Every verdict in this README is reproducible from the matching engine + log. Not
 
 Beyond the conjecture itself, the same primitivity questions sit underneath the structure of Néron–Severi lattices and the algebraic cycles of these varieties — objects at the centre of modern algebraic geometry. And the engineering stands on its own: driving exact sparse linear algebra over finite fields from 16 bytes per entry down to 1.07, on commodity hardware, turning cells that "do not fit in 8 GB" into byte-exact verdicts, is a reusable result independent of the mathematics it was built to serve.
 
-The work continues. The torsion — the *swan* — has not been found; every cell so far is primitive, exactly as the conjecture predicts. But the map is now drawn, the engines are built, the Frontier is named, and the next stones are chosen.
+The work continues. The torsion — the *swan* — has not been found; every cell so far is primitive, exactly as the conjecture predicts. Eleven cells now stand decided beyond the published table, five more confirm it byte-exact on hardware nobody would call serious, the rank formula of Degtyarev–Shimada is verified well past where they ran it, the Frontier is named, and the next stones — composite degrees with two distinct prime factors, past `{3,4,6}` and past the table — are chosen.
 
 ---
 
