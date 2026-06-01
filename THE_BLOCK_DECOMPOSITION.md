@@ -9,6 +9,8 @@ Three results are reported, in **descending order of how firmly they stand**. Th
 **Architect:** Rafael Amichis Luengo (Madrid) · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
 **Standing on:** Degtyarev–Shimada, arXiv:1405.4683 — especially §17 (the tensor/coordinate construction) and Remark 4.4 (the closed-form rank).
 
+**How to read this.** Section 1 is a self-contained proof (torsion localizes to one block) and can be read alone. Section 2 is the main result — a per-block rank law, validated out of sample, with its single open residual stated explicitly in §2.2. Sections 3–4 give the block count and its conjectural extension. Section 5 is the honest scope and the graveyard of refuted approaches. A reader wanting only the punchline: localization is *proven*; the rank law is *validated, not yet proven*; the swan has not been found.
+
 ---
 
 ## 0. Notation and setting
