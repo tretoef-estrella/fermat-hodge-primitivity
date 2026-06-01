@@ -2,7 +2,7 @@
 ### A certified body of computational results — eleven beyond the published table, five independent confirmations. **This is not a theorem.**
 
 **Rafael Amichis Luengo** — Madrid · github.com/tretoef-estrella
-**Version 1.0 — 1 June 2026**
+**Version 1.1 — 1 June 2026**
 
 ---
 
@@ -10,7 +10,7 @@
 
 This document records, in one place and with full provenance, sixteen complete **PRIMITIVE** verdicts on Fermat cells obtained on a throttled 8 GB consumer laptop using the Degtyarev–Shimada criterion. **It is not a theorem and makes no claim to be one.** It is a body of *certified computational results*: for each cell, the complex dimension `dim_C` and the prime-field dimension `dim_Fp` for every prime `p` dividing the degree were computed independently and found equal, so the standard linear cycles generate the full integral Hodge lattice — the cell is **PRIMITIVE**. Eleven of the sixteen lie beyond the Degtyarev–Shimada §5 table and are genuinely new verdicts; five lie inside it and are labelled throughout as *independent confirmations* — the same answers reproduced byte-exact by a different engine on minimal hardware a decade later. Every number below is read directly from a run log in the public repository; none is from memory. The value of this record is reproducibility and reach on small hardware, not a proof: a verdict is a certified computation, not a theorem about all cells.
 
-**Status of this document.** A *verdict* is the outcome of a finite, exact computation on one specific cell: it certifies that, *for that cell*, the integral Hodge conjecture holds (the linear cycles generate). It does **not** prove the conjecture for any infinite family, and it is **not a theorem** in the mathematical sense. Where this document overlaps the companion note *The localization of torsion to a single CRT block*, that note contains the one proven theorem; this document contains certified data. The distinction is kept sharp on purpose.
+**Status of this document.** A *verdict* is the outcome of a finite, exact computation on one specific cell: it certifies that, *for that cell*, the integral Hodge conjecture holds (the linear cycles generate). It does **not** prove the conjecture for any infinite family, and it is **not a theorem** in the mathematical sense. Where this document overlaps the companion note *The localization of torsion to a single CRT block* (`THE_LOCALIZATION_THEOREM.md`), that note contains the one proven theorem; this document contains certified data. The distinction is kept sharp on purpose.
 
 ## 1. The criterion and what a verdict certifies
 
@@ -24,26 +24,28 @@ Each verdict below is *complete*: `dim_C` and `dim_Fp` for every prime dividing 
 
 `DIM = (m−1)^{n+1}` is the ambient dimension and `dim_C = dim_Fp` is the common value certifying primitivity. "Status" states plainly whether the cell is new (beyond the DS §5 table) or an independent confirmation of a published one.
 
-| Cell (n,m) | DIM | dim_C = dim_Fp | Verdict | Status vs DS §5 | Peak RAM |
-|---|---:|---:|---|---|---:|
-| (10,3) | 2,048 | 1,124 | PRIMITIVE | new (beyond table) | 14 MB |
-| (8,4) | 19,683 | 10,730 | PRIMITIVE | new (beyond table) | 0.72 GB |
-| (8,5) | 262,144 | 198,640 | PRIMITIVE | new (beyond table) | 2.57 GB |
-| (6,5) | 16,384 | 11,484 | PRIMITIVE | confirms DS §5 | 0.46 GB |
-| (6,6) | 78,125 | 59,392 | PRIMITIVE | new (beyond table) | 0.47/0.60 GB |
-| (6,7) | 279,936 | 235,206 | PRIMITIVE | new (beyond table) | 2.48 GB |
-| (6,8) | 823,543 | 720,264 | PRIMITIVE | new (beyond table) | 2.77 GB |
-| (6,9) | 2,097,152 | 1,907,032 | PRIMITIVE | new (beyond table) | 3.71 GB |
-| (4,4) | 243 | 102 | PRIMITIVE | confirms DS §5 | 0.13 GB |
-| (4,6) | 3,125 | 2,124 | PRIMITIVE | confirms DS §5 | 0.13 GB |
-| (4,10) | 59,049 | 51,288 | PRIMITIVE | confirms DS §5 | 0.20 GB |
-| (4,12) | 161,051 | 145,950 | PRIMITIVE | confirms DS §5 | 0.60 GB |
-| (4,14) | 371,293 | 345,252 | PRIMITIVE | new (beyond table) | 2.218 GB |
-| (4,13) | 248,832 | 228,912 | PRIMITIVE | new (beyond table) | 0.14 GB |
-| (4,17) | 1,048,576 | 998,016 | PRIMITIVE | new (beyond table) | 0.79 GB |
-| (4,19) | 1,889,568 | 1,815,948 | PRIMITIVE | new (beyond table) | 1.68 GB |
+| Cell (n,m) | DIM | dim_C = dim_Fp | Status | Peak RAM | Engine | Log |
+|---|---:|---:|---|---:|---|---|
+| (10,3) | 2,048 | 1,124 | new | 14 MB | `HODGE_ENGINE_v3` | `PRUEBA_RECORD_10_3.txt` |
+| (8,4) | 19,683 | 10,730 | new | 0.72 GB | `HOUDINI` | `CIC_8_4_run1.log` |
+| (8,5) | 262,144 | 198,640 | new | 2.57 GB | `HOUDINI_HYPER_SPARK` | `HOUDINI_HYPER_SPARK_8_5_run1.log` |
+| (6,5) | 16,384 | 11,484 | confirms | 0.46 GB | `HOUDINI` | `HOUDINI_6_5_diagnostico.log` |
+| (6,6) | 78,125 | 59,392 | new | 0.47/0.60 GB | `ROSETTA_STAR` | `ROSETTA_STAR_6_6_run1.log` |
+| (6,7) | 279,936 | 235,206 | new | 2.48 GB | `HOUDINI_HYPER_SPARK` | `HOUDINI_HYPER_SPARK_6_7_run1.log` |
+| (6,8) | 823,543 | 720,264 | new | 2.77 GB | `HYPER_SPARK_PACKED` | `HYPER_SPARK_PACKED_6_8_run1.log` |
+| (6,9) | 2,097,152 | 1,907,032 | new | 3.71 GB | `HOUDINI_SONIC_BOOM_STAR` | `HOUDINI_SONIC_BOOM_STAR_6_9_run1.log` |
+| (4,4) | 243 | 102 | confirms | 0.13 GB | `LETHAL_DUAL` | `LETHAL_DUAL_4_4_gate_run1.log` † |
+| (4,6) | 3,125 | 2,124 | confirms | 0.13 GB | `LETHAL_DUAL` | `LETHAL_DUAL_4_6_gate_run1.log` † |
+| (4,10) | 59,049 | 51,288 | confirms | 0.20 GB | `LETHAL_DUAL` | `LETHAL_DUAL_4_10_run1.log` |
+| (4,12) | 161,051 | 145,950 | confirms | 0.60 GB | `LETHAL_DUAL` | `LETHAL_DUAL_4_12_run1.log` |
+| (4,14) | 371,293 | 345,252 | new | 2.218 GB | `CHUCHIPACHI_v2` | `CHUCHIPACHI_v2_4_14_char2_dump.log` |
+| (4,13) | 248,832 | 228,912 | new | 0.14 GB | `JULIOCESARINMORTAL` | `JULIOCESARINMORTAL_4_13_run1.log` |
+| (4,17) | 1,048,576 | 998,016 | new | 0.79 GB | `JULIOCESARINMORTAL` | `JULIOCESARINMORTAL_4_17_run1.log` |
+| (4,19) | 1,889,568 | 1,815,948 | new | 1.68 GB | `JULIOCESARINMORTAL` | `JULIOCESARINMORTAL_4_19_run1.log` |
 
-Every cell is **PRIMITIVE**: the linear cycles generate the integral Hodge lattice. Wall times and the engine and log for each row are in the repository tables; every engine and every log is public and independently checkable.
+**†** The cells `(4,4)` and `(4,6)` confirm DS §5 and close in seconds; their listed log is the engine's byte-exact *gate* run (the validation pass that also produces the verdict), not a separate long production run. The rank closed is identical to the verdict. All other rows are production run logs.
+
+Every cell is **PRIMITIVE**: the linear cycles generate the integral Hodge lattice. "new" means beyond the Degtyarev–Shimada §5 table; "confirms" means an independent byte-exact reproduction of a verdict already inside it. Engines live under `engines/` and logs under `logs/` in the repository; every one is public and independently checkable.
 
 ## 3. Honest accounting
 
