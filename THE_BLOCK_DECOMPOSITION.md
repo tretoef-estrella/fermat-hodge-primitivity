@@ -31,7 +31,7 @@ Throughout, `DS_n(m)` denotes the Degtyarev–Shimada closed-form rank of `L(X)`
 
 **What it does NOT give.** Localization says *where*, not *what*. It does not, by itself, tell you the rank a primitive block should have (that is Result Two), nor does it constitute a tested detector (the value-law it would be paired with is validated, not proven — see §5).
 
-**Verifier.** [`verifiers/CENTRALITY_DETECTOR_VERIFIER__1_.py`](verifiers/CENTRALITY_DETECTOR_VERIFIER__1_.py) constructs the idempotents for several cells (char 2, 3, 5; `m = 6, 12, 15`) and checks, byte-exact, that they are central, orthogonal, idempotent, and sum to one — the hypotheses of the proof.
+**Verifier.** [`verifiers/CENTRALITY_DETECTOR_VERIFIER.py`](verifiers/CENTRALITY_DETECTOR_VERIFIER.py) constructs the idempotents for several cells (char 2, 3, 5; `m = 6, 12, 15`) and checks, byte-exact, that they are central, orthogonal, idempotent, and sum to one — the hypotheses of the proof.
 
 ---
 
@@ -138,7 +138,7 @@ where `φ` is Euler's totient and `ord_d(p)` is the multiplicative order of `p` 
 Each result has a self-contained Python verifier that recomputes the Degtyarev–Shimada values from scratch (no stored numbers):
 
 ```
-python3 verifiers/CENTRALITY_DETECTOR_VERIFIER__1_.py    # §1: idempotents central/orthogonal/complete; module splits
+python3 verifiers/CENTRALITY_DETECTOR_VERIFIER.py    # §1: idempotents central/orthogonal/complete; module splits
 python3 verifiers/GENERAL_PRODUCT_LAW_VERIFIER.py        # §2: per-block product law + blind dimA=4 prediction
 python3 verifiers/DS_CONNECTION_VERIFIER.py              # §2: recursive-dimension/grade identification vs DS §17
 python3 verifiers/TRIPLE_TIE_VERIFIER.py                 # §2.1: the double-factorial fingerprint
