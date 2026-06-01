@@ -2,7 +2,7 @@
 ### A self-contained proof that any torsion in the integral cohomology of a Fermat cell is confined to one computable block
 
 **Rafael Amichis Luengo** — Madrid · github.com/tretoef-estrella
-**Version 1.0 — 1 June 2026**
+**Version 1.1 — 1 June 2026**
 
 ---
 
@@ -10,7 +10,7 @@
 
 This note isolates and proves, in full and on its own terms, the one rigorously established result underlying the author's computational campaign on the integral Hodge conjecture for Fermat varieties: *any torsion in the integral cohomology module of a Fermat cell is localized to a single block of the Chinese Remainder Theorem (CRT) splitting, namely the unique block whose rank drops modulo p.* The proof rests on one structural fact that holds by construction — the CRT idempotents are polynomials in the shift variable, hence central — and on the elementary behaviour of the Smith normal form under direct sums. No unproven law and no external identification are used. The result is the rigorous half of a torsion detector: with no computation it says *where* a counterexample must live, for every cell and every prime dividing the degree. It does not say *what* rank a primitive block carries; that is a separate, validated-but-not-proven law and is deliberately excluded here. The torsion counterexample has not been found; every measured block is primitive. What this note contributes is the proof of confinement — the per-block elementary-divisor structure that Aljovin–Movasati–Villaflor explicitly left uncomputed.
 
-**How to read this.** Section 1 fixes notation. Section 2 is the theorem and a self-contained proof; it may be read alone. Section 3 states precisely what the result does and does not give, and Section 4 records the machine verification of its hypotheses. The punchline, for a reader in a hurry: localization is proven; it tells you where a counterexample must be, not whether one exists.
+**How to read this.** Section 1 fixes notation. Section 2 is the theorem and a self-contained proof; it may be read alone. Section 2a works one idempotent explicitly. Section 3 states precisely what the result does and does not give, and Section 4 records the machine verification of its hypotheses. The punchline, for a reader in a hurry: localization is proven; it tells you where a counterexample must be, not whether one exists.
 
 ## 1. Notation and setting
 
@@ -37,6 +37,34 @@ A central, orthogonal, complete system of idempotents yields a direct-sum decomp
 The Smith normal form of a block-diagonal matrix is the concatenation of the Smith normal forms of its diagonal blocks: the elementary divisors of the whole are exactly the union, with multiplicity, of the elementary divisors of the blocks. Since the torsion of `M` is precisely the part of the cokernel recorded by the non-unit elementary divisors, the torsion partitions across the blocks. Hence any torsion subgroup is localized to the block (or blocks) carrying a non-unit elementary divisor — equivalently, to the block whose `F_p`-rank is strictly less than its `Z`-rank, i.e. the block that drops rank modulo p. ∎
 
 **Remark.** The proof uses nothing beyond the idempotents being polynomials in the shift and the additivity of the Smith normal form under direct sums. In particular it requires no dictionary between these blocks and any external geometric construction, and no transfer of an external corollary. It holds verbatim for any number of coprime primary components, not only the two-component case.
+
+## 2a. A worked idempotent
+
+To make the construction concrete, take the cell of degree `m = 6` at the prime `p = 2`. Over `F_2`,
+
+```
+φ(t) = (t^6 − 1)/(t − 1) = t^5 + t^4 + t^3 + t^2 + t + 1 = (t + 1)(t^2 + t + 1)^2,
+```
+
+so the `(t−1)`-primary part is `A = (t + 1)` with `dim_F2 A = 1`, and the coprime cofactor is `B = (t^2 + t + 1)^2` with `dim_F2 B = 4` (note `1 + 4 = 5 = m − 1`). Since `gcd(A, B) = 1`, the extended Euclidean algorithm over `F_2` gives a Bezout relation
+
+```
+s·A + u·B = 1,    s = t^3 + t^2,   u = 1,
+```
+
+and the idempotents, reduced modulo `φ`, are
+
+```
+e_B = s·A mod φ = t^4 + t^2,      e_A = u·B mod φ = t^4 + t^2 + 1.
+```
+
+One checks directly, over `F_2` and modulo `φ`, that
+
+```
+e_A^2 = e_A,   e_B^2 = e_B,   e_A·e_B = 0,   e_A + e_B = 1,
+```
+
+and each `e_i`, being a polynomial in `t`, commutes with multiplication by `t` — the centrality the proof uses. These are exactly the four conditions invoked in Theorem 1, here exhibited on an explicit pair. The same computation runs for any cell and prime; the verifier of Section 4 performs it across several.
 
 ## 3. Significance, and what the result does not give
 
