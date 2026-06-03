@@ -267,7 +267,12 @@ The structural chain above — localization, the product law, the closed walk, t
 ```
 rec(d, ℓ) = DS_{2(ℓ−1)}(d+1),    for all d ≥ 0, ℓ ≥ 1.
 ```
-Equivalently, that rank is the constant term of a closed lattice walk of `2ℓ` steps on `Z^⌊d/2⌋`. What was measured byte-exact across the campaign — the General Product Law, the *meshing* of the recursion ladders — is now proven, not a pattern. The proof is a chain of module-dimension identities read from the Degtyarev–Shimada source itself: the measured block **is** the DS core module (their tensor decomposition Cor 1.7, with a free tail isolating the core dimension cleanly), the core dimension **is** the closed walk (their Remark 4.4 applied one dimension down), and the depth step is a finite holonomic operator uniform in `d` (Lipshitz 1988). No appeal to "two sequences share a recursion" is made — that would not force equality; the tensor identity does.
+Equivalently, that rank is the constant term of a closed lattice walk of `2ℓ` steps on `Z^⌊d/2⌋`. What was measured byte-exact across the campaign — the General Product Law, the *meshing* of the recursion ladders — is now proven, not a pattern. The proof is a chain of module-dimension identities read from the Degtyarev–Shimada source itself, in two load-bearing links:
+
+- **Link 1 — the value is a closed walk** ([THE_CLOSED_WALK_LAW.md](THE_CLOSED_WALK_LAW.md)). The DS rank polynomial `DS_{2s}(m)` is the number of closed lattice walks of `2s+2` steps on `Z^⌊(m−1)/2⌋` — the constant term of `(1+S)^{2s+2}`, with the published parity correction `δ_m` revealed to be exactly the walker's rest permission. This is what carries the theorem to **every depth `n > 6`, where Degtyarev–Shimada print no closed form at all** — the closed walk *is* the definition there. Gate-verified byte-exact on 24 in-sample points, 12 out-of-sample, the new row `DS_8`, and the decisive hardware-measured `DS_6(4) = 1107` reproduced without fitting.
+- **Link 2 — the measured block *is* the DS core** (their tensor decomposition Cor 1.7, with a free tail isolating the core dimension cleanly), and the core dimension **is** that closed walk (their Remark 4.4 applied one dimension down). The depth step is a finite holonomic operator uniform in `d` (Lipshitz 1988).
+
+No appeal to "two sequences share a recursion" is made — that would not force equality; the tensor identity does.
 
 **The one condition — and the red link that discharged it.** The theorem rested on a single identification, named openly as a condition rather than buried: that the campaign's measured CRT all-`A` block is the Degtyarev–Shimada core. That *dictionary* has two halves, and only one was ever open. The **geometric** half — that the `A`-idempotent `e_A` is the coordinate-zeroing cut `X(2s)` of DS §4.6 — was confirmed *verbatim* against the source. The **faithfulness** half — that the block measured over `F_p`, carrying the nilpotent `(t−1)`-primary tower (multiplicity `p^v−1` over `F_p`, against `1` over `C`), equals the DS core's reduction over `Z` **without phantom torsion injected when `Z → F_p`** — was the genuinely open link. It was carried by measurement: four cells, `dimA ∈ {1,2,3,7}`, characteristics 2 and 3, including the tallest manageable tower (`m = 8`, `dimA = 7`, tower height 7), every one giving **zero** injected torsion, by two independent instruments with a blindness control.
 
@@ -333,7 +338,7 @@ THE_NAIL_THEOREM_CLOSED.pdf  the block-rank theorem, technical paper (closed)   
 THE_FRONTIER_6_6.md          the (6,6) discovery, in full
 THE_BLOCK_DECOMPOSITION.md   the recursive block decomposition, in full
 THE_WITHIN_PAIR_FUNCTOR.md   the within-pair functor (Sym²), proven for odd characteristic
-THE_CLOSED_WALK_LAW.md       the closed-walk reading of the DS rank polynomial
+THE_CLOSED_WALK_LAW.md       Link 1 of the theorem: the DS rank polynomial as a closed lattice walk — the reading that reaches every depth, incl. where DS print no formula
 THE_LOCALIZATION_THEOREM.md  the torsion-localization theorem, isolated with a worked idempotent
 SIXTEEN_VERDICTS.md          the sixteen certified verdicts, standalone (explicitly NOT a theorem)
 ```
