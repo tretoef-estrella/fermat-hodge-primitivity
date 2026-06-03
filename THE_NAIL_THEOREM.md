@@ -1,11 +1,22 @@
-# The block-rank theorem for Fermat CRT blocks
+# The block-rank theorem for Fermat CRT blocks — and the red link that makes it unconditional
 
-### The per-block rank of the Chinese-Remainder splitting of a Fermat cell is a Degtyarev–Shimada rank polynomial — equivalently, the constant term of a closed lattice walk — for every block dimension, proved by a tensor identity from the Degtyarev–Shimada source
+### The per-block rank of the Chinese-Remainder splitting of a Fermat cell is a Degtyarev–Shimada rank polynomial — equivalently, the constant term of a closed lattice walk — for every block dimension, proved by a tensor identity from the Degtyarev–Shimada source. As of Version 2.0 the one stated condition (the dictionary) is discharged: its faithfulness half is now a pen-and-paper theorem, so the block-rank law is **unconditional**.
 
 **Rafael Amichis Luengo** — Madrid · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
-**Version 1.0 · 2 June 2026**
+**Version 2.0 · 3 June 2026** *(Version 1.0, 2 June 2026: the law conditional on the dictionary. Version 2.0: the red link closes the dictionary's faithfulness; the law is unconditional.)*
 
-> The capstone of the campaign's structural results. [THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md) proves *where* any torsion of a Fermat cell must live (one CRT block). [THE_BLOCK_DECOMPOSITION.md](THE_BLOCK_DECOMPOSITION.md) measures *how* the block ranks multiply (a product of recursion ladders). [THE_WITHIN_PAIR_FUNCTOR.md](THE_WITHIN_PAIR_FUNCTOR.md) opens the *interior* of one block. [THE_CLOSED_WALK_LAW.md](THE_CLOSED_WALK_LAW.md) names the *value* each ladder rung takes (a closed walk). **This note closes the ladder: it proves that the rank a block contributes at every coupling depth equals that Degtyarev–Shimada value, for every block dimension, by a module-dimension identity read from the Degtyarev–Shimada paper itself.** With it, the block-rank structure of the splitting is a theorem rather than a measured pattern.
+> The capstone of the campaign's structural results. [THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md) proves *where* any torsion of a Fermat cell must live (one CRT block). [THE_BLOCK_DECOMPOSITION.md](THE_BLOCK_DECOMPOSITION.md) measures *how* the block ranks multiply (a product of recursion ladders). [THE_WITHIN_PAIR_FUNCTOR.md](THE_WITHIN_PAIR_FUNCTOR.md) opens the *interior* of one block. [THE_CLOSED_WALK_LAW.md](THE_CLOSED_WALK_LAW.md) names the *value* each ladder rung takes (a closed walk). This note closes the ladder: it proves that the rank a block contributes at every coupling depth equals that Degtyarev–Shimada value, for every block dimension, by a module-dimension identity read from the Degtyarev–Shimada paper itself. **Version 2.0 adds §7, the red link: a pen-and-paper proof that the `F_p` refinement of the block closure is faithful, which discharges the one stated condition of §2 and promotes the block-rank law from conditional to unconditional.**
+
+---
+
+## What changed in Version 2.0 (for the returning reader)
+
+Version 1.0 proved the block-rank law `rec(d, ℓ) = DS_{2(ℓ−1)}(d+1)` **conditional on one identification** (the dictionary, §2): that the campaign's measured CRT all-`A` block is the Degtyarev–Shimada core module. That dictionary has two halves:
+
+- **(geometric)** `e_A ↔` the coordinate-zeroing cut `X(2s)` of [2, §4.6]. This half was *verified textually* against the source in Version 1.0 — it was never the open part.
+- **(faithfulness)** that the block measured over `F_p` equals the Degtyarev–Shimada core over `Z` **without spurious torsion injected when `Z → F_p`** — i.e. that the characteristic-`p` refinement of the integral closure is faithful. This was the genuinely open link, carried until now by measurement (four cells, zero injected torsion) rather than proof.
+
+**Version 2.0 closes the faithfulness half by a pen-and-paper, characteristic-independent proof (§7).** The block closure is shown to be a free `Z`-module (it is the ring `Z[t]/φ` realized inside the pair, char poly `= φ`), and a free module reduces faithfully mod every prime. With the geometric half textual and the faithfulness half now a theorem, the dictionary is discharged and **the block-rank law is unconditional.** The integral-torsion question (the swan) still sits outside the chain and remains open — §7 fixes that the refinement injects no *spurious* torsion, not that *genuine* torsion is absent somewhere unmeasured.
 
 ---
 
@@ -25,7 +36,9 @@ measured byte-exact across the campaign (the General Product Law, [THE_BLOCK_DEC
 
 3. **The step is uniform.** The depth step `ℓ−1 → ℓ` adds two lattice coordinates and is a finite-order holonomic operator for every block dimension (Lipshitz 1988 [4]); this is the structural reason the induction does not blow up as the lattice dimension grows, and it carries the *uniformity* in `d`, not the equality.
 
-The equality at each depth is therefore standalone — `rec(d, ℓ) = dim_C(\text{core}) = \text{walk} = DS_{2(ℓ−1)}(d+1)` — and propagates from the base `rec(d, 1) = d`. **The result is conditional on one identification, named explicitly: that the campaign's measured CRT all-`A` block at depth `ℓ` is the Degtyarev–Shimada core `C̄_{J(2s)}(2s)`** (the dictionary `e_A ↔` coordinate-zeroing, established earlier in the campaign and confirmed verbatim against [2, Def 1.3, Thm 1.4, §4.6]). The integral torsion question (Degtyarev–Shimada Conjecture 1.2, the campaign's "swan") sits outside this chain and remains open: this theorem fixes the per-block **value**, not whether torsion exists. Every numerical statement is reproduced byte-exact by self-contained verifiers; the proof is verified link by link against the source.
+The equality at each depth is therefore standalone — `rec(d, ℓ) = dim_C(core) = walk = DS_{2(ℓ−1)}(d+1)` — and propagates from the base `rec(d, 1) = d`.
+
+**In Version 1.0 the result was stated conditional on one identification — the dictionary of §2 — that the campaign's measured CRT all-`A` block at depth `ℓ` is the Degtyarev–Shimada core `C̄_{J(2s)}(2s)`. Version 2.0 discharges that condition: §7 proves the faithfulness half of the dictionary (the geometric half being textual), so the law is unconditional.** The integral torsion question (Degtyarev–Shimada Conjecture 1.2, the campaign's "swan") sits outside this chain and remains open: this theorem fixes the per-block **value**, not whether torsion exists. Every numerical statement is reproduced byte-exact by self-contained verifiers; the proof is verified link by link against the source.
 
 ---
 
@@ -39,21 +52,26 @@ rec(d, ℓ) = DS_{2(ℓ−1)}(d+1)      (ℓ ≥ 2),    rec(d, 1) = d,    rec(d,
 
 the **General Product Law** of [THE_BLOCK_DECOMPOSITION.md](THE_BLOCK_DECOMPOSITION.md). The mechanism by which the ladders *mesh* as `ℓ` grows — the coupling — was a measured pattern. This note proves it.
 
-**Theorem (block-rank law).** *For every `d ≥ 0` and `ℓ ≥ 1`, conditional on the dictionary of §2,*
+**Theorem (block-rank law, unconditional as of Version 2.0).** *For every `d ≥ 0` and `ℓ ≥ 1`,*
 ```
 rec(d, ℓ) = DS_{2(ℓ−1)}(d+1).
 ```
-*Equivalently, the rank the block contributes at depth `ℓ` is the constant term of a closed lattice walk of `2ℓ` steps on `Z^{⌊d/2⌋}`, with rest permitted iff `d` is odd.*
+*Equivalently, the rank the block contributes at depth `ℓ` is the constant term of a closed lattice walk of `2ℓ` steps on `Z^{⌊d/2⌋}`, with rest permitted iff `d` is odd.* *(Version 1.0 proved this conditional on the dictionary of §2; §7 discharges that condition.)*
 
 The published Degtyarev–Shimada closed forms, with `δ_m = (m−1) mod 2`, are `DS_2(m) = 3m² − 9m + 6 + δ_m`, `DS_4(m) = 15m³ − 90m² + 175m − 100 + (15m − 39)δ_m`, and `DS_6(m) = 105m⁴ − 1050m³ + 3955m² − 6335m + 3325 + (210m² − 1302m + 2010)δ_m`; these are the only rows for which [2] prints a polynomial. The theorem covers all `n = 2(ℓ−1)`, i.e. all depths, by the closed-walk reading of link 1 — which is the *definition* of `DS_n` for `n > 6`, there being no published closed form beyond `DS_6`.
 
-## 2. The one stated condition: the dictionary
+## 2. The dictionary — stated, and now discharged (§7)
 
-The theorem identifies the campaign's measured object with a Degtyarev–Shimada module, and this identification is the single place the campaign's own construction meets the published one. It is stated as a condition, not hidden.
+The theorem identifies the campaign's measured object with a Degtyarev–Shimada module. In Version 1.0 this identification was stated as a condition; Version 2.0 discharges it (§7). It is recorded here in full, with its two halves separated, because the separation is exactly what a referee needs to verify the discharge.
 
 **The dictionary.** The campaign's CRT all-`A` block at depth `ℓ` is the Degtyarev–Shimada core module `C̄_{J(2s)}(2s)`, `s = ℓ−1`. Concretely: the `A`-idempotent `e_A` (projecting onto the `(t−1)`-primary part over `F_p`) corresponds to the coordinate-zeroing `z_v = 0` of the partial Fermat `X(2s) := W_s ∩ {z_{2s+2} = ⋯ = z_{n+1} = 0}` [2, §4.6]; the live cofactor `e_B` (`a_i ≠ 1`) corresponds to the surviving coordinates of `Γ_K` [2, Def 1.3, Thm 1.4].
 
-This was established earlier in the campaign and confirmed verbatim against the Degtyarev–Shimada text (Definition 1.3's "`a_i ≠ 1`" is `e_B`; "`a_i = 1`" is `e_A`; the partial-Fermat cut `X(2s)` of §4.6 is the coordinate-zeroing). The theorem holds **given** this dictionary. A referee will examine exactly this link; the paper names it rather than assuming it.
+This dictionary has two halves, and only one was ever open:
+
+- **(geometric, textual)** the identification `e_A ↔ X(2s)` itself: that the `(t−1)`-primary idempotent is the coordinate-zeroing cut. This was confirmed *verbatim* against the Degtyarev–Shimada text (Definition 1.3's "`a_i ≠ 1`" is `e_B`; "`a_i = 1`" is `e_A`; the partial-Fermat cut `X(2s)` of §4.6 is the coordinate-zeroing). It is a textual reading of the source, not an inference — never the open part.
+- **(faithfulness, the open link)** that the block measured over `F_p` equals the core's reduction over `Z` *without spurious torsion injected in the passage `Z → F_p`*. The Degtyarev–Shimada tensor (Cor 1.7) is a statement over `Z`; the campaign's CRT split is over `F_p` and carries the nilpotent `(t−1)`-primary tower (multiplicity `p^v−1` over `F_p`, multiplicity 1 over `C`). Faithfulness is the claim that this tower injects no extra survivors. This was carried by measurement (four cells, dimA `∈ {1,2,3,7}`, including the tall `m=8` tower, all zero injected torsion) until Version 2.0.
+
+**§7 proves the faithfulness half.** With the geometric half textual and the faithfulness half a theorem, the dictionary is discharged, and the block-rank law of §1 is unconditional.
 
 ## 3. Link 1 — the value is a closed walk (Eslabón 4)
 
@@ -67,7 +85,7 @@ With `s = ℓ−1`, `m = d+1`, the depth-`ℓ` value `DS_{2(ℓ−1)}(d+1)` is a
 
 ## 4. Link 2 — the measured block is the core, and the core is the walk (Eslabón 5, the induction)
 
-This is the new content. The equality is carried by a tensor identity, **not** by a shared recursion (which would not force equality — two sequences being holonomic does not make them equal).
+This is the new content of Version 1.0. The equality is carried by a tensor identity, **not** by a shared recursion (which would not force equality — two sequences being holonomic does not make them equal).
 
 **Lemma 2 (the block rank is the core dimension).** Under the dictionary of §2, the rank of the measured block at depth `ℓ` equals `dim_C C̄_{J(2s)}(2s)`, `s = ℓ−1`.
 
@@ -75,11 +93,11 @@ This is the new content. The equality is carried by a tensor identity, **not** b
 ```
 C̄_{J_s}(2d) = C̄_{J(2s)}(2s) ⊗_Z S̄(s, d),   S̄(s, d) = ⊗_k Z[t_k]/(φ(t_k)),
 ```
-each tail factor `Z[t_k]/(φ(t_k))` free of rank `m − 1`, hence `S̄` free. Degtyarev–Shimada obtain this by fixing the partition tail (the "constant relations" `t_{2s+2}t_{2s+3} = ⋯ = 1`, [2, §4.6]) and taking the even-index variables out. The exact sequence `0 → (λ)/(λρ_J) → R/(λρ_J) → R/(λ) → 0` with `R/(λ)` free [2, Lemma 4.5, Lemma 4.1] makes the split clean. Because `S̄` is free of rank `(m−1)^{d−s}`, over `C` the tensor dimension factorizes as `dim_C C̄_{J_s}(2d) = dim_C(\text{core}) · (m−1)^{d−s}`, and the tail contributes only its (constant, free) multiplicity. The rank the block contributes at depth `ℓ` is therefore `dim_C` of the core exactly — a free-module dimension, isolated, not a quantity that merely "advances controllably". ∎
+each tail factor `Z[t_k]/(φ(t_k))` free of rank `m − 1`, hence `S̄` free. Degtyarev–Shimada obtain this by fixing the partition tail (the "constant relations" `t_{2s+2}t_{2s+3} = ⋯ = 1`, [2, §4.6]) and taking the even-index variables out. The exact sequence `0 → (λ)/(λρ_J) → R/(λρ_J) → R/(λ) → 0` with `R/(λ)` free [2, Lemma 4.5, Lemma 4.1] makes the split clean. Because `S̄` is free of rank `(m−1)^{d−s}`, over `C` the tensor dimension factorizes as `dim_C C̄_{J_s}(2d) = dim_C(core) · (m−1)^{d−s}`, and the tail contributes only its (constant, free) multiplicity. The rank the block contributes at depth `ℓ` is therefore `dim_C` of the core exactly — a free-module dimension, isolated, not a quantity that merely "advances controllably". ∎
 
 **Lemma 3 (the core dimension is the walk).** `dim_C C̄_{J(2s)}(2s)` is the closed walk of `2s+2` steps of Proposition 1.
 
-*Proof.* The core `C̄_{J(2s)}(2s)` is the full-partition module one dimension down: by [2, §4.6], the restriction of `J_s` to the index set `{0, …, 2s+1}` is exactly the full set `J(2s)` of partitions of `2s+1`. Hence Remark 4.4 applies to the core verbatim with `n → 2s`, and `dim_C(\text{core}) = DS_{2s}(m)` = the constant term of `(1 + S)^{2s+2}` = the closed walk. ∎
+*Proof.* The core `C̄_{J(2s)}(2s)` is the full-partition module one dimension down: by [2, §4.6], the restriction of `J_s` to the index set `{0, …, 2s+1}` is exactly the full set `J(2s)` of partitions of `2s+1`. Hence Remark 4.4 applies to the core verbatim with `n → 2s`, and `dim_C(core) = DS_{2s}(m)` = the constant term of `(1 + S)^{2s+2}` = the closed walk. ∎
 
 **Lemma 4 (the step is uniform in `d`).** The depth step `ℓ−1 → ℓ` adds two lattice coordinates (Cor 1.7's tail growth, the "`+2` steps") and is a finite-order holonomic operator on the walk count for every lattice dimension `h`.
 
@@ -146,14 +164,48 @@ The check returns zero discrepancies across `d = 2..7`, depths `ℓ = 2..4`, inc
 
 ## 6. Significance and scope
 
-**What is proved.** The per-block rank `rec(d, ℓ) = DS_{2(ℓ−1)}(d+1)` for every `d`, conditional on the dictionary of §2, by a module-dimension identity read from the Degtyarev–Shimada source: the measured block is the core (Cor 1.7, free tail), the core dimension is the closed walk (Remark 4.4), the walk is the Degtyarev–Shimada value (Eslabón 4), uniform in `d` by Lipshitz finiteness. The coupling mechanism — the "meshing" of the General Product Law, open since the product form was first measured — is closed: it is the constant term of a closed walk, and the ladder is a tensor of cores.
+**What is proved.** The per-block rank `rec(d, ℓ) = DS_{2(ℓ−1)}(d+1)` for every `d`, **unconditionally** (Version 2.0), by a module-dimension identity read from the Degtyarev–Shimada source: the measured block is the core (Cor 1.7, free tail), the core dimension is the closed walk (Remark 4.4), the walk is the Degtyarev–Shimada value (Eslabón 4), uniform in `d` by Lipshitz finiteness — and the one identification this rested on (the dictionary, §2) is discharged by the red link (§7). The coupling mechanism — the "meshing" of the General Product Law, open since the product form was first measured — is closed: it is the constant term of a closed walk, and the ladder is a tensor of cores.
 
 **Where this sits.** It is the capstone of the campaign's structural chain:
-> within-pair triangle (measured, `ν ≤ μ`) → centrality localization ([THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md), proven) → closed-walk `=` block value ([THE_CLOSED_WALK_LAW.md](THE_CLOSED_WALK_LAW.md), Eslabón 4) → tensor induction (this note, Eslabón 5) ⟹ **block-rank law, all `d`.**
+> within-pair triangle (measured, `ν ≤ μ`) → centrality localization ([THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md), proven) → closed-walk `=` block value ([THE_CLOSED_WALK_LAW.md](THE_CLOSED_WALK_LAW.md), Eslabón 4) → tensor induction (§4, Eslabón 5) → **faithful `F_p` refinement (§7, the red link)** ⟹ **block-rank law, all `d`, unconditional.**
 
-**What this does not give.** The result fixes the per-block **value** — the rank ladder. It is **not** a statement about integral torsion. The Degtyarev–Shimada primitivity criterion compares `dim_C` against `dim_{F_p}`; this theorem computes the `C`-side ladder, not the `F_p`-versus-`C` comparison that would exhibit or exclude a counterexample. The integral torsion question — Degtyarev–Shimada Conjecture 1.2, the campaign's "swan" — sits **outside** this chain and **remains open**. It is a different battle, and is named as such without perfume. No claim is made on the rational (Clay) Hodge conjecture; this concerns the integral Hodge conjecture for Fermat varieties, a bounded problem. The torsion counterexample has not been found; every cell measured in the campaign is primitive.
+**What this does not give.** The result fixes the per-block **value** — the rank ladder. It is **not** a statement about integral torsion. The Degtyarev–Shimada primitivity criterion compares `dim_C` against `dim_{F_p}`; this theorem computes the `C`-side ladder, and §7 proves the `F_p` refinement injects no *spurious* torsion — but neither exhibits nor excludes a *genuine* torsion counterexample in some unmeasured block. The integral torsion question — Degtyarev–Shimada Conjecture 1.2, the campaign's "swan" — sits **outside** this chain and **remains open**. It is a different battle, and is named as such without perfume. No claim is made on the rational (Clay) Hodge conjecture; this concerns the integral Hodge conjecture for Fermat varieties, a bounded problem. The torsion counterexample has not been found; every cell measured in the campaign is primitive.
 
-**The stated condition, once more.** The theorem is conditional on the dictionary (§2): the measured CRT block is the Degtyarev–Shimada core. This is sealed in the campaign findings and confirmed verbatim against the source, but it is the campaign's own identification, and a referee should weigh it as such.
+## 7. The red link — the `F_p` refinement is faithful (Version 2.0, the discharge)
+
+This section proves the faithfulness half of the dictionary (§2), discharging the one stated condition and making the block-rank law unconditional. It is pen-and-paper and characteristic-independent.
+
+**What must be shown.** The Degtyarev–Shimada tensor (Cor 1.7, Lemma 2) is a decomposition over `Z`. The campaign's CRT split lives over `F_p` and carries the `(t−1)`-primary nilpotent tower: over `F_p` the factor `(t−1)` appears with multiplicity `p^v−1` (where `p^v ‖ m`), against multiplicity 1 over `C`. The faithfulness question is whether this characteristic-`p` tower injects *extra survivors* into the block closure under `Z → F_p` — equivalently, whether the integer closure module is `Z`-free (torsion-free), since a `Z`-free module of rank `r` satisfies `Z^r ⊗ F_p = F_p^r` exactly, with no injection, for **every** prime `p`.
+
+This is **not** the vacuous "free is free" (which would assert `S̄(s,d)` is free by dimension and prove nothing about the coupled closure). The object proved free here is the **concrete coupled closure** — the image of `ρ_J` under the shift, the actual submodule with its quotient — by its tensor-of-cyclic-rings structure.
+
+**The mechanism: the within-pair closure is the free ring `Z[t]/φ`.** A block at depth `ℓ` is a tensor of `ℓ` within-pair closures (the partition is a perfect matching; `ρ_J` factorizes over its pairs; the closure under shift respects the factorization). It therefore suffices to prove a single within-pair closure is `Z`-free; a tensor of free modules is free.
+
+**Lemma 5 (`ρ` is `t_A`-cyclic of full dimension `m−1`).** Let `ρ = Σ_{0 ≤ b ≤ a ≤ m−2} x^a y^b` be the within-pair triangle in `(Z[t]/φ)_x ⊗ (Z[t]/φ)_y`. Then the `x`-shift orbit of `ρ` spans a submodule of dimension `m−1` (full), so `ρ` generates the within-pair closure cyclically as a `t_A`-module.
+
+*Proof.* Write `ρ = Σ_{b=0}^{m−2} c_b(x) · y^b` by collecting `y`-powers; the `y^0`-component is
+```
+c_0(x) = 1 + x + x² + ⋯ + x^{m−2}.
+```
+In `Z[t]/φ`, the cyclotomic relation is `x^{m−1} = −(1 + x + ⋯ + x^{m−2}) = −c_0`. Therefore
+```
+x · c_0 = (x + x² + ⋯ + x^{m−2}) + x^{m−1} = (c_0 − 1) + (−c_0) = −1.
+```
+So **`x · c_0 = −1`** in `Z[t]/φ` (verified byte-exact `m = 4 … 12`). Consequently the `x`-orbit of `c_0` contains `−1`, hence `1`, hence `x, x², …, x^{m−2}` — it spans all of `(Z[t]/φ)_x`. Thus `c_0` is a **cyclic vector** for the `x`-action. Since `c_0` is the `y^0`-component of `ρ`, the `x`-orbit of `ρ` has full dimension `m−1`. ∎
+
+This is the exact structural reason the within-pair closure is saturated while the image of `(t−1)` is **not** (the latter has Smith form `[1, …, 1, m]`, index `m`, verified `m = 4,5,6,8`): the triangle `ρ` is a generator whose orbit *regenerates the whole ring* (`x·c_0 = −1` pulls the unit `1` into the orbit), whereas `(t−1)` is a non-invertible operator whose image *contracts* by a `p`-adic factor. Saturation comes from cyclic regeneration, **not** from "the shift is a unit" — a unit-built map (`(t−1)` is a polynomial in the unit `x`) can have non-saturated image, so that argument would be unsound; this one is not.
+
+**Lemma 6 (the within-pair closure is `Z`-free `≅ Z[t]/φ`).** The within-pair closure, as a `t`-module under the shift, has characteristic polynomial exactly `φ = 1 + t + ⋯ + t^{m−1}`; hence it is isomorphic to `Z[t]/φ`, which is free of rank `m−1`.
+
+*Proof.* By Lemma 5 the module is cyclic of dimension `m−1 = deg φ`, generated by `ρ`. A cyclic module over `Z[t]` of dimension `deg φ` on which `t` acts with `t`'s minimal polynomial dividing `φ` (and reaching full dimension) has characteristic polynomial `φ` and is `≅ Z[t]/(char poly) = Z[t]/φ`. Verified byte-exact: char poly of the shift on the closure `= φ` for `m = 4,5,6`. `Z[t]/φ` is free as a `Z`-module (basis `1, t, …, t^{m−2}`). ∎
+
+**Theorem (red link — faithful refinement).** The all-`A` coupled block closure at depth `ℓ` is `Z`-free of rank `(m−1)^ℓ`. Hence `Z^{(m−1)^ℓ} ⊗ F_p = F_p^{(m−1)^ℓ}` for every prime `p`, the `F_p` refinement injects zero torsion, and the dictionary's faithfulness half holds.
+
+*Proof.* The depth-`ℓ` closure is the tensor of `ℓ` within-pair closures (matching factorization of `ρ_J`, shift respecting the factorization). Each within-pair closure is `Z`-free (Lemma 6). A tensor of free `Z`-modules is `Z`-free, of rank `(m−1)^ℓ`. For a free module, rank determines the module up to isomorphism, so the rank-`(m−1)^ℓ` match measured across the campaign **is** the tensor (here rank-match suffices precisely because both sides are free — the gap that torsion would open, e.g. the char-poll obstruction the campaign documented for torsion modules, is absent for free modules). A free `Z`-module reduces faithfully mod every prime: `Z^r ⊗ F_p = F_p^r`, no injection. The isomorphism is over `Z` and names no prime, so it holds in **every** characteristic, including characteristic 2 (the `m=8`, dimA `= 7` tall-tower case, where the tower is highest). ∎
+
+**Independent verification.** `x·c_0 = −1` byte-exact `m = 4..12`; char poly of the shift on the within-pair closure `= φ` for `m = 4,5,6`; `ρ` is `t_A`-cyclic of dimension `m−1` for `m = 4..10`; `im(t−1)` has Smith `[1,…,1,m]` (index `m`, not saturated) for `m = 4,5,6,8`; `im(σ)` (the symmetrizer `I+τ`) carries 2-torsion, confirming the within-pair closure is **not** `im(σ)` (which would not be free). Four independent computational instruments measured zero injected torsion across dimA `∈ {1,2,3,7}` and char `∈ {2,3}` before the proof; the proof explains the measurements rather than resting on them.
+
+**Scope of the red link, stated plainly.** The red link proves the refinement injects no *spurious* torsion — the `C`-side ladder of §1–§5 reduces faithfully, so every primitivity verdict the campaign measured is genuine, not an artifact of the `Z → F_p` passage. It does **not** prove that *genuine* integral torsion is absent in some unmeasured block of recursive dimension `≥ 4`. That is Conjecture 1.2, the swan, and it remains open. What the red link gives the swan-hunt is a rigorous map: by [THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md), torsion lives in one block; by this theorem the per-block value is fixed and the `F_p` refinement is faithful, so a counterexample can only hide in a recursive-dimension `≥ 4` block that deviates from the Degtyarev–Shimada value — `recdim 0, 2` are torsion-free by [2, Cor 1.7]. The hunt is thereby reduced from an unbounded search to a pointed one.
 
 ---
 
