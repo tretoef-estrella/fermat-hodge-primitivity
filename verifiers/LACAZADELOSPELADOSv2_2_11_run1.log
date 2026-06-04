@@ -1,0 +1,93 @@
+==== GATE 1: (2,5) fine (must reproduce the closed ledger) ====
+[m=5] rank=37, basis trial 4, disc V = 244140625 (|.|=target: True) [1s]
+[m=5] U,W,Z gated [1s]
+[m=5] 125 group elements built, int64-guarded + spot-audited [2s]
+[m=5] building 31 orbit projectors (int64)... [2s]
+[m=5] partition = m^3*I: PASS [2s]
+== m=5 FINE SPECTRUM ==
+  triv: rank=1 disc=5  v5=1
+  O(1, 1, 0): rank=4 disc=3125  v5=5
+  O(1, 1, 2): rank=4 disc=3125  v5=5
+  O(1, 1, 3): rank=4 disc=3125  v5=5
+  O(1, 1, 4): rank=4 disc=3125  v5=5
+  O(1, 2, 0): rank=4 disc=3125  v5=5
+  O(1, 2, 3): rank=4 disc=3125  v5=5
+  O(1, 3, 0): rank=4 disc=3125  v5=5
+  O(1, 3, 4): rank=4 disc=3125  v5=5
+  O(1, 4, 0): rank=4 disc=3125  v5=5
+rank sum=37/37; glue=762939453125; formula check=762939453125
+CLOSURE p=5: 12
+GLUE GROUP SNF (p=5, K=10): profile {1: 17}; total v = 17; depth-flag=False
+[m=5] total 2s
+GATE 1 PASS byte-exact
+==== GATE 2: (2,7) fine (must reproduce the closed ledger) ====
+[m=7] rank=91, basis trial 2, disc V = 36703368217294125441230211032033660188801 (|.|=target: True) [10s]
+[m=7] U,W,Z gated [11s]
+[m=7] 343 group elements built, int64-guarded + spot-audited [22s]
+[m=7] building 57 orbit projectors (int64)... [22s]
+[m=7] partition = m^3*I: PASS [22s]
+== m=7 FINE SPECTRUM ==
+  triv: rank=1 disc=7  v7=1
+  O(1, 1, 0): rank=6 disc=40353607  v7=9
+  O(1, 1, 2): rank=6 disc=40353607  v7=9
+  O(1, 1, 3): rank=6 disc=40353607  v7=9
+  O(1, 1, 4): rank=6 disc=40353607  v7=9
+  O(1, 1, 5): rank=6 disc=40353607  v7=9
+  O(1, 1, 6): rank=6 disc=40353607  v7=9
+  O(1, 2, 0): rank=6 disc=40353607  v7=9
+  O(1, 2, 3): rank=6 disc=40353607  v7=9
+  O(1, 3, 0): rank=6 disc=40353607  v7=9
+  O(1, 3, 4): rank=6 disc=40353607  v7=9
+  O(1, 4, 0): rank=6 disc=40353607  v7=9
+  O(1, 4, 5): rank=6 disc=40353607  v7=9
+  O(1, 5, 0): rank=6 disc=40353607  v7=9
+  O(1, 5, 6): rank=6 disc=40353607  v7=9
+  O(1, 6, 0): rank=6 disc=40353607  v7=9
+rank sum=91/91; glue=15286700631942576193765185769276826401; formula check=15286700631942576193765185769276826401
+CLOSURE p=7: 48
+GLUE GROUP SNF (p=7, K=10): profile {1: 44}; total v = 44; depth-flag=False
+[m=7] total 26s
+GATE 2 PASS byte-exact. FIRING THE SEALED SHOT.
+==== SEALED SHOT: (2,11) FINE SPECTRUM ====
+SEALS: spectrum (v70 SS80.3) 27 pieces rank 10, all +-11^17, glue 11^134, closure 192; PLUS Lemma B: glue group (Z/11)^134 elementary abelian
+[m=11] rank=271, basis trial 0, disc V = 88592213009575201230959050581819203496673983850936311247456617209331422390098646799274067240224511892912343600256063311645277101292135934503249769447807774230858090529333267215281318750801671448715521 (|.|=target: True) [112s]
+[m=11] U,W,Z gated [149s]
+[m=11] 1331 group elements built, int64-guarded + spot-audited [580s]
+[m=11] building 133 orbit projectors (int64)... [580s]
+[m=11] partition = m^3*I: PASS [590s]
+== m=11 FINE SPECTRUM ==
+  triv: rank=1 disc=11  v11=1
+  O(1, 1, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 2): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 3): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 4): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 5): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 6): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 7): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 8): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 9): rank=10 disc=505447028499293771  v11=17
+  O(1, 1, 10): rank=10 disc=505447028499293771  v11=17
+  O(1, 2, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 2, 3): rank=10 disc=505447028499293771  v11=17
+  O(1, 3, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 3, 4): rank=10 disc=505447028499293771  v11=17
+  O(1, 4, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 4, 5): rank=10 disc=505447028499293771  v11=17
+  O(1, 5, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 5, 6): rank=10 disc=505447028499293771  v11=17
+  O(1, 6, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 6, 7): rank=10 disc=505447028499293771  v11=17
+  O(1, 7, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 7, 8): rank=10 disc=505447028499293771  v11=17
+  O(1, 8, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 8, 9): rank=10 disc=505447028499293771  v11=17
+  O(1, 9, 0): rank=10 disc=505447028499293771  v11=17
+  O(1, 9, 10): rank=10 disc=505447028499293771  v11=17
+  O(1, 10, 0): rank=10 disc=505447028499293771  v11=17
+rank sum=271/271; glue=35206253455228203465102873081643165487131740000448154626866623626245488538757572033437270931553975613438547654693991240963636851748322086441; formula check=35206253455228203465102873081643165487131740000448154626866623626245488538757572033437270931553975613438547654693991240963636851748322086441
+CLOSURE p=11: 192
+GLUE GROUP SNF (p=11, K=8): profile {1: 134}; total v = 134; depth-flag=False
+[m=11] total 896s
+SEAL VERDICT: pieces 27: True | ranks all 10: True | all |disc|=11^17: True | glue=11^134: True
+LEMMA B SEAL: glue group = (Z/11)^134 elementary abelian: True
+OVERALL: PASS
