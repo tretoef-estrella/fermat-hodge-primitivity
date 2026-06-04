@@ -1,4 +1,4 @@
-# The Chuchipachi Discriminant Law
+# The Watermark Law
 ### Discriminant laws for the linear Hodge lattices of Fermat surfaces: one exponent formula for every degree, five blind verdicts, and an off-by-one in a published table
 
 **Author:** Rafael Amichis Luengo (Madrid) · tretoef@gmail.com · github.com/tretoef-estrella
@@ -17,11 +17,11 @@ Let S = X²_m ⊂ P³ be the complex Fermat surface of degree m and let V = V²_
 
 ## 2. The unified law
 
-> **Law (the Chuchipachi discriminant law) [CONJ, blind-tested].** For the Fermat surface of degree m ≥ 3,
+> **Law (the Watermark law) [CONJ, blind-tested].** For the Fermat surface of degree m ≥ 3,
 >
 > |disc V(2,m)| = m^{3(m−3)²} for m odd, and |disc V(2,m)| = m^{3(m−3)²} · (m/4)³ for m even.
 
-Verified against all twelve rows of AMV Table 1 (m = 3, …, 14), prime powers included with no further correction: m = 4 gives 2⁶ (the row 8²), m = 8 gives 2²²⁸, m = 9 gives 3²¹⁶, m = 12 gives 2⁴⁸⁶·3²⁴⁶. For m = 2q with q an odd prime the factor (m/4)³ = (q/2)³ splits as **−3 on the prime 2 and +3 on q**: exp₂ = 12(q−1)(q−2) and exp_q = exp₂ + 6, which is how the law first surfaced — as two separate laws with a mysterious constant gap of 6, later recognized as the two faces of one cube. We refer to the statement above as the **Chuchipachi law** — a house name, in the repository's tradition that a playful name must carry a serious result.
+Verified against all twelve rows of AMV Table 1 (m = 3, …, 14), prime powers included with no further correction: m = 4 gives 2⁶ (the row 8²), m = 8 gives 2²²⁸, m = 9 gives 3²¹⁶, m = 12 gives 2⁴⁸⁶·3²⁴⁶. For m = 2q with q an odd prime the factor (m/4)³ = (q/2)³ splits as **−3 on the prime 2 and +3 on q**: exp₂ = 12(q−1)(q−2) and exp_q = exp₂ + 6, which is how the law first surfaced — as two separate laws with a mysterious constant gap of 6, later recognized as the two faces of one cube. We refer to the statement above as the **Watermark law**: the degree stamps its watermark on the discriminant, and the law reads it off the degree alone — no lattice computation required.
 
 ### The five blind verdicts
 
