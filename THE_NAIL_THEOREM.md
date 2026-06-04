@@ -1,11 +1,11 @@
 # The block-rank theorem for Fermat CRT blocks — and the red link that makes it unconditional
 
-### The per-block rank of the Chinese-Remainder splitting of a Fermat cell is a Degtyarev–Shimada rank polynomial — equivalently, the constant term of a closed lattice walk — for every block dimension, proved by a tensor identity from the Degtyarev–Shimada source. As of Version 2.0 the one stated condition (the dictionary) is discharged: its faithfulness half is now a pen-and-paper theorem, so the block-rank law is **unconditional**.
+### The per-block rank of the Chinese-Remainder splitting of a Fermat cell is a Degtyarev–Shimada rank polynomial — equivalently, the constant term of a closed lattice walk — for every block dimension, proved by a tensor identity from the Degtyarev–Shimada source. As of Version 2.0 the one stated condition (the dictionary) is discharged: its faithfulness half is now a pen-and-paper theorem, so the block-rank law is **unconditional**. As of Version 3.0 the dictionary's *geometric* half is likewise a theorem — the **eigencut identity** — and the coupling above recursive dimension 2 is located, verbatim, in the source (§8).
 
 **Rafael Amichis Luengo** — Madrid · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
-**Version 2.0 · 3 June 2026** *(Version 1.0, 2 June 2026: the law conditional on the dictionary. Version 2.0: the red link closes the dictionary's faithfulness; the law is unconditional.)*
+**Version 3.0 · 4 June 2026** *(Version 1.0, 2 June 2026: the law conditional on the dictionary. Version 2.0, 3 June 2026: the red link closes the dictionary's faithfulness; the law is unconditional. Version 3.0: the eigencut identity closes the dictionary's geometric half as an identity of operators, and §8 locates the coupling above recursive dimension 2 in the source's own equivalence.)*
 
-> The capstone of the campaign's structural results. [THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md) proves *where* any torsion of a Fermat cell must live (one CRT block). [THE_BLOCK_DECOMPOSITION.md](THE_BLOCK_DECOMPOSITION.md) measures *how* the block ranks multiply (a product of recursion ladders). [THE_WITHIN_PAIR_FUNCTOR.md](THE_WITHIN_PAIR_FUNCTOR.md) opens the *interior* of one block. [THE_CLOSED_WALK_LAW.md](THE_CLOSED_WALK_LAW.md) names the *value* each ladder rung takes (a closed walk). This note closes the ladder: it proves that the rank a block contributes at every coupling depth equals that Degtyarev–Shimada value, for every block dimension, by a module-dimension identity read from the Degtyarev–Shimada paper itself. **Version 2.0 adds §7, the red link: a pen-and-paper proof that the `F_p` refinement of the block closure is faithful, which discharges the one stated condition of §2 and promotes the block-rank law from conditional to unconditional.**
+> The capstone of the campaign's structural results. [THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md) proves *where* any torsion of a Fermat cell must live (one CRT block). [THE_BLOCK_DECOMPOSITION.md](THE_BLOCK_DECOMPOSITION.md) measures *how* the block ranks multiply (a product of recursion ladders). [THE_WITHIN_PAIR_FUNCTOR.md](THE_WITHIN_PAIR_FUNCTOR.md) opens the *interior* of one block. [THE_CLOSED_WALK_LAW.md](THE_CLOSED_WALK_LAW.md) names the *value* each ladder rung takes (a closed walk). This note closes the ladder: it proves that the rank a block contributes at every coupling depth equals that Degtyarev–Shimada value, for every block dimension, by a module-dimension identity read from the Degtyarev–Shimada paper itself. **Version 2.0 adds §7, the red link: a pen-and-paper proof that the `F_p` refinement of the block closure is faithful, which discharges the one stated condition of §2 and promotes the block-rank law from conditional to unconditional.** **Version 3.0 adds §8, the eigencut identity: the dictionary's geometric half — carried since Version 1.0 as a textual reading — is proven as an identity of linear projections, and the complete source is read to its end, locating the coupling of three or more pairs at Degtyarev–Shimada's own equivalence with Conjecture 1.2.**
 
 ---
 
@@ -17,6 +17,14 @@ Version 1.0 proved the block-rank law `rec(d, ℓ) = DS_{2(ℓ−1)}(d+1)` **con
 - **(faithfulness)** that the block measured over `F_p` equals the Degtyarev–Shimada core over `Z` **without spurious torsion injected when `Z → F_p`** — i.e. that the characteristic-`p` refinement of the integral closure is faithful. This was the genuinely open link, carried until now by measurement (four cells, zero injected torsion) rather than proof.
 
 **Version 2.0 closes the faithfulness half by a pen-and-paper, characteristic-independent proof (§7).** The block closure is shown to be a free `Z`-module (it is the ring `Z[t]/φ` realized inside the pair, char poly `= φ`), and a free module reduces faithfully mod every prime. With the geometric half textual and the faithfulness half now a theorem, the dictionary is discharged and **the block-rank law is unconditional.** The integral-torsion question (the swan) still sits outside the chain and remains open — §7 fixes that the refinement injects no *spurious* torsion, not that *genuine* torsion is absent somewhere unmeasured.
+
+---
+
+## What changed in Version 3.0 (for the returning reader)
+
+Version 2.0 discharged the dictionary's *faithfulness* half by the red link and noted that the *geometric* half — `e_A ↔` the coordinate-zeroing cut `X(2s)` of [2, §4.6] — was "verified textually against the source... never the open part." Version 3.0 upgrades that half from a reading to a **theorem**: the CRT idempotent cut and the Degtyarev–Shimada coordinate cut are the *same linear projection* on the per-variable ambient space, in every characteristic — the **eigencut identity**, proved in §8 by primary decomposition, in the same elementary register as `x·c₀ = −1`, with its one load-bearing hypothesis (the Fermat degree bound of [2, Lemma 4.1]) stated and verified rather than assumed. The dictionary now stands on two theorems and no readings.
+
+Version 3.0 also records what the completed source settles about the *next* object in the chain. Reading [2, §4.5–§4.6] to the end: the coupled module of three or more pairs is the quotient of free legs by the single diagonal element `Σ 1_J` (their Theorem 1.1(d)), their §4.5 establishes the four torsion descriptions isomorphic, and their §4.6 states — verbatim, as an *if and only if* — that the freedom of that quotient in recursive dimension `2s` **is** Conjecture 1.2 in dimension `2s`. With the eigencut identity in hand the equivalence applies exactly to the campaign's objects. §8 narrates this location; the scope statements of §6–§7 are unchanged and remain accurate.
 
 ---
 
@@ -209,6 +217,46 @@ This is the exact structural reason the within-pair closure is saturated while t
 
 ---
 
+## 8. The eigencut identity — the geometric half becomes a theorem, and the coupling located (Version 3.0)
+
+### 8.1 The identity
+
+Fix one variable of the cell and its ambient space `V = k[t]/(tᵐ − 1)`, the group-ring realization of the Galois rotation `γ_j : z_j ↦ ζ z_j` of [2, §2], with `t` acting as the cyclic shift. Two cuts act on `V`. The **Degtyarev–Shimada coordinate cut** sets `z_j = 0` — the operation building `X(2s) := W_s ∩ {z_{2s+2} = ⋯ = z_{n+1} = 0}` [2, §4.6] — and retains the part fixed by `γ_j`: linearly, the generalized eigenspace `E₁(t) := ker((t−1)ᵐ)`. The **CRT idempotent cut** is `e_A`, the projection onto the `(t−1)`-primary factor — the cut every block of this note is built from.
+
+**Theorem (eigencut identity).** `E₁(t) = im(e_A)` as subspaces of `V`, in every characteristic. Consequently the two cuts are the *same linear projection* — equal as operators, not merely in dimension.
+
+*Proof.* Factor the minimal polynomial of `t` on `V` into primary components over `k`: `tᵐ − 1 = (t−1)ᵃ · h(t)` with `gcd((t−1)ᵃ, h) = 1`, `a` the exact multiplicity. Primary decomposition of `V` as a `k[t]`-module gives `V = ker((t−1)ᵃ) ⊕ ker(h(t))`, and `e_A` is by construction the projector onto the first summand along the second (`e_A ≡ 1 mod (t−1)ᵃ`, `e_A ≡ 0 mod h`), so `im(e_A) = ker((t−1)ᵃ)`. Since `a ≤ m`, `ker((t−1)ᵃ) ⊆ ker((t−1)ᵐ)`; conversely any vector killed by a power of `(t−1)` lies in the `(t−1)`-primary part, which `(t−1)ᵃ` annihilates exactly. Hence `ker((t−1)ᵃ) = ker((t−1)ᵐ) = E₁(t) = im(e_A)`. ∎
+
+No cohomology, no spectral sequence, no Pham polyhedron beyond the action `γ_i ↔ t_i` already fixed in [2, §2] — the same register as the cyclotomic identity `x·c₀ = −1` of §7. Two refinements carry the statement across characteristics. **(i) The generalized eigenspace is the correct geometric object in characteristic `p`.** Over `C`, eigenvalue 1 is a simple root and `E₁` is the eigenline; over `F_p` with `p^v ‖ m`, Frobenius gives `tᵐ − 1 = (t^{m′} − 1)^{p^v}` and the `(t−1)`-primary block of `V` has dimension `p^v` exactly, with `t − 1` nilpotent on it — the tower. *Fixed by `γ_j`* must be read as this full primary block, not the one-dimensional ordinary eigenspace. (Two registers, kept distinct: on `V = k[t]/(tᵐ−1)` the primary dimension is `p^v`; in the φ-restricted quotient used in §2 and §7 the multiplicity is `p^v − 1`. Both are correct in their own register; the identity lives on `V`.) **(ii) The characteristic-0 idempotent is the Galois average:** `e_A = (1 + t + ⋯ + t^{m−1})/m`, the Reynolds projector onto the `γ_j`-invariants — the textbook projection onto the fixed subspace, which is exactly the coordinate cut's invariant part.
+
+### 8.2 The hinge, made explicit
+
+The arrow *"`z_j = 0` retains the part fixed by `γ_j`"* carries the geometry, and it holds for a stated reason, not by default. Abstractly, *fixed by `γ_j`* means exponent `≡ 0 (mod m)` — the infinite set `{0, m, 2m, …}` — while setting `z_j = 0` keeps exponent exactly `0`. The two coincide under the **Fermat degree bound** `0 ≤ ν < m` of [2, Lemma 4.1] (the quotient by `x_iᵐ − 1`), under which `ν ≡ 0 (mod m)` forces `ν = 0`. Verified for `m = 4` through `15`: without the bound the invariant exponents in `[0, 4m)` are `{0, m, 2m, 3m}`; with it, exactly `{0}`. The proof names its own load-bearing hypothesis.
+
+### 8.3 The anchor
+
+The identity was measured before it was written. Ten cells, both registers, zero discrepancies: characteristic 0 at `m = 4, 6, 10` (`dim E₁ = dim im(e_A) = 1`, `e_A = φ_full/m`, idempotent); characteristic `p` at `(m,p) = (6,2), (6,3), (12,2), (8,2), (15,3), (15,5), (9,3)` — `dimA ∈ {2, 3, 4, 8, 3, 5, 9}`, including the maximal-height towers `(8,2)` and `(9,3)` where the generalized eigenspace is the whole space. In every cell, `E₁(t) = im(e_A)` as subspaces and `e_A² = e_A` in the ambient arithmetic. Verifiers, each recomputing from scratch: [`verifiers/EIGENCUT_IDENTITY_VERIFIER.py`](verifiers/EIGENCUT_IDENTITY_VERIFIER.py), [`verifiers/HINGE1_DEGREE_BOUND_VERIFIER.py`](verifiers/HINGE1_DEGREE_BOUND_VERIFIER.py). Full statement and proof note: [THE_EIGENCUT_IDENTITY.md](THE_EIGENCUT_IDENTITY.md).
+
+### 8.4 What this changes in this note
+
+The dictionary of §2 had two halves: faithfulness, closed by §7, and the geometric identification, carried since Version 1.0 as a verbatim reading. With the eigencut identity the geometric half is an identity of operators. **The dictionary stands on two theorems**; nothing in §§1–7 changes, and the block-rank law remains unconditional with one fewer textual dependency in its chain.
+
+### 8.5 The coupling, located in the source
+
+With the complete Degtyarev–Shimada text in hand, [2, §4.5–§4.6] were read to the end — twice, independently. What they settle about the object one step beyond this note's ladder is recorded here as fact.
+
+**The object.** [2, Theorem 1.1(d)], verbatim: the coupled module is `C̄_K := (⊕_{J∈K} R̄_J)/M̄`, where `M̄` is the `R̄`-submodule generated by the **single element** `Σ_{J∈K} 1_J` — the diagonal relation gluing the legs by their unit. Each leg `R̄_J` is `Z`-free by [2, Lemma 4.1]: its `τ_J = (t_{k_0}−1)⋯(t_{k_d}−1)` is exactly a `θ` over the `k`-variables, with no restriction on the number of variables — free for any number of pairs.
+
+**What §4.5 proves.** The proof of parts (c) and (d) is a chain of **torsion isomorphisms**: dualization (`Tors Coker(ϕ) ≅ Tors Coker(ϕ∨)`), the exact sequence `0 → (⊕(τ_J))/Rs → (⊕R_J)/Rs → ⊕(R_J/(τ_J)) → 0` with third term free by Lemma 4.1, and the identification `f ↦ f·τ_J` carrying `s = Σ τ_J 1_J` to `Σ 1_J`. It establishes that the four modules of their Theorem 1.1 share one torsion.
+
+**Where the freedom of the quotient is addressed.** [2, §4.6], verbatim:
+
+> *"Thus, this module is free (as an abelian group) if and only if so is C̄_{J(2s)}(2s), i.e., if and only if Conjecture 1.2 holds for Fermat varieties of dimension 2s in P^{2s+1}."*
+
+**The identification.** By that equivalence — the source's own, an *if and only if* — whether the quotient of free legs by the diagonal `Σ 1_J` preserves freedom in recursive dimension `2s`, and whether Conjecture 1.2 holds in dimension `2s`, are **one statement**. The eigencut identity makes the application exact: the campaign's coupled core *is* the Degtyarev–Shimada module (§8.1 — the cuts are the same operator), so it inherits the equivalence. The boundary between the regimes is thereby drawn to the line. **Two legs** (recursive dimension 2): the within-pair closure is `Z[t]/φ`, free by `x·c₀ = −1` alone (§7), and dimensions 0 and 2 are torsion-free by the source's own results — below the equivalence. **Three or more legs** (recursive dimension `≥ 4`): the freedom in question sits on the equivalence itself. Accordingly, every primitivity verdict of the campaign is an instance of Conjecture 1.2 confirmed; and a deviation in a recursive-dimension `≥ 4` block, should one ever be measured, and a failure of Conjecture 1.2 in that dimension are the same event. The scope statement of §7 stands word for word; this section adds the location, read from the source and confirmed against the complete text.
+
+---
+
 ## References
 
 1. R. Amichis Luengo, *The localization of torsion to a single CRT block.* Campaign note, version 1.1, 1 June 2026. [THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md)
@@ -217,3 +265,4 @@ This is the exact structural reason the within-pair closure is saturated while t
 4. L. Lipshitz, *The diagonal of a D-finite power series is D-finite.* J. Algebra **113** (1988), 373–378.
 5. R. Amichis Luengo, *The within-pair functor of a Fermat CRT block.* Campaign note, version 1.0, 1 June 2026. [THE_WITHIN_PAIR_FUNCTOR.md](THE_WITHIN_PAIR_FUNCTOR.md)
 6. E. Aljovin, H. Movasati, R. Villaflor, *Integral Hodge conjecture for Fermat varieties.* J. Symbolic Computation **95** (2019), 177–184. arXiv:1711.02628.
+7. R. Amichis Luengo, *The eigencut identity — the CRT idempotent cut is the Degtyarev–Shimada coordinate cut.* Campaign note, version 1.0, 3 June 2026. [THE_EIGENCUT_IDENTITY.md](THE_EIGENCUT_IDENTITY.md)
