@@ -176,6 +176,10 @@ Reading the complete Degtyarev–Shimada text to the end settles where the next 
 
 By that equivalence — the source's own, an *if and only if* — the freedom of the coupling of three or more pairs in recursive dimension `2s` and Conjecture 1.2 in dimension `2s` are **one statement**; the eigencut identity (§7.2) makes the application to the campaign's objects exact. Two legs sit below the equivalence (the within-pair closure is `Z[t]/φ`, free by the red link's `x·c₀ = −1`; dimensions 0 and 2 are torsion-free by the source's own results); three or more legs sit on it. Every primitivity verdict of the campaign is accordingly an instance of Conjecture 1.2 confirmed, and a deviation in a recursive-dimension `≥ 4` block, should one ever be measured, and a failure of Conjecture 1.2 in that dimension are the same event. The full narration is in [THE_NAIL_THEOREM.md](THE_NAIL_THEOREM.md) §8.
 
+### 7.4 Reference correction (Aljovin–Movasati–Villaflor), 4 June 2026
+
+The annotation on the AMV reference below ("leaves its elementary divisors uncomputed") and the phrase "explicitly left uncomputed" in §6 are corrected against the source (arXiv:1711.02628 v2, Tables 1–2 and §4). AMV's Table 1 **computes the global elementary divisors** of the linear-cycle lattice within their tables' reach — (4,3), (4,4), (4,5), (4,6), the last at the cost of 170 GB of swap and more than two days — and their Table 2 gives the Hodge-side divisors for (6,3), (6,4), (8,3), (10,3), whose linear side they state they were not able to compute. What remains uncomputed in the literature is **(a)** the *per-block* refinement of that structure (AMV work globally, with no CRT decomposition), and **(b)** everything beyond their tables' reach. The localization theorem of §1 concerns exactly the per-block refinement; the body's phrasing stands corrected to that scope.
+
 ---
 
 ## References
