@@ -1,0 +1,107 @@
+[     0.0s] legolaselpeloterov2 - ANY-PRIME BALL. The (4,8) trial. Gates first.
+[     0.0s] building Gram (4,3): 405 planes (raw int8 0 MB)
+[     0.0s] Gram (4,3) built
+[     0.0s]   [gate1] level 0 done: 19 divisors; residual 386x386
+[     0.0s]   [gate1] level 1 done: 1 divisors; residual 385x385
+[     0.0s]   [gate1] level 2 done: 1 divisors; residual 384x384
+[     0.0s]   [gate1] level 3 done: 0 divisors; residual 384x384
+GATE (4,3) p=3: {0: 19, 1: 1, 2: 1, 3: 0}
+[     0.0s] GATE (4,3) -> PASS
+[     0.0s] building Gram (4,4): 960 planes (raw int8 1 MB)
+[     0.0s] Gram (4,4) built
+[     0.1s]   [gate2] level 0 done: 100 divisors; residual 860x860
+[     0.1s]   [gate2] level 1 done: 2 divisors; residual 858x858
+[     0.1s]   [gate2] level 2 done: 4 divisors; residual 854x854
+[     0.1s]   [gate2] level 3 done: 30 divisors; residual 824x824
+[     0.1s]   [gate2] level 4 done: 4 divisors; residual 820x820
+[     0.1s]   [gate2] level 5 done: 2 divisors; residual 818x818
+[     0.1s]   [gate2] level 6 done: 0 divisors; residual 818x818
+[     0.1s]   [gate2] level 7 done: 0 divisors; residual 818x818
+GATE (4,4) p=2: rank 142 heights {0: 100, 1: 2, 2: 4, 3: 30, 4: 4, 5: 2, 6: 0, 7: 0}
+[     0.1s] GATE (4,4) vs AMV Table 1 -> PASS
+[     0.1s] building Gram fam d=8: 512 planes (raw int8 0 MB)
+[     0.1s] Gram fam d=8 built
+[     0.1s]   [sealfam] level 0 done: 20 divisors; residual 492x492
+[     0.1s]   [sealfam] level 1 done: 0 divisors; residual 492x492
+[     0.1s]   [sealfam] level 2 done: 0 divisors; residual 492x492
+[     0.1s]   [sealfam] level 3 done: 108 divisors; residual 384x384
+[     0.1s]   [sealfam] level 4 done: 0 divisors; residual 384x384
+[     0.1s]   [sealfam] level 5 done: 0 divisors; residual 384x384
+[     0.1s]   [sealfam] level 6 done: 216 divisors; residual 168x168
+[     0.1s]   [sealfam] level 7 done: 0 divisors; residual 168x168
+SEAL TEST fam d=8: rank 344 heights {0: 20, 1: 0, 2: 0, 3: 108, 4: 0, 5: 0, 6: 216, 7: 0}
+[     0.1s] SEAL TEST flat law at 2-power degree -> HIT (law extends to d=8), continuing
+[     0.1s] THE SHOT: (4,8), 7680 planes. SEALED: counter says 5882, DS says 3302, boundary conjecture says DS.
+[     0.1s] RAM ledger: raw Gram int8 = 0.05 GB
+[     0.1s] building Gram (4,8): 7680 planes (raw int8 56 MB)
+[     1.0s] Gram (4,8) built
+[     1.0s] RAM ledger: bufA u32 = 0.22 GB
+[     3.1s]   [4,8] rank pass: 62 pivots (col 77/7680)
+[     5.1s]   [4,8] rank pass: 113 pivots (col 143/7680)
+[     7.1s]   [4,8] rank pass: 158 pivots (col 203/7680)
+[     9.1s]   [4,8] rank pass: 203 pivots (col 262/7680)
+[    11.1s]   [4,8] rank pass: 254 pivots (col 329/7680)
+[    13.1s]   [4,8] rank pass: 319 pivots (col 411/7680)
+[    15.1s]   [4,8] rank pass: 385 pivots (col 558/7680)
+[    17.2s]   [4,8] rank pass: 439 pivots (col 652/7680)
+[    19.2s]   [4,8] rank pass: 491 pivots (col 727/7680)
+[    21.2s]   [4,8] rank pass: 548 pivots (col 809/7680)
+[    23.2s]   [4,8] rank pass: 613 pivots (col 915/7680)
+[    25.2s]   [4,8] rank pass: 727 pivots (col 1171/7680)
+[    27.2s]   [4,8] rank pass: 858 pivots (col 1412/7680)
+[    29.2s]   [4,8] rank pass: 932 pivots (col 1583/7680)
+[    31.2s]   [4,8] rank pass: 975 pivots (col 1641/7680)
+[    33.2s]   [4,8] rank pass: 1015 pivots (col 1694/7680)
+[    35.2s]   [4,8] rank pass: 1061 pivots (col 1755/7680)
+[    37.3s]   [4,8] rank pass: 1117 pivots (col 1827/7680)
+[    39.3s]   [4,8] rank pass: 1200 pivots (col 2066/7680)
+[    41.3s]   [4,8] rank pass: 1254 pivots (col 2143/7680)
+[    43.3s]   [4,8] rank pass: 1305 pivots (col 2218/7680)
+[    45.3s]   [4,8] rank pass: 1364 pivots (col 2317/7680)
+[    47.3s]   [4,8] rank pass: 1444 pivots (col 2569/7680)
+[    49.3s]   [4,8] rank pass: 1554 pivots (col 2763/7680)
+[    51.3s]   [4,8] rank pass: 1680 pivots (col 3103/7680)
+[    53.3s]   [4,8] rank pass: 1791 pivots (col 3246/7680)
+[    55.4s]   [4,8] rank pass: 1940 pivots (col 3625/7680)
+[    57.4s]   [4,8] rank pass: 2013 pivots (col 3740/7680)
+[    59.4s]   [4,8] rank pass: 2105 pivots (col 3877/7680)
+[    61.4s]   [4,8] rank pass: 2314 pivots (col 4623/7680)
+[    63.4s]   [4,8] rank pass: 2481 pivots (col 4838/7680)
+[    65.4s]   [4,8] rank pass: 2797 pivots (col 5793/7680)
+[    66.8s] rank = 3302 | counter 5882: MISS | DS 3302: HIT
+[    66.8s] RAM ledger: raw freed; bufB u32 = 0.22 GB (DECLARED PEAK 0.44 GB, guard 5.4)
+[    68.8s]   [4,8] level 0: 218 pivots (col 2123/7680, rows 7680)
+[    70.8s]   [4,8] level 0: 402 pivots (col 6273/7680, rows 7680)
+[    71.2s]   [4,8] level 0 done: 428 divisors; residual 7252x7252
+[    73.2s]   [4,8] level 1: 198 pivots (col 5319/7252, rows 7252)
+[    73.8s]   [4,8] level 1 done: 252 divisors; residual 7000x7000
+[    74.3s]   [4,8] level 2 done: 42 divisors; residual 6958x6958
+[    76.3s]   [4,8] level 3: 224 pivots (col 946/6958, rows 6958)
+[    78.3s]   [4,8] level 3: 443 pivots (col 1906/6958, rows 6958)
+[    80.3s]   [4,8] level 3: 683 pivots (col 3002/6958, rows 6958)
+[    82.3s]   [4,8] level 3: 926 pivots (col 4337/6958, rows 6958)
+[    84.3s]   [4,8] level 3: 1169 pivots (col 6104/6958, rows 6958)
+[    84.9s]   [4,8] level 3 done: 1240 divisors; residual 5718x5718
+[    86.8s]   [4,8] level 4 done: 298 divisors; residual 5420x5420
+[    88.5s]   [4,8] level 5 done: 336 divisors; residual 5084x5084
+[    89.5s]   [4,8] level 6 done: 190 divisors; residual 4894x4894
+[    90.6s]   [4,8] level 7 done: 252 divisors; residual 4642x4642
+[    91.2s]   [4,8] level 8 done: 136 divisors; residual 4506x4506
+[    91.7s]   [4,8] level 9 done: 128 divisors; residual 4378x4378
+[    91.8s]   [4,8] level 10 done: 0 divisors; residual 4378x4378
+[    91.9s]   [4,8] level 11 done: 0 divisors; residual 4378x4378
+[    91.9s]   [4,8] level 12 done: 0 divisors; residual 4378x4378
+[    92.0s]   [4,8] level 13 done: 0 divisors; residual 4378x4378
+[    92.1s]   [4,8] level 14 done: 0 divisors; residual 4378x4378
+[    92.1s]   [4,8] level 15 done: 0 divisors; residual 4378x4378
+[    92.2s]   [4,8] level 16 done: 0 divisors; residual 4378x4378
+[    92.2s]   [4,8] level 17 done: 0 divisors; residual 4378x4378
+[    92.3s]   [4,8] level 18 done: 0 divisors; residual 4378x4378
+[    92.4s]   [4,8] level 19 done: 0 divisors; residual 4378x4378
+======================================================================
+VERDICT (4,8): rank = 3302  | counter 5882: MISS | DS 3302: HIT
+  boundary conjecture (hit set = prime, d=4, or gcd(d,120)=1): SURVIVES 7/7
+  2-adic height counts: {0: 428, 1: 252, 2: 42, 3: 1240, 4: 298, 5: 336, 6: 190, 7: 252, 8: 136, 9: 128, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0}
+  unaccounted beyond height 19: 0 (residual rows 4378)
+  2-adic exponent E = 12072
+Done. PMC.
