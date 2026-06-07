@@ -1,0 +1,6 @@
+SEALED BEFORE COMPUTATION (7 June 2026) - (2,35) = 5*7, THE NO-HINGE COMPOSITE
+Two-tooth conjecture, each side bends by its OWN b: #sq(p) = 3m-16+b(p), #m(p) = 3m^2-24m+59-2b(p)
+(2,35): rank 3367 both primes; exp = 3072 both primes
+  p5 (b=2): profile {1: 2890, 2: 91}
+  p7 (b=0): profile {1: 2894, 2: 89}   [verbatim prime law]
+Falsifier: any deviation kills the per-own-prime reading of the two teeth.

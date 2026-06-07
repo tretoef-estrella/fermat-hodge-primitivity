@@ -1,0 +1,13 @@
+SEALED BEFORE COMPUTATION (7 June 2026) - SHEET 3, full-profile seals with the two-tooth b
+(2,39) = 3*13: rank 4219, exp 3888 both primes
+   p3  (b=7): profile {1:3672, 2:108}
+   p13 (b=0): profile {1:3686, 2:101}
+(2,55) = 5*11: rank 8587, exp 8112 both primes
+   p5  (b=2): profile {1:7810, 2:151}
+   p11 (b=0): profile {1:7814, 2:149}
+MAC RUN FORMS (launch order held by the Auditor; freed slot only, claims untouched):
+cd ~/Downloads && time caffeinate -dims taskpolicy -c utility ./gandalfsonrie 39 3 16 ck39p3.bin 2>&1 | tee gandalfsonrie_239_p3_run1.log
+cd ~/Downloads && time caffeinate -dims taskpolicy -c utility ./gandalfsonrie 39 13 8 ck39p13.bin 2>&1 | tee gandalfsonrie_239_p13_run1.log
+cd ~/Downloads && time caffeinate -dims taskpolicy -c utility ./gandalfsonrie 55 5 13 ck55p5.bin 2>&1 | tee gandalfsonrie_255_p5_run1.log
+cd ~/Downloads && time caffeinate -dims taskpolicy -c utility ./gandalfsonrie 55 11 9 ck55p11.bin 2>&1 | tee gandalfsonrie_255_p11_run1.log
+(m=39: ~20-30 min each at 25%; m=55: ~60-90 min each; RAM 170 MB / 660 MB - under guard; checkpointed, Ctrl+C safe)

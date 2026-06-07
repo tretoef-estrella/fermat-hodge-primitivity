@@ -1,0 +1,5 @@
+SEALED BEFORE COMPUTATION (7 June 2026, virgin sheet 2; unified law):
+(2,25) m=5^2 : rank 1657, exp5 = 2904                      [prime-power probe: Prop 3.2 bending?]
+(2,27) m=3^3 : rank 1951, exp3 = 5184
+(2,26) m=2*13: rank 1802, exp2 = 1584, exp13 = 1590        [even fine print: 26^1587*(13/2)^3]
+(2,33) m=3*11: rank 2977, exp3 = 2700, exp11 = 2700
