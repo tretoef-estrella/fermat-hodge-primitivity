@@ -24,7 +24,7 @@ Three layers of evidence anchor the theorem beyond the proof. **Pointwise:** com
 
 ## 2. Notation and substrate
 
-H⁴_prim(X_d) ⊗ C decomposes as ⊕_a C·v_a over characters a = (a₀,…,a₅), a_i ∈ Z/d∖{0}, Σ a_i ≡ 0 (mod d); the coordinate torus μ_d⁶/diag acts on v_a by a [2]. The fifteen families of standard planes correspond to the perfect matchings of the six coordinates; the d³ planes of a family form a single orbit of its edge-torus. Two facts of the classical Fermat machinery are used as substrate: the eigenbasis description above and its torus equivariance (textbook), and a **Nonvanishing Lemma** — *the class of a standard plane has nonzero coefficient on every character of its support* — a Shioda-type computation (plane classes have product-of-Jacobi-factor coefficients in the eigenbasis [2, 3]). The Lemma's status is stated plainly in §6.
+H⁴_prim(X_d) ⊗ C decomposes as ⊕_a C·v_a over characters a = (a₀,…,a₅), a_i ∈ Z/d∖{0}, Σ a_i ≡ 0 (mod d); the coordinate torus μ_d⁶/diag acts on v_a by a [2]. The fifteen families of standard planes correspond to the perfect matchings of the six coordinates; the d³ planes of a family form a single orbit of its edge-torus. Two facts of the classical Fermat machinery are used as substrate: the eigenbasis description above and its torus equivariance (textbook), and a **Nonvanishing Lemma** — *the class of a standard plane has nonzero coefficient on every character of its support*. This is the explicit period computation of Movasati–Villaflor [5]: the period of a linear algebraic cycle against the eigenform ω_β is a nonzero product of Beta/Jacobi factors precisely on the support (the clean membership form is Villaflor [6, Prop. 2.2]; the eigenbasis itself is Shioda [2], Aoki–Shioda [3]). The Lemma is therefore a cited result, not an assumption; §6 records this.
 
 ## 3. The proof — the support calculus
 
@@ -56,7 +56,7 @@ For d even the character (d/2)·(1,1,1,1,1,1) is Hodge and alternates along **ev
 
 ## 6. What is proven, what is verified — the honest ledger
 
-The support calculus of §3 is complete modulo two classical inputs: the eigenbasis description of Fermat middle cohomology with its torus equivariance (textbook, [2]), and the Nonvanishing Lemma of §2 — a Shioda-type Jacobi-factor computation, **cited-route**, and empirically enforced by every measured dimension of this campaign: any vanishing anywhere would have dented a dimension somewhere across five complete kingdoms, the ten-degree flat law, and the blind trials. Pinning the precise literature citation (or writing the two-line Jacobi-factor verification in full) is the one open item this document holds itself to before submission, and is stated here as exactly what it is. The discriminant-group profiles of the cells (the torsion floors) are **outside** this theorem — they are the campaign's next object, and nothing here depends on them.
+The support calculus of §3 is complete modulo two classical inputs: the eigenbasis description of Fermat middle cohomology with its torus equivariance (textbook, [2]), and the Nonvanishing Lemma of §2 — now pinned to its explicit source, the period computation of Movasati–Villaflor [5] (membership form Villaflor [6, Prop. 2.2]), and independently enforced by every measured dimension of this campaign: any vanishing anywhere would have dented a dimension somewhere across five complete kingdoms, the ten-degree flat law, and the blind trials. With this citation fixed, the support calculus of §3 rests entirely on published, explicit results; no input of this theorem is left to assumption. The discriminant-group profiles of the cells (the torsion floors) are **outside** this theorem — they are the campaign's next object, and nothing here depends on them.
 
 ## 7. Provenance and discipline of record
 
@@ -70,5 +70,7 @@ DS [1] proved the rank formula by their criterion; AMV [4] computed cells within
 2. T. Shioda, *The Hodge conjecture for Fermat varieties.* Math. Ann. 245 (1979), 175–184.
 3. N. Aoki, T. Shioda, *Generators of the Néron–Severi group of a Fermat surface.* Progress in Mathematics 35, Birkhäuser (1983), 1–12.
 4. E. Aljovin, H. Movasati, R. Villaflor, *Integral Hodge conjecture for Fermat varieties.* J. Symbolic Computation 95 (2019), 177–184. arXiv:1711.02628.
+5. H. Movasati, R. Villaflor Loyola, *Periods of linear algebraic cycles.* arXiv:1705.00084 (2018).
+6. R. Villaflor Loyola, *On fake linear cycles inside Fermat varieties.* Algebra & Number Theory 17 (2023), no. 10.
 
 Companion documents in this repository: THE_WATERMARK_THEOREM (the surface order) · THE_DOUBLE_LADDER_THEOREM (the surface structure) · THE_BRAUER_COROLLARY · CHUCHIPACHI_FINDINGS_MASTER (the campaign record, graveyards included).
