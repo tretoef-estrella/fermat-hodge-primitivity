@@ -14,11 +14,9 @@ Let `S_m` be the Fermat surface of composite degree `m`, `NS(S_m)` its Néron–
 
 **Theorem (the Three-Ring).**
 
-- **[The count law — FIRM, measured 8/8]** For squarefree composite `m` and each prime `p | m`,
-  > **`b_p = (3m − 16) + b(p)`,**
-  the Double Ladder base `3m − 16` plus the Bend constant `b(p)` of the prime (`b(3) = 7`, `b(5) = 2`, `b(p) = 0` for `p ≥ 7`). Total order-`m²` count `Σ_{p|m} b_p` measured byte-exact at every station, blind-confirmed at `m = 33` (the line lattice, `3 | m`, `11 | m`) and at `m = 35` (a clean Néron–Severi cell, `gcd(m,6) = 1`).
+- **[The count law — FIRM, measured 8/8]** For squarefree composite `m` and each prime `p | m`, &nbsp; **`b_p = (3m − 16) + b(p)`** — the Double Ladder base `3m − 16` plus the Bend constant `b(p)` of the prime (`b(3) = 7`, `b(5) = 2`, `b(p) = 0` for `p ≥ 7`). Total order-`m²` count `Σ_{p|m} b_p` measured byte-exact at every station, blind-confirmed at `m = 33` (the line lattice, `3 | m`, `11 | m`) and at `m = 35` (a clean Néron–Severi cell, `gcd(m,6) = 1`).
 
-- **[The orthogonality — PROVEN]** The discriminant linking form is `(Z/m)²`-equivariant under pencil translation, and pairs a character `χ` only with its inverse `χ⁻¹` — of the **same order**. Hence the order-2 torsion decomposes over character order as an **orthogonal** direct sum of strata, with **zero cross term** between strata of different order. This is structure, not measurement.
+- **[The orthogonality — PROVEN]** The discriminant linking form is `(Z/m)²`-equivariant under pencil translation, and pairs a character `χ` only with its inverse `χ⁻¹` — of the **same order**. Hence the height-2 part (the order-`m²` torsion) decomposes over character order as an **orthogonal** direct sum of strata, with **zero cross term** between strata of different order. This is structure, not measurement.
 
 - **[The non-separability — PROVEN, the document's discovery]** Of the three character-order strata of `S_m` at `p = 3` (orders `m`, `3`, `m/3`), only the **primitive order-`m`** stratum carries any height-2 3-torsion. The order-3 stratum is the Fermat cube `S₃`, which carries **zero** 3-adic torsion of any height (measured: empty 3-adic profile); the order-5 stratum `S₅` carries **no 3-part**. Therefore the entire bend `b(3) = 7` sits **inside the primitive order-`m` stratum**: it is **not** a separable sub-Fermat block, **not** piece overlap, **not** a glue leak. The bend is intrinsic to the primitive heart.
 
