@@ -6,6 +6,14 @@
 
 **4 June 2026** · Version 1.0 (skeleton v6 of the campaign record)
 
+> **Version note (30 September 2026).** The statement and the proof are unchanged. Three additions, after reading the sources in the original:
+>
+> **1. Correction.** §1 says that Shioda «asked for its structure» in 1987. He asked for the determinant only: [7], p. 133, Question 7.2 (characteristic `p ≡ 1 mod m`) and Question 7.4, formula (7.10) (the complex surface), both for prime `m`. The structure of the discriminant group, which goes beyond his question, is the companion *Double Ladder Theorem* (same repository).
+>
+> **2. Literature.** In 2015 Shioda still used the formula as expected, not as proved: it appears inside Conjecture 23 of T. Shioda, *Mordell–Weil lattice of higher genus fibration on a Fermat surface*, J. Math. Sci. Univ. Tokyo **22** (2015), 443–468, §6.5. [6, Table 1] lists the elementary divisors for every `m ≤ 14`; for `m = 5, 7, 11, 13` their product is `m^{3(m−3)²}`.
+>
+> **3. Verified in Lean.** On 30 September 2026 the theorem was certified in Lean 4 with Mathlib, along a second route that is entirely integral and uses no characters. For every prime `m ≥ 5`, Lean proves that `V` is free of rank `3(m−1)(m−2)+1` and that the Gram determinant of every basis of `V` equals `m^{3(m−3)²}`, with sign `+`. The proof depends only on the three standard axioms of Lean. That the Gram matrix is the intersection matrix of the lines is proved by hand and checked by computer, not formalized. The Lean certificate is `LEAN_CERTIFICATE_WATERMARK_v2`; the certificate, the Lean project and all the evidence are in the repository `github.com/tretoef-estrella/watermark-theorem`.
+
 ---
 
 ## Abstract
