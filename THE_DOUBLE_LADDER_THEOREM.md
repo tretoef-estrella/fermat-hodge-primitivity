@@ -3,9 +3,16 @@
 ### The discriminant group of the Néron–Severi lattice of a prime-degree Fermat surface — structure, not just order
 
 **Rafael Amichis Luengo** · Madrid · [tretoef@gmail.com](mailto:tretoef@gmail.com) · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
-*5 June 2026 · version 3, 30 September 2026 (corrections, see the note below) · Companion to* The Watermark Theorem *(same repository). Computations: MacBook Air M2, 8 GB RAM, single thread, 25% CPU.*
+
+*5 June 2026 · version 4, 30 September 2026 (see the notes below) · Companion to* The Watermark Theorem *(same repository). Computations: MacBook Air M2, 8 GB RAM, single thread, 25% CPU.*
 
 > **Version 3 (30 September 2026).** The statement is unchanged. Corrections, after reading the sources in the original: (1) Aljovin–Movasati–Villaflor [6, Table 1] list the elementary divisors not only at `m = 5, 7` but also at `m = 11` and `m = 13`, and all four rows agree with the theorem; so the `m = 11` value, although predicted before it was computed, was already in print. (2) Shioda [7, Questions 7.2 and 7.4] asked for the determinant of `NS(S_m)`, not for its discriminant group; the Watermark Theorem answers his question for prime degree, and the present theorem goes further. (3) The 170 GB of swap in [6] were for their fourfold cell `(n, d) = (4, 6)`. **Status of the proof.** §4 and §6 below contain four steps confirmed at three or four primes and not written for general `m` (see the Remark in §4). A different proof, written for every prime — the order from the Watermark, the exponent `m²` from an explicit integer identity `G Y G = 6m² G`, and `rank(G mod m) = 12(m − 3)` for `m ≥ 7` (`26` at `m = 5`) — has been checked completely in Lean 4 with Mathlib on 30 September 2026, together with the Watermark. Its Lean certificate is being prepared for this repository.
+>
+> **Version 4 (30 September 2026, later the same day).** The statement is unchanged.
+>
+> **1. Which proof is complete.** The Abstract and §1 present the proof of this paper as complete. Four of its steps, in §4 and §6, are confirmed at three or four primes and not written for general `m` (the Remark in §4; the note to version 3). The theorem is proved for every prime by a different proof: the order from the Watermark Theorem, the exponent `m²` from the integer identity `G Y G = 6m² G`, and `rank(G mod m) = 12(m − 3)` for `m ≥ 7` (`26` at `m = 5`). That proof is written out in *The Double Ladder Theorem — a pencil proof* (version 2), and it is the one certified in Lean.
+>
+> **2. Verified in Lean.** The Lean 4 certificate, `LEAN_CERTIFICATE_DOUBLE_LADDER_v2`, announced in the note to version 3, is published. For every prime `m ≥ 7`, Lean proves `V*/V ≅ (Z/m)^{3m²−24m+59} × (Z/m²)^{3m−16}`, and it proves the case `m = 5` separately. The proofs use only the three standard axioms. An independent cold reader found no fatal error and no gap. That the Lean matrix is the intersection matrix of the lines is proved by hand and checked by computer, not formalized. The certificate, the pencil proof, the Lean project and all the evidence are in the repository `github.com/tretoef-estrella/watermark-theorem`.
 
 ---
 
