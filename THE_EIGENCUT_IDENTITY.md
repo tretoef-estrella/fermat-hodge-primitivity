@@ -5,7 +5,7 @@
 **Rafael Amichis Luengo** — Madrid · [github.com/tretoef-estrella](https://github.com/tretoef-estrella)
 **Version 1.0 · 3 June 2026**
 
-> Companion to [THE_NAIL_THEOREM.md](THE_NAIL_THEOREM__2_.md) and [THE_BLOCK_DECOMPOSITION.md](THE_BLOCK_DECOMPOSITION__1_.md). The Nail proves the block-rank law `rec(d,ℓ) = DS_{2(ℓ−1)}(d+1)` is unconditional *given* one identification — the dictionary of §2 there — whose geometric half (`e_A ↔` the coordinate-zeroing cut `X(2s)`) was carried as a textual reading, never proved as an identity of operators. This note proves that geometric half: the CRT idempotent cut and the Degtyarev–Shimada coordinate cut are not merely the same dimension count, they are the **same projection on the same ambient space**. It is the handle the campaign's standing residual (Link A) turned on — and it falls to linear algebra, in the register of `x·c₀ = −1`, not to the cohomology of [2, §4].
+> Companion to [THE_NAIL_THEOREM.md](THE_NAIL_THEOREM.md) and [THE_BLOCK_DECOMPOSITION.md](THE_BLOCK_DECOMPOSITION.md). The Nail proves the block-rank law `rec(d,ℓ) = DS_{2(ℓ−1)}(d+1)` is unconditional *given* one identification — the dictionary of §2 there — whose geometric half (`e_A ↔` the coordinate-zeroing cut `X(2s)`) was carried as a textual reading, never proved as an identity of operators. This note proves that geometric half: the CRT idempotent cut and the Degtyarev–Shimada coordinate cut are not merely the same dimension count, they are the **same projection on the same ambient space**. It is the handle the campaign's standing residual (Link A) turned on — and it falls to linear algebra, in the register of `x·c₀ = −1`, not to the cohomology of [2, §4].
 
 ---
 
@@ -137,6 +137,6 @@ Recomputes both registers from scratch: char 0 (`m = 4, 6, 10`, simple eigenvalu
 
 ## References
 
-1. R. Amichis Luengo, *The block-rank theorem for Fermat CRT blocks — and the red link.* Campaign note, version 2.0, 3 June 2026. [THE_NAIL_THEOREM.md](THE_NAIL_THEOREM__2_.md)
+1. R. Amichis Luengo, *The block-rank theorem for Fermat CRT blocks — and the red link.* Campaign note, version 2.0, 3 June 2026. [THE_NAIL_THEOREM.md](THE_NAIL_THEOREM.md)
 2. A. Degtyarev, I. Shimada, *On the topology of projective subspaces in complex Fermat varieties.* J. Math. Soc. Japan **68**:3 (2016), 975–996. arXiv:1405.4683. — §2 (the Galois action `γ_i ↔ t_i`); §4.6 (the coordinate-zeroing cut `X(2s)`, the tensor `C̄_{J_s}(2d) = C̄_{J(2s)}(2s) ⊗ S̄(s,d)`); Remark 4.4 (the closed-form rank).
 3. R. Amichis Luengo, *The localization of torsion to a single CRT block.* Campaign note, version 1.1, 1 June 2026. [THE_LOCALIZATION_THEOREM.md](THE_LOCALIZATION_THEOREM.md)
