@@ -6,7 +6,7 @@ The author should be cited as **Rafael Amichis Luengo**, or, where an abbreviate
 
 ## Plain citation
 
-> Amichis Luengo, R. (2026). *The Hodge–Fermat Campaign: verifying the Integral Hodge Conjecture for high-dimensional Fermat varieties, and the prime-power reduction frontier.* https://github.com/tretoef-estrella/prime-power-frontier
+> Amichis Luengo, R. (2026). *The Hodge–Fermat Campaign: verifying the Integral Hodge Conjecture for high-dimensional Fermat varieties, and the prime-power reduction frontier.* https://github.com/tretoef-estrella/fermat-hodge-primitivity
 
 ## BibTeX
 
@@ -17,7 +17,7 @@ The author should be cited as **Rafael Amichis Luengo**, or, where an abbreviate
              Conjecture for high-dimensional Fermat varieties, and the
              prime-power reduction frontier},
   year    = {2026},
-  url     = {https://github.com/tretoef-estrella/prime-power-frontier},
+  url     = {https://github.com/tretoef-estrella/fermat-hodge-primitivity},
   note    = {Computational verification via the Degtyarev--Shimada criterion}
 }
 ```

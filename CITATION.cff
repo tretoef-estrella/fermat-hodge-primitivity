@@ -13,7 +13,7 @@ authors:
     city: Madrid
     country: ES
     email: tretoef@gmail.com
-repository-code: 'https://github.com/tretoef-estrella/prime-power-frontier'
+repository-code: 'https://github.com/tretoef-estrella/fermat-hodge-primitivity'
 abstract: >-
   A computational campaign verifying the Integral Hodge
   Conjecture for high-dimensional Fermat varieties on a single

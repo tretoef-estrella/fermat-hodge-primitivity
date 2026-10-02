@@ -83,6 +83,9 @@ Equivalently, `DS_n(m)` is the number of closed walks of `n+2` steps on a lattic
 
 *Proof (identification against the source, byte-exact).* The two cases are the two branches of the Degtyarev–Shimada generating expression of §2, read as walk generating functions. For odd `m = 2h+1` the bracket is `S = Σ_{i=1}^{h}(x_i + x_i^{-1})` with no constant term, and the rank is the constant term of `(1 + S)^{n+2}`; but the outer `1` together with the absence of a central term means the surviving constant-term contributions are exactly the closed directional walks, giving `cw(h, n+2)` with `h = (m−1)/2`. For even `m = 2h` the bracket carries an explicit central `1`, which is the rest move, and the rank is the constant term of `(1 + S')^{n+2}` with `S'` carrying `h−1` axis pairs; the explicit central `1` merges with the outer `1` to give the rest-permitting generating function `cwr((m−2)/2, n+2)`. The identification is verified byte-exact below. ∎
 
+> 🔵 **NOTA `2026-09-16` (Grepy, turno 18, informe 146) — grieta en el caso impar:** `:52` transcribe `(1+S)^{n+2}`, cuyo término constante es `cwr`, y la prueba concluye `cw`. La rama par (`m = q+1`) no queda afectada.
+
+
 **The verification (independent recompute).** Both branches reproduce the published `DS_2, DS_4, DS_6` on all `24` points `m = 3, …, 8`:
 
 | | `m=3` | `m=4` | `m=5` | `m=6` | `m=7` | `m=8` |
